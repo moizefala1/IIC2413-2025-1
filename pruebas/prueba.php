@@ -1,5 +1,6 @@
 <?php
-echo "hola mundo", "\n";
+$hola_mundo = "hola mundo" ;
 $pene = 1;
-echo $pene
+echo $hola_mundo , "\n"; 
+echo $pene;
 ?>
