@@ -1,3 +1,5 @@
 <?php
-$usuarios_rescatados = fopen("usuarios_rescatados.csv", "r");
+$ruta_archivo = __DIR__ . '/CSV_sucios/usuarios_rescatados.csv';
+$usuarios_rescatados = fopen ("$ruta_archivo", "r");
+?>
 
