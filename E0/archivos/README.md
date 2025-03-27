@@ -1,0 +1,8 @@
+- Como el rut no admite nulo, le asignamos un 0 en caso de no existir. Estandarizamos rut para que sea una string sin puntos.
+- El DV tampoco admite nulo, asi que le asignamos un 10 en caso de no existir, o de ser un valor no valido (que no sea 0-9 o K/k)
+- Como el correo es el identificador de la persona, en el caso de no estar en los dominios permitidos, no existir, o no tener al menos una letra antes del dominio, se considerara como un dato invalido. Para salvar la mayor cantidad de datos, el programa identifica si tiene dos arrobas, o si el dominio no termina en .com/.cl, y lo soluciona dependiendo del dominnio en cuestion (.cal para edubus, .cl para viajes y .com para cualquier otro caso)
+- Ya que usuario admite nulo, si es que el str nombre_usuario es vacia, se le asigna null
+-Lo mismo para la contraseña
+-Para el telefono, como no admite nulo, estandarizamos en "0 0000 0000" todos aquellos numeros que no existan. Luego, limpiamos los datos para darles el formato indicado en las reglas de negocio.
+- Como los puntos admiten nulo, simplemente les damos null si es que no existen. Establecemos que los puntos no pueden ser negativos, de ser asi, los estandarizamos a 0
+- El codigo de agenda no puede ser nulo, por lo que de no existir establecemos "-1" como codigo de agenda.
