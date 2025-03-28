@@ -43,6 +43,7 @@ while (feof($usuarios_rescatados) !== true){
     //Etiqueta
     $tupla = check_etiqueta($tupla);
     //Codigo de reserva
+    $tupla = check_codigo_reserva($tupla);
 
     fwrite($personasOK, implode(",", $tupla));
 

@@ -31,7 +31,7 @@ function check_dv($tupla){
         $tupla[2] = $dv;
         return $tupla;
     }
-    elseif (gettype($dv) != "integer" && $dv == 'K' || $dv == 'k'){
+    elseif (!is_numeric($dv) && $dv == 'K' || $dv == 'k'){
         return $tupla;
     }
     else {
@@ -147,7 +147,7 @@ function check_puntos($tupla){
         $tupla[7] = null;
         return $tupla;
     }
-    elseif (gettype($puntos) != "integer"){
+    elseif (!is_numeric($puntos)){
         $puntos = (int)$puntos;
     }
     elseif ($puntos < 0){
@@ -162,8 +162,8 @@ function check_codigo_agenda($tupla){
         $tupla[8] = (-1);
         return $tupla;
     }
-    elseif (gettype($codigo_agenda) != "integer"){
-        $codigo_agenda = (integer)$codigo_agenda;
+    elseif (!is_numeric($codigo_agenda)){
+        $codigo_agenda = (int)$codigo_agenda;
     }
     $tupla[8] = $codigo_agenda;
     return $tupla;
@@ -177,6 +177,19 @@ function check_etiqueta($tupla){
     }
     elseif (gettype($etiqueta) != "string"){
         $tupla[9] = (string)$etiqueta;
+        return $tupla;
+    }
+    return $tupla;
+};
+
+function check_codigo_reserva($tupla){
+    $codigo_reserva = $tupla[10];
+    if (empty($codigo_reserva)){
+        $tupla[10] = -1;
+        return $tupla;
+    }
+    elseif (!is_numeric($codigo_reserva)){
+        $tupla[10] = (int)$codigo_reserva;
         return $tupla;
     }
     return $tupla;
