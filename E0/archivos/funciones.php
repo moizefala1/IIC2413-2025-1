@@ -159,7 +159,7 @@ function check_puntos($tupla){
 function check_codigo_agenda($tupla){
     $codigo_agenda = $tupla[8];
     if (empty($codigo_agenda)){
-        $tupla[8] = (-1);
+        $tupla[8] = -1;
         return $tupla;
     }
     elseif (!is_numeric($codigo_agenda)){
@@ -193,6 +193,44 @@ function check_codigo_reserva($tupla){
         return $tupla;
     }
     return $tupla;
+};
+
+function check_fecha($tupla){
+    $fecha = $tupla[11];
+    if (empty($fecha)){
+        $tupla[11] = null;
+        return $tupla;
+    }
+    elseif (gettype($fecha) != "string"){
+        $tupla[11] = (string)$fecha;
+        return $tupla;
+    }
+    $fecha = str_replace("/", "-", $fecha); 
+    $tupla[11] = $fecha;
+    return $tupla;
+};
+
+function check_monto ($tupla){
+    $monto = $tupla[12];
+    if (empty($monto)){
+        $tupla[12] = -1.0;
+    }
+    elseif (!is_numeric($monto)){
+        $monto = floatval($monto);
+    }
+    return $tupla;
+
+};
+
+function check_personas($tupla){
+    if (empty($tupla[13])){
+        $tupla[13] = null;
+    }
+    elseif (!is_numeric($tupla[13])){
+        $tupla[13] = (int)$tupla[13];
+    }
+    return $tupla;
+
 };
 
 ?> 

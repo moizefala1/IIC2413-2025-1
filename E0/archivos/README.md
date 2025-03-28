@@ -6,3 +6,8 @@
 -Para el telefono, como no admite nulo, estandarizamos en "0 0000 0000" todos aquellos numeros que no existan. Luego, limpiamos los datos para darles el formato indicado en las reglas de negocio.
 - Como los puntos admiten nulo, simplemente les damos null si es que no existen. Establecemos que los puntos no pueden ser negativos, de ser asi, los estandarizamos a 0
 - El codigo de agenda no puede ser nulo, por lo que de no existir establecemos "-1" como codigo de agenda.
+-La etiqueta puede ser nulo, por lo que le asignamos null en caso de de no existir
+-El codigo de reserva funciona de manera similar al codigo de agenda, por lo que de igual manera usamos -1 para identificar el nulo
+-Nos solicitan que la fecha cumpla el formato YYYY-MM-DD, por lo que limpiamos los datos. Admite nulo, por lo que establecemos null en el caso que no exista
+-Monto de reserva no admite nulo, establecemos -1 en caso de ser nulo, estandarizamos float como tipo de dato.
+-Cantidad de personas admite nulo, estandarizamos que el dato sea del tipo integer, y nulo en caso de no existir
