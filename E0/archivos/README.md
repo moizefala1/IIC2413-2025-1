@@ -11,3 +11,10 @@
 -Nos solicitan que la fecha cumpla el formato YYYY-MM-DD, por lo que limpiamos los datos. Admite nulo, por lo que establecemos null en el caso que no exista
 -Monto de reserva no admite nulo, establecemos -1 en caso de ser nulo, estandarizamos float como tipo de dato.
 -Cantidad de personas admite nulo, estandarizamos que el dato sea del tipo integer, y nulo en caso de no existir
+
+----------------EMPLEADOS-----------------
+- Mantenemos la misma estandarizacion y formato para los datos compartidos entre ambos archivos.
+- Asignamos null para los elementos que lo permiten
+- Usaremos -1 para los numero de viajes que sean nulos
+- Para las fechas de llegadas, al no poder ser nulas, usaremos "0000-00-00" para referirnos a ellas.
+- para el precio de asiento usaremos -1 en el caso de nulo

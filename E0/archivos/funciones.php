@@ -9,39 +9,34 @@ function check_nombre($tupla){
         $tupla[0] = (string)$tupla[0];
         return $tupla;
     }
-    
     return $tupla;
 
 };
 
 
 function check_rut($tupla){ 
-    $rut = $tupla[1];
-    $rut = str_replace(".", "", $rut);
-    if ($rut == ""){
-        $rut = 0;
+    if (empty($tupla[1])){
+        $tupla[1] = 0;
+        return $tupla;
     }
-    $tupla[1] = $rut;
+    $tupla[1] = str_replace(".", "", $tupla[1]);
     return $tupla;
 };
 function check_dv($tupla){
-    $dv = $tupla[2];
-    if(empty($dv)){
-        $dv = 10;
-        $tupla[2] = $dv;
+    if(empty($tupla[2])){
+        $tupla[2] = 10;
         return $tupla;
     }
-    elseif (!is_numeric($dv) && $dv == 'K' || $dv == 'k'){
+    elseif ($tupla[2] == 'K' || $tupla[2] == 'k'){
         return $tupla;
     }
     else {
-        $dv = (int)$dv;
-        if ($dv >= 0 && $dv <= 9 ) {
+        $tupla[2] = (int)$tupla[2];
+        if ($tupla[2] >= 0 && $tupla[2] <= 9 ) {
             return $tupla;
         } 
         else {
-            $dv = 10;
-            $tupla[2] = $dv;
+            $tupla[2] = 10;
             return $tupla;
         }
 }
@@ -153,9 +148,10 @@ function check_puntos($tupla){
     elseif ($puntos < 0){
         $puntos = 0;
     }
+    $tupla[7] = $puntos;
     return $tupla;
-};
 
+};
 function check_codigo_agenda($tupla){
     $codigo_agenda = $tupla[8];
     if (empty($codigo_agenda)){
@@ -233,4 +229,185 @@ function check_personas($tupla){
 
 };
 
+function check_jornada ($tupla){
+    if (empty($tupla[7])){
+        $tupla[7] = null;
+    }
+    return $tupla;
+}
+
+function check_isapre ($tupla){
+    if (empty($tupla[8])){
+        $tupla[8] = null;
+    }
+    return $tupla;
+}
+
+function check_contrato ($tupla){
+    if (empty($tupla[9])){
+        $tupla[9] = null;
+    }
+    return $tupla;
+}
+
+function check_codigo_reserva_empleado($tupla){
+    if (!is_numeric($tupla[10])){
+        $tupla[10] = (int)$tupla[10];
+    }
+    if (empty($tupla[10])){
+        $tupla[10] = -1;
+    }
+    return $tupla;
+}
+
+function check_codigo_agenda_empleado($tupla){
+    if (!is_numeric($tupla[11])){
+        $tupla[11] = (int)$tupla[11];
+    }
+    if (empty($tupla[11])){
+        $tupla[11] = null;
+    }
+    return $tupla;
+}
+
+function check_fecha_empleado($tupla){
+    if (empty($tupla[12])){
+        $tupla[12] = null;
+        return $tupla;
+    }
+    $tupla[12] = str_replace("/", "-", $tupla[12]);
+    return $tupla;
+}
+
+function check_monto_empleado($tupla){
+    if (empty($tupla[13])){
+        $tupla[13] = -1.0;
+    }
+    elseif (!is_numeric($tupla[13])){
+        $tupla[13] = floatval($tupla[13]);
+    }
+    return $tupla;
+}
+
+function check_personas_empleado($tupla){
+    if (empty($tupla[14])){
+        $tupla[14] = null;
+    }
+    elseif (!is_numeric($tupla[14])){
+        $tupla[14] = (int)$tupla[14];
+    }
+    return $tupla;
+}
+
+function check_disponibilidad($tupla){
+    if ($tupla[15] != 'Disponible' || $tupla[15] != 'No Disponible'){
+        $tupla[15] = null;
+    }
+    return $tupla;
+}
+
+function check_num_viaje($tupla){
+    if (empty($tupla[16])){
+        $tupla[16] = -1;
+    }
+    elseif (!is_numeric($tupla[16])){
+        $tupla[16] = (int)$tupla[16];
+    }
+    return $tupla;
+}
+
+function check_origen($tupla){
+    if (empty($tupla[17])){
+        $tupla[17] = null;
+        return $tupla;
+    }
+    $tupla[17] = str_replace("#", "", $tupla[17]);
+    $tupla[17] = str_replace("-", " ", $tupla[17]);
+    return $tupla;
+}
+
+function check_destino($tupla){
+    if (empty($tupla[18])){
+        $tupla[18] = null;
+        return $tupla;
+    }
+    $tupla[18] = str_replace("!", "", $tupla[18]);
+    $tupla[18] = str_replace("-", " ", $tupla[18]);
+    return $tupla;
+}
+
+function check_fecha_salida($tupla){
+    if (empty($tupla[19])){
+        $tupla[19] = null;
+        return $tupla;
+    }
+    $tupla[19] = str_replace("/", "-", $tupla[19]);
+    return $tupla;
+}
+
+function check_fecha_llegada($tupla){
+    if (empty($tupla[20])){
+        $tupla[20] = "0000-00-00";
+        return $tupla;
+    }
+    $tupla[20] = str_replace("/", "-", $tupla[20]);
+    return $tupla;
+}
+
+function check_capacidad($tupla){
+    if (empty($tupla[21])){
+        $tupla[21] = null;
+        return $tupla;
+    }
+    elseif (!is_numeric($tupla[21])){
+        $tupla[21] = (int)$tupla[21];
+    }
+    return $tupla;
+}
+
+function check_tiempo_estimado($tupla){
+    if (empty($tupla[22])){
+        $tupla[22] = null;
+        return $tupla;
+    }
+    elseif (!is_numeric($tupla[22])){
+        $tupla[22] = (int)$tupla[22];
+    }
+    return $tupla;
+}
+function check_precio_asiento($tupla){
+    if (empty($tupla[23])){
+        $tupla[23] = -1;
+        return $tupla;
+    }
+    elseif (!is_numeric($tupla[23])){
+        $tupla[23] = (int)$tupla[23];
+    }
+    return $tupla;
+}
+
+function check_empresa($tupla){
+    if (empty($tupla[24])){
+        $tupla[24] = null;
+        return $tupla;
+    }
+    return $tupla;
+}
+
+function check_bus($tupla){
+    if (empty($tupla[25])){
+        $tupla[25] = null;
+        return $tupla;
+    }
+    return $tupla;
+}
+
+function check_comodidades($tupla){
+    if (empty($tupla[26])){
+        $tupla[26] = null;
+        return $tupla;
+    }
+
+    return $tupla;
+}
 ?> 
