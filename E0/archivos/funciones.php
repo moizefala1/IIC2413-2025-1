@@ -286,6 +286,9 @@ function check_monto_empleado($tupla){
     elseif (!is_numeric($tupla[13])){
         $tupla[13] = floatval($tupla[13]);
     }
+    elseif ($tupla[13] < 0){
+        $tupla[13] = $tupla[13] * -1;
+    }
     return $tupla;
 }
 
@@ -300,7 +303,7 @@ function check_personas_empleado($tupla){
 }
 
 function check_disponibilidad($tupla){
-    if ($tupla[15] != 'Disponible' || $tupla[15] != 'No Disponible'){
+    if ($tupla[15] != 'Disponible' and $tupla[15] != 'No disponible'){
         $tupla[15] = null;
     }
     return $tupla;
@@ -407,7 +410,46 @@ function check_comodidades($tupla){
         $tupla[26] = null;
         return $tupla;
     }
+    $tupla[26] = str_replace("{", "", $tupla[26]);
+    $tupla[26] = str_replace("}", "", $tupla[26]);
+    $tupla[26] = str_replace(",", ";", $tupla[26]);  
+    $tupla[26] = str_replace("\"", "", $tupla[26]);  
 
     return $tupla;
 }
+
+function check_escalas($tupla){
+    if (empty($tupla[27])){
+        $tupla[27] = null;
+        return $tupla;
+    }
+    $tupla[27] = str_replace("{", "", $tupla[27]);
+    $tupla[27] = str_replace("}", "", $tupla[27]);
+    $tupla[27] = str_replace(",", ";", $tupla[27]);  
+    $tupla[27] = str_replace("\"", "", $tupla[27]);  
+
+    return $tupla;
+}
+
+function check_clase($tupla){
+    if (empty($tupla[28])){
+        $tupla[28] = null;
+        return $tupla;
+    }
+    return $tupla;
+}
+
+function check_paradas($tupla){
+    if (empty($tupla[29])){
+        $tupla[29] = null;
+        return $tupla;
+    }
+    $tupla[29] = str_replace("{", "", $tupla[29]);
+    $tupla[29] = str_replace("}", "", $tupla[29]);
+    $tupla[29] = str_replace(",", ";", $tupla[29]);  
+    $tupla[29] = str_replace("\"", "", $tupla[29]);  
+
+    return $tupla;
+}
+
 ?> 
