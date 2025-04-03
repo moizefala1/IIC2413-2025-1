@@ -167,23 +167,58 @@ while (($tupla = fgetcsv($empleados_rescatados, 0, ',', '"', '\\')) !== false){
         fputcsv($empleadosOK, $tupla_empleados, ',', '"', '\\');
     }
     
-    $tupla_reservas = [$tupla[11], $tupla[10], $tupla[12], $tupla[13], $tupla[14], $tupla[15]];
-    if ($tupla_reservas[1] != -1 and $tupla_reservas[0] != ""){
-        fwrite($agendaOK, implode(",", $tupla_reservas)."\n");
+   
+    if ($tupla[10] != -1 and $tupla[11] != ""){    
+        $tupla_reservas = [$tupla[11], $tupla[10], $tupla[12], $tupla[13], $tupla[14], $tupla[15]];
+        fwrite($reservasOK, implode(",", $tupla_reservas)."\n");
     }
-    fwrite($reservasOK, implode(",", $tupla_reservas)."\n");
-    
-
-
-
-
-
-
-    $correo_anterior = $tupla[3];  
     
     
+    $tupla_transportes = [$tupla[3], $tupla[10], $tupla[16], $tupla[17], $tupla[18], $tupla[21], 
+                            $tupla[22], $tupla[23], $tupla[24], $tupla[19], $tupla[20]];
+
+    if ($tupla[25] != null){
+        $tupla_buses = [$tupla[3], $tupla[10], $tupla[16], $tupla[17], $tupla[18], $tupla[21], 
+                        $tupla[22], $tupla[23], $tupla[24], $tupla[25], $tupla[26], $tupla[19], $tupla[20]];  
+        fwrite($busesOK, implode(",", $tupla_buses)."\n");
+    }
+    else{
+        fwrite($transportesOK, implode(",", $tupla_transportes)."\n");
+    }
+
+    if ($tupla[29] != null){
+        $tupla_trenes = [$tupla[3], $tupla[10], $tupla[16], $tupla[17], $tupla[18], $tupla[21], 
+                        $tupla[22], $tupla[23], $tupla[24], $tupla[26], $tupla[29], $tupla[19], $tupla[20]];
+        fwrite($trenesOK, implode(",", $tupla_trenes)."\n");
+    }
+    else{
+        fwrite($transportesOK, implode(",", $tupla_transportes)."\n");
+    }
+
+    if ($tupla[28] != null or $tupla[27] != null){
+        $tupla_aviones = [$tupla[3], $tupla[10], $tupla[16], $tupla[17], $tupla[18], $tupla[21], 
+            $tupla[22], $tupla[23], $tupla[24], $tupla[27], $tupla[28], $tupla[19], $tupla[20]];
+        fwrite($avionesOK, implode(",", $tupla_aviones)."\n");
+    }
+    else{
+        fwrite($transportesOK, implode(",", $tupla_transportes)."\n");
+    }
+
+
+    $correo_anterior = $tupla[3];
 
 
 }
 fclose($empleados_rescatados);
+fclose($agendaOK);
+fclose($usuariosOK);
+fclose($empleadosOK);   
+fclose($reservasOK);
+fclose($transportesOK);
+fclose($busesOK);
+fclose($trenesOK);
+fclose($avionesOK);
+fclose($usuarios_descartados);
+fclose($empleados_descartados);
+fclose($personasOK);
 ?>
