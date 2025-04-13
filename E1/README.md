@@ -14,7 +14,7 @@
 
 ### 1. Modelo E/R 
 
-![Diagrama E/R](E1\Diagrama_E-R_BDD.svg)
+![Diagrama E/R](Diagrama_E-R_BDD.svg)
 
 <!-- Tienes que agregar la ruta de tu imagen donde dice diagrama.png, tiene que ser en formato svg para no perder calidad -->
 
