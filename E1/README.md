@@ -133,15 +133,16 @@ la que fue invitado.
   
 ### 8. Justificación sobre la consistencia del diseño del esquema relacional y normalización en BCNF
   
-# Fidelidad
+Fidelidad:  
 El modelo relacional respeta fielmente el modelo E/R original, conservando jerarquías, relaciones entre entidades y estructuras de dependencia como las entidades débiles. Por lo que el dominio esta correctamente representado.
-
-# Redundancia: 
-Al descomponer atributos multivaluados (por ejemplo, comodidades, normativas, restricciones, paradas, etc.) en tablas separadas, se evita almacenar múltiples valores en una misma celda.
-Anomalías: Al diseñar todas las tablas en BCNF, se eliminan dependencias funcionales, por lo tanto se evitan las anomalías de inserción, actualización y eliminación.
-
-# Simplicidad y claridad: 
-El uso de llaves compuestas cuando corresponde (por ejemplo, en __Agenda__, __Review__, __Invitados__) y el uso de claves sustitutas cuando es necesario (como en Reserva), permite un esquema que es más simple de consultar y mantener, sin sacrificar la unicidad de los registros.
-
-# Buena elección de llaves primarias:
+  
+Redundancia:  
+Al descomponer atributos multivaluados (por ejemplo, comodidades, normativas, restricciones, paradas, etc.) en tablas separadas, se evita almacenar múltiples valores en una misma celda.  
+  
+Anomalías: Al diseñar todas las tablas en BCNF, se eliminan dependencias funcionales, por lo tanto se evitan las anomalías de inserción, actualización y eliminación.  
+  
+Simplicidad y claridad:   
+El uso de llaves compuestas cuando corresponde (por ejemplo, en __Agenda__, __Review__, __Invitados__) y el uso de claves sustitutas cuando es necesario (como en Reserva), permite un esquema que es más simple de consultar y mantener, sin sacrificar la unicidad de los registros.  
+  
+Buena elección de llaves primarias:  
 Las llaves fueron escogidas considerando criterios de unicidad mínima y estabilidad (por ejemplo, evitando el uso de RUT por estar dividido en dos atributos), y cuando no fue posible usar atributos existentes, se optó por llaves sustitutas como id_reserva.
