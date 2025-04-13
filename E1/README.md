@@ -37,14 +37,14 @@ __Habitacion__ es debil respecto a __Hotel__ ya que si bien tiene un numero de h
 
 ### 3. Identificación de llaves primerarias/compuesta y justificación
 
-#### 3.1 Persona
+### 3.1 Persona
 - La llave primaria en la __Persona__ es el _correo_ porque no pueden existir dos personas con registradas con el mismo correo, y como rut y dv estan separados en dos atributos distintos, el correo es ideal (y el unico) que nos permite evitar la duplicidad.
 
 ### 3.2 Reserva
 - La llave primaria de __Reserva__ es __id_reserva__. Se decide agregar esta surrogate key debido a que reserva no puede ser debil ni con usuario ni con agenda (particularmente no depende de ninguna de estas dos para existir), y sus atributos por si solos no son unicos, inclusive la llave compuesta de todos sus atributos (no especifica enunciado) por lo que para evitar usar todos los atributos como llave compuesta, que podria llevar a anomalias y a violar el principio de unicidad, se le añade esta surrogate key.
 (cabe destacar que el enunciado no especifica la prohibicion de nuevos atributos)
 
-#### 3.3 Agenda
+### 3.3 Agenda
 - La llave compuesta en la __Agenda__ está compuesta por _correo_ y _etiqueta_ porque pueden existir muchas agendas con la misma etiqueta, pero una agenda esta asociada a solo un usuario, por lo que la tupla (correo, etiqueta) nos permite mantener la unicidad
 
 ### 3.4 Seguros
@@ -92,54 +92,47 @@ Finalmente el caso de  __Hospedaje__ que es padre de __Hotel__ y __Airbnb__. De 
 
 ### 6. Esquema Relacional
 
-__Persona__: (nombre: string, <u>correo</u>: string, contrasña: string, nombre_de_usuario: string, teléfono_de_contacto: string, rut: int, dv: string)
-__Empleado__: (<u>correo</u>: string, contrato: string, isapre: string, jornada: string) as T
-__Usuario__ : (<u>correo</u>: string, puntos_booked: int) as U
-__Agenda__: (<u>etiqueta</u>: string, <u>U.correo</u>: str)
-
-__Reserva__: (<u>id_reserva</u>:int, monto: int, fecha: date, puntos_a_añadir: int, cantidad_de_personas: int, estado_disponibilidad: string) as R
-
-__Review__: (<u>R.id_reserva</u>: int, <u>U.correo</u>: string, estrellas: int, descripcion: string) 
-
-__Seguro__: (<u>R.id_reserva</u>: int, <u>U.correo</u>: string, <u>tipo</u>: string, valor: int, clausula: string, emprsa:string)
-
-__Hospedaje__:(<u>id_reserva</u>: int, nombre_hospedaje: string, ubicacion: string, precio_por_noche: int, estrellas: int, fecha_check_in: date, fecha_check_out: date) as Hos
-__Comodidades__ (<u>Hos.id_reserva</u>: int, comodidad: string) **
-__Hotel__: (<u>id_reserva</u>: int) as H
-__Normativas_hotel__: (<u>H.id_reserva</u>: int, normativa: string) **
-__Habitacion__: (<u>H.id_reserva</u>: int, <u>numero_habitacion</u>: int, tipo: string)
-__Airbnb__: (<u>id_reserva</u>: int, nombre_anfitrion: string, contacto_anfitrion: string, descripcion_airbnb: string, cantidad_piezas: int, cantidad_camas: int, cantidad_baños: int)
-
-__Panorama__: (<u>id_reserva</u>: int, nombre_panorama: string, empresa_panorama: string, ubicacion_panorama: string, duracion: int, precio: int, capacidad_panorama: int, fecha_panorama: date) as P
-__Resticciones_panorama__:(<u>P.id_reserva</u>: int, restriccion: string) **
-__Invitados__(<u>U.correo</u>: string,<u>P.id_reserva</u>: int ,<u>nombre_invitado</u>: string, categoria: string)
-
-__Transporte__: (<u>id_reserva</u>: int, T.correo: string, lugar_origen: string, lugar_llegada: string, capacidad: int, tiempo_estimado: int, precio_transporte: int, fecha_salida: date, fecha_llegada: date) as Trans
-
-__Bus__:(<u>Trans.id_reserva</u>: int, tipo_bus: string) as B
-__Comodidades_bus__: (<u>B.id_reserva</u>: int, comodidad: string) **
-
-__Avion__:(<u>Trans.id_reserva</u>: int, clase_avion: string) as A
-__Escala_aviones__: (<u>A.id_reserva </u>: int, escala)
-
-__Tren__: (<u>Trans.id_reserva</u>: int) as Tren *
-__Comodidades_tren__: (<u>Tren.id_reserva</u>, comodidad: string)**
-__Paradas_tren__: (<u>Tren.id_reserva</u>, parada: string) **
-
-
-
+__Persona__: (nombre: string, <u>correo</u>: string, contrasña: string, nombre_de_usuario: string, teléfono_de_contacto: string, rut: int, dv: string)  
+__Empleado__: (<u>correo</u>: string, contrato: string, isapre: string, jornada: string) as T  
+__Usuario__ : (<u>correo</u>: string, puntos_booked: int) as U  
+__Agenda__: (<u>etiqueta</u>: string, <u>U.correo</u>: str)  
+  
+__Reserva__: (<u>id_reserva</u>:int, monto: int, fecha: date, puntos_a_añadir: int, cantidad_de_personas: int, estado_disponibilidad: string) as R  
+__Review__: (<u>R.id_reserva</u>: int, <u>U.correo</u>: string, estrellas: int, descripcion: string)  
+__Seguro__: (<u>R.id_reserva</u>: int, <u>U.correo</u>: string, <u>tipo</u>: string, valor: int, clausula: string, emprsa:string)  
+  
+__Hospedaje__:(<u>id_reserva</u>: int, nombre_hospedaje: string, ubicacion: string, precio_por_noche: int, estrellas: int, fecha_check_in: date, fecha_check_out: date) as Hos  
+__Comodidades__ (<u>Hos.id_reserva</u>: int, comodidad: string) **  
+__Hotel__: (<u>id_reserva</u>: int) as H  
+__Normativas_hotel__: (<u>H.id_reserva</u>: int, normativa: string) **   
+__Habitacion__: (<u>H.id_reserva</u>: int, <u>numero_habitacion</u>: int, tipo: string)   
+__Airbnb__: (<u>id_reserva</u>: int, nombre_anfitrion: string, contacto_anfitrion: string, descripcion_airbnb: string, cantidad_piezas: int, cantidad_camas: int, cantidad_baños: int)  
+  
+__Panorama__: (<u>id_reserva</u>: int, nombre_panorama: string, empresa_panorama: string, ubicacion_panorama: string, duracion: int, precio: int, capacidad_panorama: int, fecha_panorama: date) as P  
+__Resticciones_panorama__:(<u>P.id_reserva</u>: int, restriccion: string) **   
+__Invitados__(<u>U.correo</u>: string,<u>P.id_reserva</u>: int ,<u>nombre_invitado</u>: string, categoria: string)   
+  
+__Transporte__: (<u>id_reserva</u>: int, T.correo: string, lugar_origen: string, lugar_llegada: string, capacidad: int, tiempo_estimado: int, precio_transporte: int, fecha_salida: date, fecha_llegada: date) as Trans  
+__Bus__:(<u>Trans.id_reserva</u>: int, tipo_bus: string) as B  
+__Comodidades_bus__: (<u>B.id_reserva</u>: int, comodidad: string) **  
+__Avion__:(<u>Trans.id_reserva</u>: int, clase_avion: string) as A  
+__Escala_aviones__: (<u>A.id_reserva </u>: int, escala)  
+__Tren__: (<u>Trans.id_reserva</u>: int) as Tren *   
+__Comodidades_tren__: (<u>Tren.id_reserva</u>, comodidad: string)**   
+__Paradas_tren__: (<u>Tren.id_reserva</u>, parada: string) **   
+  
 ### 7. Justificación de tablas de relaciones
 
 Todas las tablas con ** son producto del principio de datos atomicos. Ya que hay atributos multivaluados, se decide crear una tabla con referencia a la PK de la entidad, y ahi dar cada atributo necesario. 
-Luego, podemos notar que * solo tiene la PK como atributo, esto debido a que, ademas de los atributos multivaluados, no tiene ningun otro. Aun asi se mantiene la tabla, para evitar anomalias y mantener la semantica.
-
+Luego, podemos notar que * solo tiene la PK como atributo, esto debido a que, ademas de los atributos multivaluados, no tiene ningun otro. Aun asi se mantiene la tabla, para evitar anomalias y mantener la semantica.  
+  
 Las tablas son validas ya que cada tabla que relaciona dos o mas entidades cuenta con una FK 
 (que seria la PK de la entidad referenciada) para poder referenciarse en la tabla. Por 
 ejemplo, invitados cuenta con el correo del usuario quien lo invito, y la ID de la reserva a 
-la que fue invitado.
-
+la que fue invitado.  
+  
 ### 8. Justificación sobre la consistencia del diseño del esquema relacional y normalización en BCNF
-
+  
 # Fidelidad
 El modelo relacional respeta fielmente el modelo E/R original, conservando jerarquías, relaciones entre entidades y estructuras de dependencia como las entidades débiles. Por lo que el dominio esta correctamente representado.
 
