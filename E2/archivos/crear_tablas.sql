@@ -1,11 +1,12 @@
+CREATE EXTENSION IF NOT EXISTS unaccent;
 CREATE TABLE Persona (
     nombre VARCHAR(50) NOT NULL,
-    correo VARCHAR(50) PRIMARY KEY,
+    correo VARCHAR(50) PRIMARY KEY NOT NULL,
     contrasena VARCHAR(50) NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
     telefono_contacto VARCHAR(20),
     rut VARCHAR(12)  NOT NULL,
-    dv CHAR(1) NOT NULL
+    dv CHAR(1) NOT NULL,
     CONSTRAINT rut_unico UNIQUE (rut, dv)
 );
 
@@ -25,16 +26,28 @@ FOR EACH ROW EXECUTE FUNCTION limpiar_rut_trigger();
 CREATE TABLE Empleado (
     correo VARCHAR(50) PRIMARY KEY,
     jornada VARCHAR(20) NOT NULL CHECK (jornada IN ('Nocturno', 'Diurno')),
-    isapre VARCHAR(20) NOT NULL CHECK (isapre IN ('Más vida', 'Colmena', 'Consalud', 'Banmédica',
-    'Fonasa')),
+    isapre VARCHAR(20) NOT NULL,
     contrato VARCHAR(100) NOT NULL CHECK (contrato IN ('Part time', 'Full time')),
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
 );
 
+CREATE OR REPLACE FUNCTION normalizar_isapre()
+RETURNS trigger AS $$
+BEGIN
+  NEW.isapre := lower(unaccent(NEW.isapre));
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_normalizar_isapre
+BEFORE INSERT OR UPDATE ON Empleado
+FOR EACH ROW
+EXECUTE FUNCTION normalizar_isapre();
+
 
 CREATE TABLE Usuario (
     correo VARCHAR(50) PRIMARY KEY,
-    puntos INTEGER DEFAULT 0    
+    puntos INTEGER NOT NULL DEFAULT 0,  
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
 );
 
@@ -54,26 +67,26 @@ FOR EACH ROW EXECUTE FUNCTION corregir_puntos_negativos();
 
 
 CREATE TABLE Agenda (
-    id INTEGER PRIMARY KEY,
+    id INTEGER  NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
     etiqueta VARCHAR(50),
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
 
 CREATE TABLE Seguro (
-    id SERIAL PRIMARY KEY,
+    id SERIAL NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
-    reserva_id INTEGER NOT NULL ,
+    reserva_id INTEGER NOT NULL,
     valor INTEGER NOT NULL,
     clausula TEXT NOT NULL, 
-    empresa VARCHAR(50), NOT NULL,
-    tipo VARCHAR(50) NOT NULL
-    FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE,
+    empresa VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
 
 
 CREATE TABLE Reserva (
-    id INTEGER PRIMARY KEY,
+    id INTEGER NOT NULL PRIMARY KEY,
     agenda_id INTEGER,
     fecha DATE NOT NULL,
     monto INTEGER NOT NULL,
@@ -213,7 +226,7 @@ CREATE TABLE Habitacion (
     id SERIAL PRIMARY KEY,
     hotel_id INTEGER NOT NULL,
     numero_habitacion VARCHAR(10) NOT NULL,
-    tipo VARCHAR(50) CHEKCK (tipo IN ('Sencilla', 'Doble', 'Matrimonial', 'Triple', 'Cuadruple', 'Suite')),
+    tipo VARCHAR(50) CHECK (tipo IN ('Sencilla', 'Doble', 'Matrimonial', 'Triple', 'Cuadruple', 'Suite')),
     CONSTRAINT habitacion_unica UNIQUE (hotel_id, numero_habitacion),
     FOREIGN KEY (hotel_id) REFERENCES Hotel(id) ON DELETE CASCADE
 );
@@ -264,13 +277,11 @@ FOR EACH ROW EXECUTE FUNCTION corregir_precio();
 
 
 
-------CAMBIAR PK DE TODOS ESTOS A COMODIDADES E ID TRANSPORTE 
-
 -- Tabla Tren
 CREATE TABLE Tren (
     id INTEGER PRIMARY KEY,
-    comodidades TEXT NOT NULL[],
-    paradas TEXT NOT NULL[],
+    comodidades TEXT[] NOT NULL,
+    paradas TEXT[] NOT NULL,
     FOREIGN KEY (id) REFERENCES Transporte(id) ON DELETE CASCADE
 );
 
