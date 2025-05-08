@@ -1,27 +1,27 @@
 CREATE EXTENSION IF NOT EXISTS unaccent;
 CREATE TABLE Persona (
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50),
     correo VARCHAR(50) PRIMARY KEY NOT NULL,
-    contrasena VARCHAR(50) NOT NULL,
-    username VARCHAR(50) UNIQUE NOT NULL,
+    contrasena VARCHAR(50),
+    username VARCHAR(50) UNIQUE,
     telefono_contacto VARCHAR(20),
-    rut VARCHAR(12)  NOT NULL,
-    dv CHAR(1) NOT NULL,
-    CONSTRAINT rut_unico UNIQUE (rut, dv)
+    run VARCHAR(12),
+    dv CHAR(1),
+    CONSTRAINT run_unico UNIQUE (run, dv)
 );
 
-CREATE OR REPLACE FUNCTION limpiar_rut_trigger()
+CREATE OR REPLACE FUNCTION limpiar_run_trigger()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.rut := REGEXP_REPLACE(NEW.rut, '[^0-9]', '', 'g'); 
+    NEW.run := REGEXP_REPLACE(NEW.run, '[^0-9]', '', 'g'); 
     NEW.dv := UPPER(REGEXP_REPLACE(NEW.dv, '[^0-9kK]', '', 'g'));
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER persona_limpiar_rut
+CREATE TRIGGER persona_limpiar_run
 BEFORE INSERT OR UPDATE ON Persona
-FOR EACH ROW EXECUTE FUNCTION limpiar_rut_trigger();
+FOR EACH ROW EXECUTE FUNCTION limpiar_run_trigger();
 
 CREATE TABLE Empleado (
     correo VARCHAR(50) PRIMARY KEY,
@@ -147,7 +147,7 @@ CREATE TABLE Panorama (
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION corregir_precio()
+CREATE OR REPLACE FUNCTION panorama_corregir_precio()
 RETURNS TRIGGER AS $$
 BEGIN
     IF NEW.precio_persona < 0 THEN
@@ -159,7 +159,7 @@ END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER panorama_corregir_precio
 BEFORE INSERT OR UPDATE ON Panorama 
-FOR EACH ROW EXECUTE FUNCTION corregir_precio();
+FOR EACH ROW EXECUTE FUNCTION panorama_corregir_precio();
 
 
 
@@ -199,7 +199,7 @@ CREATE TABLE Hospedaje (
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION corregir_precio()
+CREATE OR REPLACE FUNCTION hospedaje_corregir_precio()
 RETURNS TRIGGER AS $$
 BEGIN
     IF NEW.precio_noche < 0 THEN
@@ -209,9 +209,9 @@ BEGIN
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-CREATE TRIGGER persona_corregir_precio
-BEFORE INSERT OR UPDATE ON Persona 
-FOR EACH ROW EXECUTE FUNCTION corregir_precio();
+CREATE TRIGGER hospedaje_corregir_precio
+BEFORE INSERT OR UPDATE ON Hospedaje 
+FOR EACH ROW EXECUTE FUNCTION hospedaje_corregir_precio();
 
 
 -- Tabla Hotel
@@ -251,7 +251,7 @@ CREATE TABLE Transporte (
     lugar_llegada VARCHAR(100),
     capacidad INTEGER,
     tiempo_estimado INTEGER NOT NULL, 
-    precio_asiento DECIMAL(10,2) NOT NULL,
+    precio_asiento INTEGER NOT NULL,
     empresa VARCHAR(100),
     fecha_salida TIMESTAMP NOT NULL,
     fecha_llegada TIMESTAMP,
@@ -259,7 +259,7 @@ CREATE TABLE Transporte (
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION corregir_precio()
+CREATE OR REPLACE FUNCTION transporte_corregir_precio()
 RETURNS TRIGGER AS $$
 BEGIN
     IF NEW.precio_asiento < 0 THEN
@@ -271,7 +271,7 @@ END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER transporte_corregir_precio
 BEFORE INSERT OR UPDATE ON Transporte 
-FOR EACH ROW EXECUTE FUNCTION corregir_precio();
+FOR EACH ROW EXECUTE FUNCTION transporte_corregir_precio();
 
 
 
