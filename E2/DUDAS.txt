@@ -1,0 +1,7 @@
+DUDAS
+
+II) problemas con codificacion UTF-8 con isapres
+
+IV) Aclarar panorama y datos nulos (mostrar la discusion 22 y luego la 7)
+
+III) Podemos asumir que la isapre siempre va a estar en el formato especificado? o hay que realizar limpieza

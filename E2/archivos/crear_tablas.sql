@@ -1,27 +1,26 @@
-CREATE EXTENSION IF NOT EXISTS unaccent;
 CREATE TABLE Persona (
     nombre VARCHAR(50),
     correo VARCHAR(50) PRIMARY KEY NOT NULL,
     contrasena VARCHAR(50),
     username VARCHAR(50) UNIQUE,
     telefono_contacto VARCHAR(20),
-    run VARCHAR(12),
-    dv CHAR(1),
-    CONSTRAINT run_unico UNIQUE (run, dv)
+    run INTEGER NOT NULL,
+    dv CHAR(1) NOT NULL
 );
 
 CREATE OR REPLACE FUNCTION limpiar_run_trigger()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.run := REGEXP_REPLACE(NEW.run, '[^0-9]', '', 'g'); 
-    NEW.dv := UPPER(REGEXP_REPLACE(NEW.dv, '[^0-9kK]', '', 'g'));
-    RETURN NEW;
+    NEW.run := ABS(NEW.run);
+    RETURN NEW; 
 END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER persona_limpiar_run
 BEFORE INSERT OR UPDATE ON Persona
 FOR EACH ROW EXECUTE FUNCTION limpiar_run_trigger();
+
+----------------------------------------------------------
 
 CREATE TABLE Empleado (
     correo VARCHAR(50) PRIMARY KEY,
@@ -31,40 +30,18 @@ CREATE TABLE Empleado (
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION normalizar_isapre()
-RETURNS trigger AS $$
-BEGIN
-  NEW.isapre := lower(unaccent(NEW.isapre));
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER trigger_normalizar_isapre
-BEFORE INSERT OR UPDATE ON Empleado
-FOR EACH ROW
-EXECUTE FUNCTION normalizar_isapre();
-
+-----------------------------------------------------------
 
 CREATE TABLE Usuario (
     correo VARCHAR(50) PRIMARY KEY,
-    puntos INTEGER NOT NULL DEFAULT 0,  
+    puntos INTEGER NOT NULL CHECK (puntos >= 0),  
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION corregir_puntos_negativos()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.puntos < 0 THEN
-        NEW.puntos := ABS(NEW.puntos);
-    END IF;
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
 
-CREATE TRIGGER usuario_corregir_puntos
-BEFORE INSERT OR UPDATE ON Usuario
-FOR EACH ROW EXECUTE FUNCTION corregir_puntos_negativos();
+-----------------------------------------------------------------
 
+-------------- HASTA ACA ESTA BIEN -------------------
 
 CREATE TABLE Agenda (
     id INTEGER  NOT NULL PRIMARY KEY,
@@ -73,6 +50,7 @@ CREATE TABLE Agenda (
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
 
+---------------------------------------------------------
 CREATE TABLE Seguro (
     id SERIAL NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
@@ -84,6 +62,7 @@ CREATE TABLE Seguro (
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
 
+-----------------------------------------------------------
 
 CREATE TABLE Reserva (
     id INTEGER NOT NULL PRIMARY KEY,
@@ -119,7 +98,7 @@ CREATE TRIGGER reserva_corregir_valores_negativos
 BEFORE INSERT OR UPDATE ON Reserva
 FOR EACH ROW EXECUTE FUNCTION corregir_valores_negativos();
 
-
+---------------------------------------------------------
 
 CREATE TABLE Review (
     id SERIAL PRIMARY KEY,
@@ -128,20 +107,21 @@ CREATE TABLE Review (
     estrellas INTEGER NOT NULL CHECK (estrellas BETWEEN 1 AND 5),
     descripcion TEXT,
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE,
-    FOREIGN KEY (reserva_id) REFERENCES Reserva(id) ON DELETE CASCADE
+    FOREIGN KEY (reserva_id) REFERENCES Reserva(id) ON DELETE CASCADE,
+    CONSTRAINT review_unica UNIQUE (correo_usuario, reserva_id)
 );
 
 --------------------------------------------------------
 
 CREATE TABLE Panorama (
     id INTEGER PRIMARY KEY,
-    empresa VARCHAR(100) NOT NULL,
+    empresa VARCHAR(100) ,
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
-    ubicacion TEXT NOT NULL,
-    duracion INTEGER NOT NULL,
+    ubicacion TEXT,
+    duracion INTEGER,
     precio_persona INTEGER NOT NULL,
-    capacidad INTEGER NOT NULL,
+    capacidad INTEGER,
     restricciones TEXT[],
     fecha_panorama TIMESTAMP NOT NULL,
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
@@ -161,13 +141,13 @@ CREATE TRIGGER panorama_corregir_precio
 BEFORE INSERT OR UPDATE ON Panorama 
 FOR EACH ROW EXECUTE FUNCTION panorama_corregir_precio();
 
-
+---------------------------------------------------------
 
 CREATE TABLE Participante (
-    id SERIAL PRIMARY KEY,
     id_panorama INTEGER NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     edad INTEGER,
+    PRIMARY KEY (id_panorama, nombre),
     FOREIGN KEY (id_panorama) REFERENCES Panorama(id) ON DELETE CASCADE
 );
 CREATE OR REPLACE FUNCTION corregir_edad()
@@ -213,6 +193,7 @@ CREATE TRIGGER hospedaje_corregir_precio
 BEFORE INSERT OR UPDATE ON Hospedaje 
 FOR EACH ROW EXECUTE FUNCTION hospedaje_corregir_precio();
 
+----------------------------------------------------------
 
 -- Tabla Hotel
 CREATE TABLE Hotel (
@@ -221,15 +202,17 @@ CREATE TABLE Hotel (
     FOREIGN KEY (id) REFERENCES Hospedaje(id) ON DELETE CASCADE
 );
 
+-----------------------------------------------------------
 -- Tabla Habitacion
 CREATE TABLE Habitacion (
-    id SERIAL PRIMARY KEY,
     hotel_id INTEGER NOT NULL,
     numero_habitacion VARCHAR(10) NOT NULL,
     tipo VARCHAR(50) CHECK (tipo IN ('Sencilla', 'Doble', 'Matrimonial', 'Triple', 'Cuadruple', 'Suite')),
-    CONSTRAINT habitacion_unica UNIQUE (hotel_id, numero_habitacion),
+    PRIMARY KEY (hotel_id, numero_habitacion),
     FOREIGN KEY (hotel_id) REFERENCES Hotel(id) ON DELETE CASCADE
 );
+
+-----------------------------------------------------------
 
 -- Tabla Airbnb
 CREATE TABLE Airbnb (
@@ -273,9 +256,7 @@ CREATE TRIGGER transporte_corregir_precio
 BEFORE INSERT OR UPDATE ON Transporte 
 FOR EACH ROW EXECUTE FUNCTION transporte_corregir_precio();
 
-
-
-
+----------------------------------------------------------
 
 -- Tabla Tren
 CREATE TABLE Tren (
