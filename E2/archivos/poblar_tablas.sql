@@ -57,3 +57,14 @@ BEGIN
 END $$;
 
 \copy personas_descartadas TO '../descartados/personas_descartadas.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO Usuario (correo, puntos) 
+SELECT correo, puntos
+FROM temp_personas 
+WHERE correo IN (SELECT correo FROM Persona) AND puntos IS NOT NULL
+ON CONFLICT (correo) DO NOTHING;
+
+INSERT INTO Empleado (correo, jornada, isapre, contrato)
+SELECT correo, jornada, isapre, contrato
+FROM temp_personas 
+WHERE correo IN (SELECT correo FROM Persona) AND 

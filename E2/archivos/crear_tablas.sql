@@ -25,7 +25,7 @@ FOR EACH ROW EXECUTE FUNCTION limpiar_run_trigger();
 
 CREATE TABLE Empleado (
     correo VARCHAR(50) PRIMARY KEY,
-    jornada VARCHAR(20) NOT NULL CHECK (jornada IN ('Nocturno', 'Diurno')),
+    jornada VARCHAR(20) CHECK (jornada IN ('Nocturno', 'Diurno')),
     isapre VARCHAR(20) NOT NULL,
     contrato VARCHAR(100) NOT NULL CHECK (contrato IN ('Part time', 'Full time')),
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
