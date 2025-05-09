@@ -82,9 +82,10 @@ DECLARE
   tupla temp_personas%ROWTYPE;
 BEGIN
   FOR tupla IN 
-    SELECT correo, puntos 
-    FROM temp_personas 
-    WHERE correo IN (SELECT correo FROM Persona)
+    SELECT * FROM temp_personas WHERE correo IN (SELECT correo FROM Persona)
+    AND isapre IS NULL
+    AND jornada IS NULL
+    AND contrato IS NULL
     LOOP
     BEGIN
       INSERT INTO Usuario (correo, puntos)
@@ -111,9 +112,8 @@ DECLARE
   tupla temp_personas%ROWTYPE;
 BEGIN
   FOR tupla IN 
-    SELECT correo, jornada, isapre, contrato 
-    FROM temp_personas 
-    WHERE correo IN (SELECT correo FROM Persona)
+    SELECT * FROM temp_personas WHERE correo IN (SELECT correo FROM Persona) 
+    AND correo NOT IN (SELECT correo FROM Usuario) AND correo NOT IN (SELECT correo FROM usuarios_descartados)
     LOOP
     BEGIN
       INSERT INTO Empleado (correo, jornada, isapre, contrato)

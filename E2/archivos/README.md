@@ -1,0 +1,1 @@
+La persona que tenga puntos NULL y (jornada, isapre, contrato) NULL, sera considerado en usuario_descartado.csv. (Primero se pobla la tabla usuario, por lo que primero infrinjiria esas IC)
