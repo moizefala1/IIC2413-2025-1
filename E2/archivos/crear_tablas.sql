@@ -10,7 +10,7 @@ CREATE TABLE Persona (
     contrasena VARCHAR(50),
     username VARCHAR(50) UNIQUE,
     telefono_contacto VARCHAR(20),
-    run INTEGER NOT NULL,
+    run INTEGER NOT NULL CHECK (run >= 0),
     dv CHAR(1) NOT NULL
 );
 
@@ -62,11 +62,11 @@ CREATE TABLE Seguro (
 CREATE TABLE Reserva (
     id INTEGER NOT NULL PRIMARY KEY,
     agenda_id INTEGER,
-    fecha DATE NOT NULL,
-    monto INTEGER NOT NULL,
-    cantidad_personas INTEGER NOT NULL,
+    fecha DATE,
+    monto INTEGER,
+    cantidad_personas INTEGER,
     estado_disponibilidad VARCHAR(20) NOT NULL,
-    puntos_booked INTEGER 
+    puntos_booked INTEGER,
     FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE SET NULL
 );
 

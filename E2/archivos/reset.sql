@@ -1,4 +1,4 @@
 \c postgres
-DROP DATABASE alvaro;
-CREATE DATABASE alvaro;
+DROP DATABASE alvaro1;
+CREATE DATABASE alvaro1;
 \c alvaro
