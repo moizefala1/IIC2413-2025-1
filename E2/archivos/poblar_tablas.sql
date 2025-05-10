@@ -73,10 +73,6 @@ END $$;
 
 \copy personas_descartadas TO '../descartados/personas_descartadas.csv' DELIMITER ',' CSV HEADER;
 
----------------------------------
---------HASTA ACA ESTA BIEN -------------------
----------------------------------
-
 DO $$
 DECLARE
   tupla temp_personas%ROWTYPE;
@@ -138,3 +134,5 @@ END $$;
 \copy empleados_descartados TO '../descartados/empleados_descartados.csv' DELIMITER ',' CSV HEADER;
 ------------------------------
 COMMIT;
+
+-----HASTA ACA ESTA BIEN -------------------

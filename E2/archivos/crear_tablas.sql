@@ -1,3 +1,9 @@
+---FECHA Y MONTO SON NULOS EN RESERVA (esperar a actualizacion repo)-----------------
+---CAMBIAR CORREO A CORREO_EMPLEADO, CORREO_USUARIO SEGUN CORRESPONDENCIA-------------
+--- ESTANDARIZAR ID A xxxxx-ID SEGUN CORRESPONDENCIA ------------------------------
+
+
+
 CREATE TABLE Persona (
     nombre VARCHAR(50),
     correo VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -7,18 +13,6 @@ CREATE TABLE Persona (
     run INTEGER NOT NULL,
     dv CHAR(1) NOT NULL
 );
-
-CREATE OR REPLACE FUNCTION limpiar_run_trigger()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.run := ABS(NEW.run);
-    RETURN NEW; 
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER persona_limpiar_run
-BEFORE INSERT OR UPDATE ON Persona
-FOR EACH ROW EXECUTE FUNCTION limpiar_run_trigger();
 
 ----------------------------------------------------------
 
@@ -64,6 +58,7 @@ CREATE TABLE Seguro (
 
 -----------------------------------------------------------
 
+
 CREATE TABLE Reserva (
     id INTEGER NOT NULL PRIMARY KEY,
     agenda_id INTEGER,
@@ -71,32 +66,9 @@ CREATE TABLE Reserva (
     monto INTEGER NOT NULL,
     cantidad_personas INTEGER NOT NULL,
     estado_disponibilidad VARCHAR(20) NOT NULL,
-    puntos_booked INTEGER DEFAULT 0,
+    puntos_booked INTEGER 
     FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE SET NULL
 );
-
-CREATE OR REPLACE FUNCTION corregir_valores_negativos()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.monto < 0 THEN
-        NEW.monto := ABS(NEW.monto);
-    END IF;
-    
-    IF NEW.puntos_booked < 0 THEN
-        NEW.puntos_booked := ABS(NEW.puntos_booked);
-    END IF;
-    
-    IF NEW.cantidad_personas < 0 THEN
-        NEW.cantidad_personas := ABS(NEW.cantidad_personas);
-    END IF;
-
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER reserva_corregir_valores_negativos
-BEFORE INSERT OR UPDATE ON Reserva
-FOR EACH ROW EXECUTE FUNCTION corregir_valores_negativos();
 
 ---------------------------------------------------------
 
@@ -127,42 +99,17 @@ CREATE TABLE Panorama (
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
 
-CREATE OR REPLACE FUNCTION panorama_corregir_precio()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.precio_persona < 0 THEN
-        NEW.precio_persona := ABS(NEW.precio_persona);
-    END IF;
-    
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-CREATE TRIGGER panorama_corregir_precio
-BEFORE INSERT OR UPDATE ON Panorama 
-FOR EACH ROW EXECUTE FUNCTION panorama_corregir_precio();
 
 ---------------------------------------------------------
 
 CREATE TABLE Participante (
     id_panorama INTEGER NOT NULL,
     nombre VARCHAR(100) NOT NULL,
-    edad INTEGER,
+    edad INTEGER CHECK (edad >= 0),
     PRIMARY KEY (id_panorama, nombre),
     FOREIGN KEY (id_panorama) REFERENCES Panorama(id) ON DELETE CASCADE
 );
-CREATE OR REPLACE FUNCTION corregir_edad()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.edad < 0 THEN
-        NEW.edad := ABS(NEW.edad);
-    END IF;
-    
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-CREATE TRIGGER participante_corregir_edad
-BEFORE INSERT OR UPDATE ON Participante
-FOR EACH ROW EXECUTE FUNCTION corregir_edad();
+
 
 --------------------------------------------------------------------
 
@@ -178,20 +125,6 @@ CREATE TABLE Hospedaje (
     fecha_checkout TIMESTAMP, 
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
-
-CREATE OR REPLACE FUNCTION hospedaje_corregir_precio()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.precio_noche < 0 THEN
-        NEW.precio_noche := ABS(NEW.precio_noche);
-    END IF;
-    
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-CREATE TRIGGER hospedaje_corregir_precio
-BEFORE INSERT OR UPDATE ON Hospedaje 
-FOR EACH ROW EXECUTE FUNCTION hospedaje_corregir_precio();
 
 ----------------------------------------------------------
 
@@ -241,20 +174,6 @@ CREATE TABLE Transporte (
     FOREIGN KEY (correo_empleado) REFERENCES Empleado(correo) ON DELETE CASCADE,
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
-
-CREATE OR REPLACE FUNCTION transporte_corregir_precio()
-RETURNS TRIGGER AS $$
-BEGIN
-    IF NEW.precio_asiento < 0 THEN
-        NEW.precio_asiento := ABS(NEW.precio_asiento);
-    END IF;
-    
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-CREATE TRIGGER transporte_corregir_precio
-BEFORE INSERT OR UPDATE ON Transporte 
-FOR EACH ROW EXECUTE FUNCTION transporte_corregir_precio();
 
 ----------------------------------------------------------
 
