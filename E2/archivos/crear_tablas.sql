@@ -32,15 +32,12 @@ CREATE TABLE Usuario (
     FOREIGN KEY (correo) REFERENCES Persona(correo) ON DELETE CASCADE
 );
 
-
 -----------------------------------------------------------------
-
--------------- HASTA ACA ESTA BIEN -------------------
 
 CREATE TABLE Agenda (
     id INTEGER  NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
-    etiqueta VARCHAR(50),
+    etiqueta VARCHAR(50) NOT NULL,
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
 
@@ -49,11 +46,13 @@ CREATE TABLE Seguro (
     id SERIAL NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
     reserva_id INTEGER NOT NULL,
-    valor INTEGER NOT NULL,
-    clausula TEXT NOT NULL, 
-    empresa VARCHAR(50) NOT NULL,
-    tipo VARCHAR(50) NOT NULL,
-    FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
+    valor INTEGER,
+    clausula TEXT, 
+    empresa VARCHAR(50),
+    tipo VARCHAR(50),
+    FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE,
+    FOREIGN KEY (reserva_id) REFERENCES Reserva(id) ON DELETE CASCADE,
+    CONSTRAINT seguro_unica UNIQUE (correo_usuario, tipo, reserva_id)
 );
 
 -----------------------------------------------------------
@@ -66,10 +65,10 @@ CREATE TABLE Reserva (
     monto INTEGER,
     cantidad_personas INTEGER,
     estado_disponibilidad VARCHAR(20) NOT NULL,
-    puntos_booked INTEGER,
-    FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE SET NULL
+    puntos_booked INTEGER CHECK (puntos_booked >= 0),
+    FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE CASCADE
 );
-
+-------------- HASTA ACA ESTA BIEN -------------------
 ---------------------------------------------------------
 
 CREATE TABLE Review (
@@ -84,6 +83,8 @@ CREATE TABLE Review (
 );
 
 --------------------------------------------------------
+-------------- HASTA ACA ESTA BIEN -------------------
+
 
 CREATE TABLE Panorama (
     id INTEGER PRIMARY KEY,
@@ -109,6 +110,8 @@ CREATE TABLE Participante (
     PRIMARY KEY (id_panorama, nombre),
     FOREIGN KEY (id_panorama) REFERENCES Panorama(id) ON DELETE CASCADE
 );
+
+
 
 
 --------------------------------------------------------------------
