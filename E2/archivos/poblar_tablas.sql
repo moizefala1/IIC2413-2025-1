@@ -108,6 +108,25 @@ CREATE TEMP TABLE agendas_descartados (
     etiqueta VARCHAR(50)
 );
 
+CREATE TEMP TABLE reviews_descartados (
+    id SERIAL PRIMARY KEY,
+    correo_usuario VARCHAR(50),
+    reserva_id INTEGER,
+    estrellas INTEGER,
+    descripcion TEXT
+);
+
+CREATE TEMP TABLE seguros_descartados (
+    id SERIAL PRIMARY KEY,
+    correo_usuario VARCHAR(50),
+    reserva_id INTEGER,
+    valor INTEGER,
+    clausula TEXT, 
+    empresa VARCHAR(50),
+    tipo VARCHAR(50)
+);
+
+
 
 
 \copy temp_personas FROM '../csv/personas.csv' DELIMITER ',' CSV HEADER;
@@ -122,7 +141,7 @@ DECLARE
 BEGIN
   FOR tupla IN SELECT * FROM temp_personas LOOP
     BEGIN
-      INSERT INTO Persona (nombre, correo, contrasena, username, telefono_contacto, run, dv)
+      INSERT INTO Persona(nombre, correo, contrasena, username, telefono_contacto, run, dv)
       VALUES (
         tupla.nombre,
         tupla.correo,
@@ -133,10 +152,10 @@ BEGIN
         tupla.dv
       );
     EXCEPTION WHEN others THEN
-      INSERT INTO personas_descartados (nombre, correo, contrasena, username, telefono_contacto, run, dv)
+      INSERT INTO personas_descartados(nombre, correo, contrasena, username, telefono_contacto, run, dv)
       VALUES (
         tupla.nombre,
-        tupla.correo,
+        tupla.correo, 
         tupla.contrasena,
         tupla.username,
         tupla.telefono_contacto,
@@ -149,6 +168,7 @@ END $$;
 
 \copy personas_descartados TO '../descartados/personas_descartados.csv' DELIMITER ',' CSV HEADER;
 
+-----------------------------------------------------------
 DO $$
 DECLARE
   tupla temp_personas%ROWTYPE;
@@ -228,8 +248,6 @@ BEGIN
             INSERT INTO Agenda(id, correo_usuario, etiqueta)
             VALUES (tupla.agenda_id, tupla.correo_usuario, tupla.etiqueta);
         EXCEPTION WHEN OTHERS THEN
-        RAISE NOTICE 'Error inserting agenda with id %', tupla.agenda_id;
-        RAISE NOTICE 'Error message: %', SQLERRM;
             INSERT INTO agendas_descartados(id, correo_usuario, etiqueta)
             VALUES (tupla.agenda_id, tupla.correo_usuario, tupla.etiqueta);
         END;
@@ -274,6 +292,75 @@ END $$;
 \copy reservas_descartados TO '../descartados/reservas_descartados.csv' DELIMITER ',' CSV HEADER;
 
 ------------------------------
+DO $$
+DECLARE
+  tupla temp_seguros_reviews%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_seguros_reviews WHERE estrellas IS NOT NULL LOOP
+    BEGIN
+      INSERT INTO Review(correo_usuario, reserva_id, estrellas, descripcion)
+      VALUES(
+        tupla.correo_usuario,
+        tupla.reserva_id,
+        tupla.estrellas,
+        tupla.descripcion
+      );
+    EXCEPTION WHEN others THEN
+    INSERT INTO reviews_descartados(correo_usuario, reserva_id, estrellas, descripcion)
+      VALUES(
+        tupla.correo_usuario,
+        tupla.reserva_id,
+        tupla.estrellas,
+        tupla.descripcion
+      );
+    END;
+  END LOOP;
+END $$;
+
+\copy reviews_descartados TO '../descartados/reviews_descartados.csv' DELIMITER ',' CSV HEADER;
+----------------------
+DO $$
+DECLARE
+  tupla temp_seguros_reviews%ROWTYPE;
+BEGIN
+  FOR tupla IN
+  SELECT * FROM temp_seguros_reviews WHERE estrellas IS NULL LOOP
+  BEGIN
+    INSERT INTO Seguro(correo_usuario, reserva_id, valor, clausula, empresa, tipo)
+    VALUES(
+      tupla.correo_usuario,
+      tupla.reserva_id,
+      tupla.valor_seguro,
+      tupla.clausula,
+      tupla.empresa_seguro,
+      tupla.tipo_seguro
+    );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO seguros_descartados(correo_usuario, reserva_id, valor, clausula, empresa, tipo)
+    VALUES(
+      tupla.correo_usuario,
+      tupla.reserva_id,
+      tupla.valor_seguro,
+      tupla.clausula,
+      tupla.empresa_seguro,
+      tupla.tipo_seguro
+    );
+    END;
+  END LOOP;
+END $$;
+
+\copy seguros_descartados TO '../descartados/seguros_descartados.csv' DELIMITER ',' CSV HEADER;
+
+
+
+
+
+
+
+
+
+
 
 
 COMMIT;

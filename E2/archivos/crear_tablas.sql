@@ -54,7 +54,7 @@ CREATE TABLE Reserva (
 
 ---------------------------------------------------------
 CREATE TABLE Seguro (
-    id SERIAL NOT NULL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     correo_usuario VARCHAR(50) NOT NULL,
     reserva_id INTEGER NOT NULL,
     valor INTEGER,
