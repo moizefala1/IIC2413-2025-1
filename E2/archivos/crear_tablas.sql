@@ -1,4 +1,4 @@
----FECHA Y MONTO SON NULOS EN RESERVA (esperar a actualizacion repo)-----------------
+
 ---CAMBIAR CORREO A CORREO_EMPLEADO, CORREO_USUARIO SEGUN CORRESPONDENCIA-------------
 --- ESTANDARIZAR ID A xxxxx-ID SEGUN CORRESPONDENCIA ------------------------------
 
@@ -40,6 +40,17 @@ CREATE TABLE Agenda (
     etiqueta VARCHAR(50) NOT NULL,
     FOREIGN KEY (correo_usuario) REFERENCES Usuario(correo) ON DELETE CASCADE
 );
+------------------------------------------------------------
+CREATE TABLE Reserva (
+    id INTEGER NOT NULL PRIMARY KEY,
+    agenda_id INTEGER,
+    fecha DATE,
+    monto INTEGER CHECK (monto >= 0),
+    cantidad_personas INTEGER CHECK (cantidad_personas > 0),
+    estado_disponibilidad VARCHAR(20) NOT NULL,
+    puntos_booked INTEGER CHECK (puntos_booked >= 0),
+    FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE CASCADE
+);
 
 ---------------------------------------------------------
 CREATE TABLE Seguro (
@@ -55,20 +66,6 @@ CREATE TABLE Seguro (
     CONSTRAINT seguro_unica UNIQUE (correo_usuario, tipo, reserva_id)
 );
 
------------------------------------------------------------
-
-
-CREATE TABLE Reserva (
-    id INTEGER NOT NULL PRIMARY KEY,
-    agenda_id INTEGER,
-    fecha DATE,
-    monto INTEGER,
-    cantidad_personas INTEGER,
-    estado_disponibilidad VARCHAR(20) NOT NULL,
-    puntos_booked INTEGER CHECK (puntos_booked >= 0),
-    FOREIGN KEY (agenda_id) REFERENCES Agenda(id) ON DELETE CASCADE
-);
--------------- HASTA ACA ESTA BIEN -------------------
 ---------------------------------------------------------
 
 CREATE TABLE Review (
