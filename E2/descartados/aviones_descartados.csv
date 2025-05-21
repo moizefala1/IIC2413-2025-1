@@ -25,11 +25,9 @@ id,clase,escalas
 81798,Primera clase,
 81973,,
 82040,Primera clase,
-82301,,"{Madrid,""El Prat de LLobregat"",""El Ejido""}"
 82305,,
 82356,,
 82816,,
-82853,,"{Lugo,""Talavera de la Reina""}"
 82998,,
 83109,,"{""Ciudad Real"",""Mollet del Vallés""}"
 83322,,
@@ -40,13 +38,11 @@ id,clase,escalas
 84396,,
 84424,,
 84558,,
-84723,,
 84919,Clase económica,
 85026,,
 85028,,
 85220,,
 85315,,{Fuengirola}
-85476,Clase económica,
 85692,,
 85924,,
 85966,,"{Granada,""Hospitalet de LLobregat"",Rubí}"
@@ -58,7 +54,6 @@ id,clase,escalas
 86691,,
 87058,,"{Getafe,Alcorcón,Elche}"
 87065,,"{Elda,Calahorra}"
-87069,,
 87083,,
 87365,,
 87403,,
@@ -87,27 +82,22 @@ id,clase,escalas
 91602,Primera clase,
 91683,Clase ejecutiva,
 91753,,
-91898,,
 91923,,
 91994,,
 92083,,"{Benidorm,Leganés,Valladolid}"
 92084,,
 92127,,
 92368,,"{""Collado Villalba"",""Alcalá de Guadaira"",Oviedo}"
-92372,,
 92441,,
 92978,,
 92676,,
-92732,,
 92817,,
 92887,Clase económica,
 92958,,
-93037,,
 93068,,{Paterna}
 93090,,"{Elche,Marbella}"
 93146,,
 93264,,
-93433,,"{Alcorcón,Elche,Alcobendas,""San Sebastían de los Reyes""}"
 93576,,
 93853,,
 93917,Clase económica,
@@ -118,7 +108,6 @@ id,clase,escalas
 94981,,
 95283,,"{""La Línea de la Concepción""}"
 95335,Clase económica,
-95657,,
 95750,,
 95922,,
 95945,,
@@ -129,19 +118,16 @@ id,clase,escalas
 96406,,
 96548,,
 96713,,
-96721,Clase económica,
 96745,,
 96923,,
 97044,,{Madrid}
 97303,,"{""Santiago de Compostela"",Cartagena,""Jerez de la Frontera"",Cuenta,Gandía}"
 97500,,{Torremolinos}
-97652,,"{""Pozuelo de Alarcón""}"
 97779,,
 98032,,
 98262,,
 98363,,
 98427,,
-98477,,
 98808,Clase económica,
 99425,,"{""El Prat de LLobregat""}"
 99711,,
@@ -175,7 +161,6 @@ id,clase,escalas
 102904,,
 103144,,
 103216,,
-103284,,"{Zamora,""Collado Villalba"",Marbella,Estepona}"
 103479,,
 103521,,
 103528,,
@@ -206,7 +191,6 @@ id,clase,escalas
 105734,,
 105759,,
 106025,Primera clase,
-106145,Clase ejecutiva,
 106367,,
 106405,,
 106458,,
@@ -228,14 +212,12 @@ id,clase,escalas
 108397,,
 108456,,
 108616,,
-108744,,"{Telde,Coslada,Mijas}"
 108782,Clase económica,
 108985,,
 109062,,
 109110,,
 109367,,"{Marbella,""Roquetas de Mar"",Lérida,Mataró,Lugo}"
 109422,,
-109490,Clase económica,
 109518,,
 109712,,
 109835,,
@@ -255,11 +237,9 @@ id,clase,escalas
 111450,Clase ejecutiva,
 111452,,
 111473,,
-111511,,"{Benalmádena,Sabadell}"
 111942,,
 112120,,
 112325,,
-112562,,
 113089,,"{Torrelavega,Elche,Tarragona}"
 113312,,
 113389,,
@@ -271,23 +251,19 @@ id,clase,escalas
 114704,,{Tarrasa}
 114776,,
 114936,,
-114995,,
 115275,,
 115548,,
 115652,,"{Málaga,Madrid,Móstoles,""Santa Coloma de Gramanet""}"
-115807,Clase ejecutiva,
 115868,,
 116121,,
 116363,Clase ejecutiva,
 117111,,
 117179,,
-117232,,
 117238,,{Jaén}
 117309,,
 117351,,
 117395,,
 117645,,
-117672,,
 117768,Clase ejecutiva,
 117830,,
 117888,,
@@ -298,7 +274,6 @@ id,clase,escalas
 118524,,
 118532,,
 118610,,"{Avilés,Badajoz,Mataró}"
-118768,Clase económica,
 119195,Clase ejecutiva,
 119846,,
 120090,,
@@ -309,21 +284,17 @@ id,clase,escalas
 121014,,
 121216,,
 121249,,
-121334,,
 121583,,
-121752,,"{Paterna,Torremolinos}"
 121872,,
 122165,Clase ejecutiva,
 122411,,
 122675,,
-122740,,
 122930,,
 123004,Clase económica,
 123031,,
 123088,,"{Salamanca,""Chiclana de la Frontera"",""Las Palmas de Gran Canaria""}"
 123140,Primera clase,
 123149,,
-123261,,
 123862,,
 123466,,
 123467,,
@@ -348,7 +319,6 @@ id,clase,escalas
 126711,Clase ejecutiva,
 126723,,
 126737,,
-126773,,
 126982,,
 126995,Clase económica,
 127462,,
@@ -356,7 +326,6 @@ id,clase,escalas
 127702,,
 127929,,"{Alicante,Cáceres,""Talavera de la Reina""}"
 127953,Clase económica,
-128046,,"{""El Puerto de Santa María""}"
 128156,,
 128347,,
 128437,,
@@ -368,10 +337,8 @@ id,clase,escalas
 128963,,
 129087,Clase económica,
 129654,,
-129728,,
 129737,,
 129772,,
-130155,,
 130287,Clase ejecutiva,
 130369,,
 130593,,
@@ -379,17 +346,13 @@ id,clase,escalas
 130894,,
 130951,,
 131026,,"{""Talavera de la Reina""}"
-131085,,
 131089,,
 131253,,
 131300,Primera clase,
 131373,,
 131464,Primera clase,
-131473,,{Almería}
 131651,,
 131841,Primera clase,
-131882,,
-131886,,
 132020,,
 132109,Clase económica,
 132114,,"{Zamora,Lérida,Vitoria,Baracaldo}"
@@ -412,7 +375,6 @@ id,clase,escalas
 134524,,
 134545,,
 134667,Clase ejecutiva,
-134791,,
 134928,,
 135014,,
 135061,,
@@ -423,31 +385,24 @@ id,clase,escalas
 135531,,
 135651,,
 135841,,
-136350,,
 136548,,
 136580,,
-136611,,
 136628,Clase ejecutiva,
 136751,,
-137112,,
 137408,,
 137642,,{Albacete}
 137653,Primera clase,
 137795,,
 138183,,"{Paterna,Valencia,""Dos Hermanas"",""El Ejido""}"
-138208,,
-138462,,
 138480,,
 138528,,
 138536,,
-138953,,
 139044,Clase económica,
 139156,,
 139255,,
 139401,,
 139465,,
 139472,,"{Baracaldo,Leganés,Sabadell,Tarragona}"
-139490,Primera clase,
 139496,,
 139619,,"{Orihuela,""Las Palmas de Gran Canaria"",""Pozuelo de Alarcón"",Almería}"
 139626,Clase económica,
@@ -458,7 +413,6 @@ id,clase,escalas
 140248,,
 140319,,
 140461,,
-140517,,
 140591,,{Irún}
 140732,,
 140776,,
@@ -479,8 +433,6 @@ id,clase,escalas
 142390,Clase ejecutiva,
 142499,,
 142523,,
-142684,,
-142689,,
 142815,,
 142899,,
 143117,Primera clase,
@@ -489,7 +441,6 @@ id,clase,escalas
 143426,,
 143494,,
 143542,Clase económica,
-143550,,
 143643,Clase económica,
 143822,,
 143937,,
