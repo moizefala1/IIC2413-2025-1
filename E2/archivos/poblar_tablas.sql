@@ -52,7 +52,7 @@ CREATE TEMP TABLE temp_reservas_agendas (
     banos INT,
     nombre_panorama VARCHAR(100),
     duracion VARCHAR(50),
-    precio_persona DECIMAL(10,2),
+    precio_persona INTEGER,
     restricciones TEXT,
     fecha_panorama DATE
 );
@@ -126,8 +126,49 @@ CREATE TEMP TABLE seguros_descartados (
     tipo VARCHAR(50)
 );
 
+CREATE TEMP TABLE panoramas_descartados (
+    id INTEGER ,
+    empresa VARCHAR(100) ,
+    nombre VARCHAR(100),
+    descripcion TEXT,
+    ubicacion TEXT,
+    duracion INTEGER,
+    precio_persona INTEGER,
+    capacidad INTEGER,
+    restricciones TEXT[],
+    fecha_panorama TIMESTAMP
+);
 
+CREATE TEMP TABLE transportes_descartados (
+    id INTEGER,
+    correo_empleado VARCHAR(100),
+    lugar_origen VARCHAR(100),
+    lugar_llegada VARCHAR(100),
+    capacidad INTEGER,
+    tiempo_estimado INTEGER, 
+    precio_asiento INTEGER,
+    empresa VARCHAR(100),
+    fecha_salida DATE,
+    fecha_llegada DATE
+);
 
+CREATE TEMP TABLE trenes_descartados (
+    id INTEGER,
+    comodidades TEXT[],
+    paradas TEXT[]
+);
+
+CREATE TEMP TABLE buses_descartados (
+    id INTEGER,
+    comodidades TEXT[],
+    tipo VARCHAR(50)
+);
+
+CREATE TEMP TABLE aviones_descartados (
+    id INTEGER,
+    clase VARCHAR(20),
+    escalas TEXT[]
+);
 
 \copy temp_personas FROM '../csv/personas.csv' DELIMITER ',' CSV HEADER;
 \copy temp_reservas_agendas FROM '../csv/agenda_reserva.csv' DELIMITER ',' CSV HEADER;
@@ -297,35 +338,7 @@ DECLARE
   tupla temp_seguros_reviews%ROWTYPE;
 BEGIN
   FOR tupla IN
-    SELECT * FROM temp_seguros_reviews WHERE estrellas IS NOT NULL LOOP
-    BEGIN
-      INSERT INTO Review(correo_usuario, reserva_id, estrellas, descripcion)
-      VALUES(
-        tupla.correo_usuario,
-        tupla.reserva_id,
-        tupla.estrellas,
-        tupla.descripcion
-      );
-    EXCEPTION WHEN others THEN
-    INSERT INTO reviews_descartados(correo_usuario, reserva_id, estrellas, descripcion)
-      VALUES(
-        tupla.correo_usuario,
-        tupla.reserva_id,
-        tupla.estrellas,
-        tupla.descripcion
-      );
-    END;
-  END LOOP;
-END $$;
-
-\copy reviews_descartados TO '../descartados/reviews_descartados.csv' DELIMITER ',' CSV HEADER;
-----------------------
-DO $$
-DECLARE
-  tupla temp_seguros_reviews%ROWTYPE;
-BEGIN
-  FOR tupla IN
-  SELECT * FROM temp_seguros_reviews WHERE estrellas IS NULL LOOP
+  SELECT * FROM temp_seguros_reviews WHERE estrellas IS NULL AND descripcion IS NULL LOOP
   BEGIN
     INSERT INTO Seguro(correo_usuario, reserva_id, valor, clausula, empresa, tipo)
     VALUES(
@@ -351,10 +364,168 @@ BEGIN
 END $$;
 
 \copy seguros_descartados TO '../descartados/seguros_descartados.csv' DELIMITER ',' CSV HEADER;
+----------------------
+DO $$
+DECLARE
+  tupla temp_seguros_reviews%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_seguros_reviews WHERE tipo_seguro IS NULL AND valor_seguro IS NULL AND empresa_seguro IS NULL AND clausula IS NULL LOOP
+    BEGIN
+      INSERT INTO Review(correo_usuario, reserva_id, estrellas, descripcion)
+      VALUES(
+        tupla.correo_usuario,
+        tupla.reserva_id,
+        tupla.estrellas,
+        tupla.descripcion
+      );
+      EXCEPTION WHEN others THEN
+      INSERT INTO reviews_descartados(correo_usuario, reserva_id, estrellas, descripcion)
+      VALUES(
+        tupla.correo_usuario,
+        tupla.reserva_id,
+        tupla.estrellas,
+        tupla.descripcion
+      );
+    END;
+  END LOOP;
+END $$;
+
+\copy reviews_descartados TO '../descartados/reviews_descartados.csv' DELIMITER ',' CSV HEADER;
 
 
+-------------------------------------
 
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Reserva) AND ubicacion IS NULL AND precio_noche IS NULL AND fecha_checkin IS NULL
+    AND nombre_panorama IS NULL AND precio_persona IS NULL AND fecha_panorama IS NULL
+    LOOP
+    BEGIN
+    INSERT INTO Transporte(id, correo_empleado, lugar_origen, lugar_llegada, capacidad, tiempo_estimado, 
+    precio_asiento, empresa, fecha_salida, fecha_llegada)
+      VALUES(
+        tupla.id,
+        tupla.correo_empleado,
+        tupla.lugar_origen,
+        tupla.lugar_llegada,
+        tupla.capacidad,
+        tupla.tiempo_estimado,
+        tupla.precio_asiento,
+        tupla.empresa,
+        tupla.fecha_salida,
+        tupla.fecha_llegada
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO transportes_descartados(id, correo_empleado, lugar_origen, lugar_llegada, capacidad, tiempo_estimado, 
+    precio_asiento, empresa, fecha_salida, fecha_llegada)
+      VALUES(
+        tupla.id,
+        tupla.correo_empleado,
+        tupla.lugar_origen,
+        tupla.lugar_llegada,
+        tupla.capacidad,
+        tupla.tiempo_estimado,
+        tupla.precio_asiento,
+        tupla.empresa,
+        tupla.fecha_salida,
+        tupla.fecha_llegada
+      );
+    END;
+  END LOOP;
+END $$;
 
+\copy transportes_descartados TO '../descartados/transportes_descartados.csv' DELIMITER ',' CSV HEADER;
+
+----------------
+
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND escalas = '{}'
+    AND tipo_bus IS NULL and clase IS NULL
+    LOOP
+    BEGIN
+    INSERT INTO Tren(id, comodidades, paradas)
+      VALUES(
+        tupla.id,
+        tupla.comodidades,
+        tupla.paradas
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO trenes_descartados(id, comodidades, paradas)
+      VALUES(
+        tupla.id,
+        tupla.comodidades,
+        tupla.paradas
+      );
+    END;
+  END LOOP;
+END $$;
+
+\copy trenes_descartados TO '../descartados/trenes_descartados.csv' DELIMITER ',' CSV HEADER;
+-------------------------------
+
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND id NOT IN (SELECT id FROM Tren)
+    AND id NOT IN (SELECT id from trenes_descartados) AND escalas = '{}' AND clase IS NULL
+    LOOP
+    BEGIN
+    INSERT INTO Bus(id, comodidades, tipo)
+      VALUES(
+        tupla.id,
+        tupla.comodidades,
+        tupla.tipo_bus
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO buses_descartados(id, comodidades, tipo)
+      VALUES(
+        tupla.id,
+        tupla.comodidades,
+        tupla.tipo_bus
+      );
+    END;
+  END LOOP;
+END $$;
+
+\copy buses_descartados TO '../descartados/buses_descartados.csv' DELIMITER ',' CSV HEADER;
+----------------------------------
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND id NOT IN (SELECT id FROM Bus)
+    AND id NOT IN (SELECT id from buses_descartados) AND id NOT IN (SELECT id FROM Tren) 
+    AND id NOT IN (SELECT id FROM trenes_descartados)
+    LOOP
+    BEGIN
+    INSERT INTO Avion(id, clase, escalas)
+      VALUES(
+        tupla.id,
+        tupla.clase,
+        tupla.escalas
+      );
+    EXCEPTION WHEN others THEN
+    INSERT INTO aviones_descartados(id, clase, escalas)
+      VALUES(
+        tupla.id,
+        tupla.clase,
+        tupla.escalas
+      );
+    END;
+  END LOOP;
+END $$;
+\copy aviones_descartados TO '../descartados/aviones_descartados.csv' DELIMITER ',' CSV HEADER;
 
 
 

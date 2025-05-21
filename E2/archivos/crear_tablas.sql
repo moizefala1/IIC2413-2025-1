@@ -80,7 +80,6 @@ CREATE TABLE Review (
 );
 
 --------------------------------------------------------
--------------- HASTA ACA ESTA BIEN -------------------
 
 
 CREATE TABLE Panorama (
@@ -107,6 +106,7 @@ CREATE TABLE Participante (
     PRIMARY KEY (id_panorama, nombre),
     FOREIGN KEY (id_panorama) REFERENCES Panorama(id) ON DELETE CASCADE
 );
+-------------- HASTA ACA ESTA BIEN -------------------
 
 
 
@@ -160,6 +160,7 @@ CREATE TABLE Airbnb (
 );
 --------------------------------------------------------------------------------------
 
+---------DE ACA PARA ABAJO LISTO------------------------
 CREATE TABLE Transporte (
     id INTEGER PRIMARY KEY,
     correo_empleado VARCHAR(100) NOT NULL,
@@ -167,10 +168,10 @@ CREATE TABLE Transporte (
     lugar_llegada VARCHAR(100),
     capacidad INTEGER,
     tiempo_estimado INTEGER NOT NULL, 
-    precio_asiento INTEGER NOT NULL,
+    precio_asiento INTEGER NOT NULL CHECK(precio_asiento > 0)  ,
     empresa VARCHAR(100),
-    fecha_salida TIMESTAMP NOT NULL,
-    fecha_llegada TIMESTAMP,
+    fecha_salida DATE NOT NULL,
+    fecha_llegada DATE,
     FOREIGN KEY (correo_empleado) REFERENCES Empleado(correo) ON DELETE CASCADE,
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
@@ -188,8 +189,8 @@ CREATE TABLE Tren (
 -- Tabla Bus
 CREATE TABLE Bus (
     id INTEGER PRIMARY KEY,
-    comodidades TEXT[],
-    tipo VARCHAR(50) NOT NULL CHECK (tipo IN ('Normal', 'Semi-cama', 'Cama')),
+    comodidades TEXT[] NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
     FOREIGN KEY (id) REFERENCES Transporte(id) ON DELETE CASCADE
 );
 
@@ -197,6 +198,7 @@ CREATE TABLE Bus (
 CREATE TABLE Avion (
     id INTEGER PRIMARY KEY,
     clase VARCHAR(20) NOT NULL,
-    escalas TEXT[],
+    escalas TEXT[] NOT NULL,
     FOREIGN KEY (id) REFERENCES Transporte(id) ON DELETE CASCADE
 );
+

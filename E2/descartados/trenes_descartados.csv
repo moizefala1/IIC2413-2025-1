@@ -1,0 +1,392 @@
+id,comodidades,paradas
+78473,"{TV,Agua,Calefacción}",
+78501,,"{""Castellón de la Plana"",Madrid,Almería,""Mollet del Vallés""}"
+78560,{},
+78609,,"{León,Cuenta,Madrid,Elda,""El Puerto de Santa María""}"
+78742,,"{""Jerez de la Frontera""}"
+78774,"{Agua,TV,Baño,Comida,Calefacción}",
+78901,,{}
+79709,,"{Sagunto,""Mollet del Vallés"",""Molina de Segura"",Mataró,Mérida}"
+79757,,"{Málaga,Sabadell,Badajoz,""San Fernando""}"
+79772,"{""Asientos reclinables"",Baño,""Aire acondicionado"",Wifi,Agua}",
+79837,"{Calefacción,Wifi,""Aire acondicionado""}",
+80053,{},
+80248,,{}
+80488,"{Baño,Wifi,""Asientos reclinables"",TV,Agua,Comida}",
+80730,,"{Cuenta,Zamora,Rubí}"
+80932,,
+81074,"{Calefacción,Baño,TV,Wifi,""Asientos reclinables"",Agua}",
+81505,,"{Alcobendas,Salamanca}"
+81511,{},
+81641,,{Torrelavega}
+81634,"{TV,Baño,Comida}",
+81889,,"{Bilbao,Cádiz,Inca,Alcorcón,Majadahonda}"
+82174,,{}
+82313,,"{Motril,Jaén}"
+82385,"{""Aire acondicionado"",Wifi,Comida,TV}",
+83098,"{""Asientos reclinables"",Wifi,Baño,Calefacción,""Aire acondicionado"",Comida}",
+83136,"{""Aire acondicionado"",Calefacción,Agua,Wifi}",
+83168,"{Calefacción,Agua,Baño,TV,Wifi,Comida}",
+83194,,"{Benidorm,Valencia,Badajoz,Inca,""Santa Cruz de Tenerife""}"
+83394,,"{""Hospitalet de LLobregat"",Paterna,Segovia,Elche}"
+83637,,{}
+83888,"{Comida,""Aire acondicionado"",TV,Baño,Wifi,Agua}",
+84103,"{Agua,""Asientos reclinables"",Wifi}",
+84672,,"{Puertollano,Benalmádena}"
+84673,"{TV,Baño,Calefacción,Wifi,""Asientos reclinables""}",
+85324,"{""Asientos reclinables"",Agua,Comida,TV}",
+85487,,"{""Torrejón de Ardoz"",Paterna,Inca,Telde}"
+85981,,"{""Dos Hermanas"",Alicante,Murcia,Paterna}"
+86272,"{""Aire acondicionado"",Calefacción,Wifi}",
+86511,,
+86532,,"{Gerona,Barcelona,Orihuela,Orense}"
+87483,"{Baño,TV,""Aire acondicionado"",Comida,""Asientos reclinables"",Calefacción}",
+87699,"{Baño,Wifi,Agua}",
+87778,,{}
+87786,,"{Torremolinos,Benidorm,Granada,Majadahonda}"
+88724,,"{Puertollano,Marbella,""La Línea de la Concepción""}"
+88785,,{}
+89105,"{Agua,Calefacción,""Aire acondicionado"",Comida,Wifi,""Asientos reclinables""}",
+89331,,"{Leganés,""La Coruña"",Pamplona}"
+89339,{},
+89379,"{Comida,Baño,""Aire acondicionado""}",
+89605,"{Calefacción,Wifi,Agua,""Aire acondicionado""}",
+89710,,"{Madrid,Valencia,Avilés}"
+90160,"{Baño,Wifi,Agua,Calefacción}",
+90322,,"{Lérida,Valladolid,""Collado Villalba"",Orense,Estepona}"
+90639,,"{""Las Palmas de Gran Canaria"",Cáceres}"
+90738,,"{Lorca,""Cornellá de Llobregat""}"
+91231,,"{""San Fernando"",Manresa,Lorca,Ceuta}"
+91281,,{}
+91387,,{Córdoba}
+91722,,{}
+92295,,"{Sabadell,León,""El Ejido"",""La Coruña""}"
+92510,,{Alcobendas}
+92513,"{Calefacción,""Asientos reclinables"",""Aire acondicionado"",Wifi,Agua}",
+92697,"{""Asientos reclinables"",Baño,Comida,TV,Agua,""Aire acondicionado"",Wifi}",
+93716,"{Comida,Calefacción,Baño,Agua,Wifi,TV}",
+93821,"{Wifi,Comida,""Asientos reclinables"",TV}",
+93994,,"{""Collado Villalba"",Alcoy,Paterna,Tarragona,Algeciras}"
+94074,"{""Aire acondicionado"",Calefacción,Agua}",
+94230,,"{Fuengirola,Ferrol,Segovia}"
+94437,,"{Alicante,Ávila,""La Línea de la Concepción"",Málaga}"
+94559,"{""Aire acondicionado"",Wifi,Agua}",
+94619,{},
+94684,"{Baño,Agua,TV,Comida,Calefacción}",
+94816,"{""Asientos reclinables"",Agua,Baño,""Aire acondicionado""}",
+94908,,"{Orihuela,Ferrol}"
+95330,"{Baño,Wifi,TV}",
+95701,"{""Aire acondicionado"",Baño,""Asientos reclinables"",Wifi,Calefacción,Agua}",
+96026,"{Wifi,""Asientos reclinables"",Calefacción,Baño,TV,""Aire acondicionado""}",
+96220,"{""Aire acondicionado"",Baño,Wifi,Comida,TV}",
+96570,,{}
+96580,,
+96658,,"{""Las Palmas de Gran Canaria"",Cáceres,Zamora,Valdemoro,Torremolinos}"
+96814,"{""Aire acondicionado"",Wifi,""Asientos reclinables"",Calefacción,Comida,Agua,Baño}",
+97482,"{Baño,""Asientos reclinables"",Wifi,Agua,""Aire acondicionado"",Comida,Calefacción}",
+97771,"{""Aire acondicionado"",Comida,Calefacción}",
+98173,,{}
+98211,,"{Pontevedra,Granada,""Santa Coloma de Gramanet""}"
+98360,"{TV,Comida,Wifi,""Asientos reclinables"",Calefacción}",
+98777,"{Agua,Comida,Wifi,""Aire acondicionado"",Calefacción,Baño}",
+98805,"{Agua,Baño,Comida,""Asientos reclinables""}",
+98878,,"{""Hospitalet de LLobregat"",""Collado Villalba"",Badajoz}"
+98906,"{TV,""Aire acondicionado"",Comida,Baño,Agua,Calefacción,Wifi}",
+98933,,"{""San Sebastían de los Reyes""}"
+98947,"{Agua,Calefacción,TV,Comida,Baño}",
+99031,"{Comida,TV,""Asientos reclinables""}",
+99164,,{}
+99481,,
+99485,"{Calefacción,""Asientos reclinables"",Baño,Comida,Agua}",
+99500,"{Calefacción,""Asientos reclinables"",Baño,Wifi,Comida}",
+99617,,"{Zaragoza,""Palma de Mallorca""}"
+99726,"{Agua,Baño,TV,Calefacción}",
+99986,,"{Sagunto,Palencia}"
+100110,,{}
+100165,"{""Aire acondicionado"",""Asientos reclinables"",Comida,Agua,TV,Baño}",
+100182,,{}
+100286,,{}
+100574,{},
+101241,,"{Lorca,Gandía,Cuenta,Burgos,Cádiz}"
+101292,{},
+101327,,{}
+101575,"{Baño,Calefacción,""Asientos reclinables"",Wifi,TV,Agua}",
+102176,,"{""Chiclana de la Frontera""}"
+102568,"{""Asientos reclinables"",""Aire acondicionado"",Wifi,Comida,Agua,TV,Calefacción}",
+102795,"{""Aire acondicionado"",Baño,Agua}",
+103162,"{Wifi,""Asientos reclinables"",Calefacción,Agua,""Aire acondicionado""}",
+103247,,{}
+103539,"{Baño,Agua,Comida}",
+103778,,"{Bilbao,""Roquetas de Mar""}"
+103803,"{TV,Calefacción,Agua,""Aire acondicionado"",Baño,Comida,Wifi}",
+103806,"{Agua,Calefacción,""Asientos reclinables"",Baño,Comida,""Aire acondicionado"",TV}",
+103985,,"{Móstoles,Oviedo}"
+104169,,"{Estepona,""Talavera de la Reina"",Elche}"
+104285,"{Agua,Baño,Comida,Calefacción,Wifi,""Asientos reclinables""}",
+104328,,"{Lorca,Zaragoza,""San Sebastián"",Manresa,Gerona}"
+104659,,{}
+104737,,"{Alcobendas,Majadahonda,Ponferrada,Almería}"
+105550,,
+105731,"{""Aire acondicionado"",Wifi,Baño,Comida}",
+106131,,"{Puertollano,""El Ejido"",Zaragoza}"
+106134,"{TV,Agua,""Asientos reclinables"",Wifi,""Aire acondicionado"",Calefacción,Comida}",
+106345,,"{Sagunto,Fuenlabrada,Leganés,Alcobendas}"
+106346,"{Agua,""Aire acondicionado"",Baño,TV,Comida}",
+106465,,"{""Alcalá de Henares""}"
+106599,"{""Asientos reclinables"",Baño,""Aire acondicionado"",Calefacción}",
+107183,,"{Lérida,Leganés,Elda,Cáceres}"
+107366,"{Baño,TV,Agua,Comida,Calefacción,""Aire acondicionado""}",
+107442,"{Comida,""Aire acondicionado"",Wifi,Agua}",
+107796,,{}
+107995,,"{Ponferrada,Segovia,""El Puerto de Santa María""}"
+108580,,{Paterna}
+108721,,{}
+108967,,{}
+108968,"{""Asientos reclinables"",Wifi,TV}",
+109285,"{Baño,Comida,""Asientos reclinables""}",
+109344,,"{Madrid,Paterna,Gijón}"
+109563,"{""Asientos reclinables"",Baño,Comida}",
+110090,"{Agua,Comida,Baño,TV,Calefacción,Wifi}",
+110742,"{Comida,""Asientos reclinables"",Agua}",
+110930,"{Calefacción,Wifi,Comida,TV,Agua}",
+111105,"{Wifi,Baño,Calefacción,""Asientos reclinables""}",
+111192,,{}
+111393,"{Baño,Wifi,Comida,Agua}",
+111565,,"{""Roquetas de Mar"",Santander,Gandía,""Chiclana de la Frontera""}"
+111896,,{}
+111966,"{Agua,Baño,Comida,TV,""Aire acondicionado"",Wifi}",
+112382,"{""Aire acondicionado"",""Asientos reclinables"",Agua}",
+112620,"{Agua,TV,""Aire acondicionado""}",
+113184,,"{""Jerez de la Frontera"",""El Prat de LLobregat"",""San Fernando"",Reus,Málaga}"
+113473,,"{Irún,Bilbao}"
+113812,,{}
+113922,,"{Ávila,Madrid,Vigo}"
+114044,"{""Aire acondicionado"",Baño,""Asientos reclinables"",Calefacción,Agua,Comida}",
+114388,"{Calefacción,Comida,Wifi,Agua,""Aire acondicionado""}",
+114505,"{""Aire acondicionado"",TV,Comida,Baño,Wifi}",
+115585,"{Wifi,Comida,Calefacción,""Asientos reclinables"",""Aire acondicionado""}",
+115901,,"{""La Coruña"",""San Fernando""}"
+116478,,"{Manresa,Calahorra}"
+116686,"{TV,Baño,""Aire acondicionado"",Comida,Calefacción,Agua,Wifi}",
+116696,,"{Fuengirola,Puertollano}"
+116784,,
+116846,"{""Asientos reclinables"",Baño,Comida,""Aire acondicionado""}",
+116863,,"{""Collado Villalba""}"
+116944,"{Agua,""Asientos reclinables"",TV,""Aire acondicionado""}",
+117110,"{Baño,Calefacción,Wifi,TV}",
+117493,,"{""Jerez de la Frontera""}"
+117658,,"{Algeciras,""San Fernando"",Barcelona,Segovia}"
+117985,,{}
+118704,"{Calefacción,Wifi,""Aire acondicionado""}",
+118734,"{""Aire acondicionado"",TV,Comida}",
+118793,,"{""El Prat de LLobregat"",Toledo,""San Sebastían de los Reyes""}"
+119121,,"{Gijón,Santander}"
+119123,,"{Baracaldo,""Pozuelo de Alarcón""}"
+119239,"{Agua,Calefacción,""Aire acondicionado"",""Asientos reclinables"",Baño,TV,Comida}",
+119256,,"{""Santa Cruz de Tenerife"",Gijón}"
+119347,,"{""El Prat de LLobregat"",Barcelona}"
+119353,,"{Granada,""Alcalá de Guadaira"",Manresa,Oviedo,""Collado Villalba""}"
+119361,"{Baño,""Asientos reclinables"",Comida}",
+119981,"{""Asientos reclinables"",Calefacción,Agua,TV,Wifi,""Aire acondicionado""}",
+119983,,{}
+120639,,{}
+121360,,{}
+121718,"{Comida,""Asientos reclinables"",TV,""Aire acondicionado""}",
+121808,,{}
+122134,"{""Asientos reclinables"",Baño,Calefacción,""Aire acondicionado"",Comida}",
+122229,,{Alicante}
+122359,"{""Asientos reclinables"",Calefacción,""Aire acondicionado"",Wifi}",
+122486,{},
+123013,,"{Calahorra,""Alcalá de Guadaira"",Marbella,Benidorm,Ponferrada}"
+123109,"{""Aire acondicionado"",Comida,Baño}",
+123137,,{Getafe}
+123189,,"{Tarrasa,Fuenlabrada,Zamora,""Hospitalet de LLobregat"",""Castellón de la Plana""}"
+123209,"{Calefacción,Comida,Agua,""Asientos reclinables"",TV}",
+123991,"{Comida,Wifi,""Asientos reclinables""}",
+124033,"{Comida,""Asientos reclinables"",Agua,TV,""Aire acondicionado"",Wifi,Calefacción}",
+124108,"{""Aire acondicionado"",Wifi,TV,Comida,Baño}",
+124339,,"{Mérida,Ferrol}"
+124662,"{Calefacción,Wifi,""Asientos reclinables"",""Aire acondicionado"",Agua}",
+124874,,"{Pamplona,Lorca,""Talavera de la Reina""}"
+124892,,"{""El Prat de LLobregat""}"
+125178,"{Calefacción,TV,""Asientos reclinables""}",
+125206,,"{Badalona,Rivas-Vaciamadrid}"
+125281,,"{Marbella,Pamplona,""Hospitalet de LLobregat"",Fuengirola,Coslada}"
+125286,"{Calefacción,""Aire acondicionado"",Wifi,TV,Agua}",
+125346,"{Agua,Comida,Calefacción}",
+125492,,{}
+125706,"{""Asientos reclinables"",Baño,Calefacción,Wifi}",
+125831,"{Baño,Wifi,TV}",
+126251,,"{Gijón,Segovia,Linares}"
+126334,"{Agua,""Asientos reclinables"",Calefacción}",
+126568,"{Comida,Wifi,""Aire acondicionado"",Agua,Baño,TV,Calefacción}",
+126588,,"{""Santa Cruz de Tenerife""}"
+126779,"{Agua,""Asientos reclinables"",""Aire acondicionado""}",
+127006,"{TV,Wifi,Agua}",
+127041,"{Wifi,Comida,Agua,""Asientos reclinables"",TV}",
+127098,,
+127244,,"{""Collado Villalba"",Tarrasa}"
+127548,,{}
+127554,{},
+127829,,"{""San Fernando""}"
+128024,"{Comida,Calefacción,Wifi,Agua,""Asientos reclinables"",Baño,""Aire acondicionado""}",
+128071,"{""Aire acondicionado"",Comida,Baño}",
+128626,,{}
+128678,,{Cáceres}
+128999,{},
+129018,"{TV,""Asientos reclinables"",Agua,Comida}",
+129318,"{""Aire acondicionado"",""Asientos reclinables"",Wifi,TV,Baño,Comida,Agua}",
+129771,"{""Asientos reclinables"",Wifi,Comida,TV,Calefacción}",
+129971,,{Linares}
+129976,,{}
+130402,,{}
+130417,"{""Aire acondicionado"",Agua,Calefacción,Baño,""Asientos reclinables""}",
+130712,"{""Asientos reclinables"",""Aire acondicionado"",Comida}",
+131218,,{}
+131312,"{Agua,""Aire acondicionado"",Wifi,Calefacción,Comida,""Asientos reclinables"",TV}",
+131511,,"{Sagunto,""Las Palmas de Gran Canaria"",Palencia,Mijas}"
+131900,,{}
+132366,,"{Móstoles,Vigo,Irún}"
+132399,,"{Málaga,Fuenlabrada,""Hospitalet de LLobregat"",""El Prat de LLobregat"",Gecho}"
+132404,"{TV,""Asientos reclinables"",Wifi}",
+132498,,
+132738,,"{Arrecife,Ceuta,Zaragoza}"
+132781,"{""Aire acondicionado"",Agua,Baño}",
+132796,"{Baño,Calefacción,Wifi}",
+132944,,"{""Dos Hermanas""}"
+133029,,{Badalona}
+133054,"{Calefacción,Baño,Wifi,""Aire acondicionado"",Agua,Comida,""Asientos reclinables""}",
+133084,,{}
+133146,,"{""Talavera de la Reina"",Avilés,Arrecife,""Alcalá de Henares"",Murcia}"
+133753,"{Agua,""Aire acondicionado"",Comida}",
+134718,{},
+134787,"{""Asientos reclinables"",Calefacción,""Aire acondicionado"",Wifi,Agua,Comida}",
+134982,"{TV,""Asientos reclinables"",Agua,Wifi,Comida}",
+135013,"{Wifi,""Aire acondicionado"",Calefacción,Baño,Comida}",
+135023,,{Gerona}
+135283,"{""Aire acondicionado"",""Asientos reclinables"",TV,Agua,Baño,Comida,Wifi}",
+135387,,{Puertollano}
+135917,"{Comida,Calefacción,TV,""Aire acondicionado"",Baño}",
+136019,,{}
+136297,,{}
+136378,"{TV,Baño,""Aire acondicionado""}",
+136391,"{Calefacción,Wifi,Agua,TV}",
+136766,"{Agua,Comida,Baño,Calefacción,Wifi}",
+137211,"{Wifi,Comida,TV,""Aire acondicionado""}",
+137213,"{Baño,Comida,Calefacción,Wifi,TV,""Aire acondicionado"",Agua}",
+137295,"{Baño,Wifi,""Aire acondicionado"",Comida,""Asientos reclinables"",TV}",
+137345,"{Baño,""Aire acondicionado"",""Asientos reclinables""}",
+137631,,{}
+137690,"{TV,""Aire acondicionado"",Wifi,Calefacción,Comida,Agua}",
+138209,,"{""Santa Cruz de Tenerife""}"
+138227,{},
+139025,{},
+139631,"{""Asientos reclinables"",Comida,Agua}",
+139737,,{}
+139755,,"{Puertollano,Sabadell,Oviedo,""Santa Lucía de Tirajana"",Gerona}"
+139779,"{Comida,Agua,Calefacción,Baño,""Asientos reclinables"",TV,Wifi}",
+139964,,{}
+140134,"{Agua,""Asientos reclinables"",Comida,Calefacción,Baño,""Aire acondicionado""}",
+140403,,"{""Mollet del Vallés"",Manresa,Ferrol,""Santa Coloma de Gramanet""}"
+140458,,{Alicante}
+140638,,{Motril}
+141038,,
+141557,"{""Asientos reclinables"",TV,Wifi,Comida,Agua}",
+141797,,"{Manresa,""Mollet del Vallés""}"
+141798,,"{Cáceres,Valdemoro,Orihuela,Torrelavega,Santander}"
+142080,,{Badalona}
+142419,"{Baño,TV,""Asientos reclinables"",Comida}",
+142438,{},
+142442,"{""Aire acondicionado"",Agua,Baño,TV}",
+142662,"{""Aire acondicionado"",Calefacción,Baño,Agua,Wifi,""Asientos reclinables"",TV}",
+142737,,"{Granada,""Chiclana de la Frontera"",""Castellón de la Plana""}"
+142853,,{Mijas}
+142908,,{Málaga}
+143266,,"{Torrelavega,Alcoy,Sagunto,Granada,Valencia}"
+143339,,"{Mérida,Parla,Tarragona,Motril}"
+143479,,"{Bilbao,Palencia,Gecho,Bilbao}"
+143743,"{Wifi,""Aire acondicionado"",TV,Comida,Baño,""Asientos reclinables"",Agua}",
+143850,,"{Guadalajara,Badajoz}"
+143924,"{TV,Baño,Wifi,""Asientos reclinables"",Comida,Agua,Calefacción}",
+144534,"{Baño,Comida,Wifi,TV,""Asientos reclinables"",""Aire acondicionado""}",
+144554,"{Baño,Wifi,Calefacción,""Aire acondicionado"",Comida,Agua}",
+144860,"{""Aire acondicionado"",Calefacción,Agua}",
+145216,,{}
+145896,,{}
+145951,,
+146415,,{}
+146699,,{}
+147475,{},
+147571,{},
+148653,,"{Santander,Algeciras,""Torrejón de Ardoz"",Sevilla}"
+148663,,{}
+148681,"{Agua,Baño,Calefacción,TV}",
+148691,,
+148702,"{Baño,Agua,TV,""Asientos reclinables"",Calefacción,Wifi,""Aire acondicionado""}",
+148713,,"{""Torrejón de Ardoz"",""Santa Coloma de Gramanet"",Arrecife}"
+148717,"{Baño,Agua,""Asientos reclinables"",Calefacción,TV,Wifi}",
+148741,"{Baño,""Asientos reclinables"",TV,Comida,Agua}",
+148766,"{Agua,""Asientos reclinables"",Baño,Comida}",
+148827,"{Baño,TV,""Aire acondicionado"",Comida,""Asientos reclinables"",Wifi}",
+148851,"{Calefacción,Baño,Agua,""Asientos reclinables"",""Aire acondicionado"",Comida}",
+148859,"{Agua,Wifi,""Asientos reclinables"",Comida,Baño,TV,Calefacción}",
+148866,,
+148876,,{Inca}
+148883,,"{""San Fernando"",Valencia,Puertollano,Manresa,Jaén}"
+148954,,"{Vigo,""San Fernando"",""Jerez de la Frontera"",""Collado Villalba""}"
+149008,,"{Paterna,""La Línea de la Concepción""}"
+149009,,{}
+149024,"{Wifi,TV,""Aire acondicionado""}",
+149039,,"{Guadalajara,Granada,Baracaldo,Santander}"
+149041,"{Calefacción,Baño,Agua,Wifi,""Asientos reclinables""}",
+149066,,{}
+149083,,"{Badalona,""Cerdañola del Vallés"",""Roquetas de Mar"",Benalmádena}"
+149127,,"{Alcorcón,Rivas-Vaciamadrid}"
+149148,,"{Lugo,Pamplona}"
+149155,"{Calefacción,""Asientos reclinables"",""Aire acondicionado"",Comida,Wifi,Baño}",
+149161,,"{""El Puerto de Santa María"",Ávila}"
+149168,"{Baño,Comida,""Asientos reclinables"",Agua,""Aire acondicionado"",Wifi,TV}",
+149169,"{Wifi,Agua,Baño,""Aire acondicionado"",TV}",
+149171,,"{""Santa Cruz de Tenerife"",Estepona,Cartagena}"
+149186,"{""Asientos reclinables"",Comida,TV,Agua}",
+149252,,{}
+149256,"{Agua,Baño,""Aire acondicionado"",Wifi,Calefacción}",
+149267,,"{Gecho,Orihuela,Manresa}"
+149275,,{}
+149348,"{Calefacción,""Asientos reclinables"",Agua,TV,""Aire acondicionado"",Wifi}",
+149400,"{Calefacción,Comida,TV,Agua,Wifi,""Asientos reclinables""}",
+149411,"{Calefacción,Agua,Wifi,Comida,""Asientos reclinables"",Baño,""Aire acondicionado""}",
+149439,,"{Santander,""Jerez de la Frontera"",""Santa Cruz de Tenerife"",""Torrejón de Ardoz"",Reus}"
+149456,,"{Jaén,Mataró}"
+149460,"{""Aire acondicionado"",Calefacción,Baño,TV,Agua,Comida}",
+149465,"{Wifi,""Asientos reclinables"",Baño,TV,Agua}",
+149480,"{Agua,TV,""Asientos reclinables"",Calefacción,Wifi,""Aire acondicionado"",Baño}",
+149500,"{Comida,Calefacción,Wifi,Baño,""Asientos reclinables"",TV,Agua}",
+149508,,"{Torrelavega,Granada}"
+149533,,"{""San Sebastián"",Arrecife,Gandía}"
+149544,,"{Lérida,""La Coruña""}"
+149546,,"{""Sanlúcar de Barrameda"",Ceuta,Ponferrada}"
+149562,,"{Leganés,""El Prat de LLobregat"",Parla}"
+149848,"{""Asientos reclinables"",Agua,""Aire acondicionado""}",
+149591,"{""Asientos reclinables"",Agua,TV,Comida,Calefacción,""Aire acondicionado""}",
+149594,,{}
+149630,"{""Aire acondicionado"",Calefacción,Baño}",
+149671,"{Agua,Baño,""Asientos reclinables"",Comida,Wifi,Calefacción}",
+149678,,"{Manresa,Orihuela,Toledo}"
+149714,"{Comida,""Asientos reclinables"",""Aire acondicionado"",Wifi}",
+149730,,"{Elda,Alcobendas,Toledo}"
+149734,"{Wifi,Agua,""Asientos reclinables"",Baño,Comida,""Aire acondicionado""}",
+149754,"{Agua,""Aire acondicionado"",Calefacción,""Asientos reclinables""}",
+149755,,{}
+149772,"{TV,Calefacción,Agua,Wifi}",
+149797,,"{Guadalajara,Alcobendas,Rivas-Vaciamadrid,Torremolinos}"
+149809,,"{Pontevedra,""Sanlúcar de Barrameda""}"
+149825,,{}
+149868,,"{""Santa Lucía de Tirajana""}"
+149942,,"{Rivas-Vaciamadrid,Murcia,""La Línea de la Concepción""}"
+149948,"{Wifi,TV,Baño,""Aire acondicionado"",Calefacción,Comida}",
+149959,"{TV,Wifi,""Asientos reclinables"",Agua}",
+149978,,{Gerona}
+150012,,{}
+150064,,"{Lugo,Sagunto,Murcia}"
+150072,,{}
