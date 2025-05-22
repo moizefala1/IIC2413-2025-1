@@ -1,5 +1,4 @@
 BEGIN;
-
 CREATE TEMP TABLE temp_personas (
     nombre VARCHAR(50),
     correo VARCHAR(50),
@@ -696,44 +695,6 @@ BEGIN
 END $$;
 \copy hospedajes_descartados TO '../descartados/hospedajes_descartados.csv' DELIMITER ',' CSV HEADER;
 ------------------------------
-DO $$
-DECLARE
-  tupla temp_reservas_agendas%ROWTYPE;
-BEGIN
-  FOR tupla IN
-    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id from Reserva) AND id NOT IN (SELECT id FROM Transporte) 
-    AND id NOT IN (SELECT id FROM transportes_descartados) AND id NOT IN (SELECT id FROM Panorama) 
-    AND id NOT IN (SELECT id FROM panoramas_descartados) 
-    LOOP
-    BEGIN
-    INSERT INTO Hospedaje(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
-    VALUES(
-      tupla.id,
-      tupla.nombre_hospedaje,
-      tupla.ubicacion,
-      tupla.precio_noche,
-      tupla.estrellas,
-      tupla.comodidades,
-      tupla.fecha_checkin,
-      tupla.fecha_checkout
-      );
-    EXCEPTION WHEN OTHERS THEN
-    INSERT INTO hospedajes_descartados(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
-    VALUES(
-      tupla.id,
-      tupla.nombre_hospedaje,
-      tupla.ubicacion,
-      tupla.precio_noche,
-      tupla.estrellas,
-      tupla.comodidades,
-      tupla.fecha_checkin,
-      tupla.fecha_checkout
-      );
-    END;
-  END LOOP;
-END $$;
-\copy hospedajes_descartados TO '../descartados/hospedajes_descartados.csv' DELIMITER ',' CSV HEADER;
-------------------------------------
 DO $$
 DECLARE
   tupla temp_reservas_agendas%ROWTYPE;

@@ -1,9 +1,3 @@
-
----CAMBIAR CORREO A CORREO_EMPLEADO, CORREO_USUARIO SEGUN CORRESPONDENCIA-------------
---- ESTANDARIZAR ID A xxxxx-ID SEGUN CORRESPONDENCIA ------------------------------
-
-
-
 CREATE TABLE Persona (
     nombre VARCHAR(50),
     correo VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -119,7 +113,7 @@ CREATE TABLE Hospedaje (
     nombre VARCHAR(100),
     ubicacion TEXT NOT NULL,
     precio_noche  INTEGER NOT NULL CHECK (precio_noche >= 0),
-    estrellas INTEGER CHECK (estrellas BETWEEN 1 AND 5),
+    estrellas INTEGER NOT NULL CHECK (estrellas BETWEEN 1 AND 5),
     comodidades TEXT[],
     fecha_checkin DATE NOT NULL,
     fecha_checkout DATE, 
