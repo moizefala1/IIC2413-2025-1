@@ -89,7 +89,7 @@ CREATE TABLE Panorama (
     descripcion TEXT,
     ubicacion TEXT,
     duracion INTEGER,
-    precio_persona INTEGER NOT NULL,
+    precio_persona INTEGER CHECK (precio_persona >= 0)  NOT NULL,
     capacidad INTEGER,
     restricciones TEXT[],
     fecha_panorama TIMESTAMP NOT NULL,
@@ -118,11 +118,11 @@ CREATE TABLE Hospedaje (
     id INTEGER PRIMARY KEY,
     nombre VARCHAR(100),
     ubicacion TEXT NOT NULL,
-    precio_noche INTEGER NOT NULL,
+    precio_noche  INTEGER NOT NULL CHECK (precio_noche >= 0),
     estrellas INTEGER CHECK (estrellas BETWEEN 1 AND 5),
     comodidades TEXT[],
-    fecha_checkin TIMESTAMP NOT NULL,
-    fecha_checkout TIMESTAMP, 
+    fecha_checkin DATE NOT NULL,
+    fecha_checkout DATE, 
     FOREIGN KEY (id) REFERENCES Reserva(id) ON DELETE CASCADE
 );
 
@@ -131,7 +131,7 @@ CREATE TABLE Hospedaje (
 -- Tabla Hotel
 CREATE TABLE Hotel (
     id INTEGER PRIMARY KEY,
-    politicas TEXT[],
+    politicas TEXT[] NOT NULL,
     FOREIGN KEY (id) REFERENCES Hospedaje(id) ON DELETE CASCADE
 );
 
@@ -152,7 +152,7 @@ CREATE TABLE Airbnb (
     id INTEGER PRIMARY KEY,
     nombre_anfitrion VARCHAR(100) NOT NULL,
     contacto_anfitrion VARCHAR(100) NOT NULL,
-    descripcion TEXT,
+    descripcion TEXT NOT NULL,
     piezas INTEGER NOT NULL,
     camas INTEGER NOT NULL,
     banos INTEGER NOT NULL,

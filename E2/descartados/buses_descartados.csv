@@ -14,6 +14,7 @@ id,comodidades,tipo
 87082,,Cama
 87591,,Cama
 87762,,Normal
+87976,,Cama
 88445,,Cama
 90353,,Cama
 90695,,Cama
@@ -23,10 +24,12 @@ id,comodidades,tipo
 93501,,Cama
 93676,,Cama
 94608,,Cama
+94674,,Cama
 95275,,Cama
 95331,,Cama
 95373,,Cama
 95515,,Cama
+95945,,Cama
 96436,,Cama
 96746,,Cama
 97125,,Cama
@@ -81,6 +84,7 @@ id,comodidades,tipo
 122004,,Cama
 122986,,Cama
 123083,,Cama
+123706,,Cama
 124536,,Cama
 124569,,Cama
 125406,,Cama
@@ -106,6 +110,7 @@ id,comodidades,tipo
 133676,,Cama
 133710,,Cama
 133957,,Cama
+135061,,Cama
 135343,,Cama
 137053,,Cama
 138997,,Cama
@@ -123,12 +128,15 @@ id,comodidades,tipo
 144699,,Cama
 144708,,Cama
 144738,,Cama
+144778,,Cama
 144790,,Cama
 144802,,Cama
 144809,,Cama
+144818,,Cama
 144855,,Cama
 144885,,Cama
 144887,,Cama
+144907,,Cama
 144954,,Cama
 144956,,Cama
 144978,,Cama
@@ -145,6 +153,7 @@ id,comodidades,tipo
 145341,,Cama
 145380,,Cama
 145393,,Cama
+145431,,Cama
 145432,,Cama
 145444,,Cama
 145477,,Cama
@@ -172,6 +181,7 @@ id,comodidades,tipo
 146178,,Cama
 146195,,Cama
 146264,,Cama
+146329,,Cama
 146367,,Cama
 146423,,Cama
 146460,,Cama

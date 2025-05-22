@@ -3,6 +3,7 @@ id,comodidades,paradas
 78501,,"{""Castellón de la Plana"",Madrid,Almería,""Mollet del Vallés""}"
 78560,{},
 78609,,"{León,Cuenta,Madrid,Elda,""El Puerto de Santa María""}"
+78773,"{Calefacción,""Asientos reclinables"",TV,Agua,Baño}",
 78774,"{Agua,TV,Baño,Comida,Calefacción}",
 78901,,{}
 79709,,"{Sagunto,""Mollet del Vallés"",""Molina de Segura"",Mataró,Mérida}"
@@ -21,6 +22,7 @@ id,comodidades,paradas
 81889,,"{Bilbao,Cádiz,Inca,Alcorcón,Majadahonda}"
 82174,,{}
 82313,,"{Motril,Jaén}"
+82356,,"{Santander,Valencia}"
 83098,"{""Asientos reclinables"",Wifi,Baño,Calefacción,""Aire acondicionado"",Comida}",
 83136,"{""Aire acondicionado"",Calefacción,Agua,Wifi}",
 83168,"{Calefacción,Agua,Baño,TV,Wifi,Comida}",
@@ -28,6 +30,7 @@ id,comodidades,paradas
 83394,,"{""Hospitalet de LLobregat"",Paterna,Segovia,Elche}"
 83888,"{Comida,""Aire acondicionado"",TV,Baño,Wifi,Agua}",
 84103,"{Agua,""Asientos reclinables"",Wifi}",
+84558,,"{Gijón,Torrelavega,Alicante,Sabadell}"
 84672,,"{Puertollano,Benalmádena}"
 84673,"{TV,Baño,Calefacción,Wifi,""Asientos reclinables""}",
 85324,"{""Asientos reclinables"",Agua,Comida,TV}",
@@ -52,13 +55,16 @@ id,comodidades,paradas
 91231,,"{""San Fernando"",Manresa,Lorca,Ceuta}"
 91281,,{}
 91387,,{Córdoba}
+91542,"{Calefacción,Wifi,TV,Comida,""Aire acondicionado""}",
 91722,,{}
 92295,,"{Sabadell,León,""El Ejido"",""La Coruña""}"
 92510,,{Alcobendas}
 92513,"{Calefacción,""Asientos reclinables"",""Aire acondicionado"",Wifi,Agua}",
+92676,"{Comida,Calefacción,""Asientos reclinables"",""Aire acondicionado"",TV,Agua,Baño}",
 92697,"{""Asientos reclinables"",Baño,Comida,TV,Agua,""Aire acondicionado"",Wifi}",
 93716,"{Comida,Calefacción,Baño,Agua,Wifi,TV}",
 93821,"{Wifi,Comida,""Asientos reclinables"",TV}",
+93952,"{""Aire acondicionado"",Calefacción,""Asientos reclinables""}",
 93994,,"{""Collado Villalba"",Alcoy,Paterna,Tarragona,Algeciras}"
 94074,"{""Aire acondicionado"",Calefacción,Agua}",
 94230,,"{Fuengirola,Ferrol,Segovia}"
@@ -97,16 +103,19 @@ id,comodidades,paradas
 101292,{},
 101327,,{}
 101575,"{Baño,Calefacción,""Asientos reclinables"",Wifi,TV,Agua}",
+102119,{},
 102176,,"{""Chiclana de la Frontera""}"
 102795,"{""Aire acondicionado"",Baño,Agua}",
 103162,"{Wifi,""Asientos reclinables"",Calefacción,Agua,""Aire acondicionado""}",
 103247,,{}
 103778,,"{Bilbao,""Roquetas de Mar""}"
 103985,,"{Móstoles,Oviedo}"
+104076,,"{Vitoria,""Alcalá de Henares""}"
 104169,,"{Estepona,""Talavera de la Reina"",Elche}"
 104285,"{Agua,Baño,Comida,Calefacción,Wifi,""Asientos reclinables""}",
 104328,,"{Lorca,Zaragoza,""San Sebastián"",Manresa,Gerona}"
 104659,,{}
+104717,,{}
 104737,,"{Alcobendas,Majadahonda,Ponferrada,Almería}"
 105550,,
 105731,"{""Aire acondicionado"",Wifi,Baño,Comida}",
@@ -135,6 +144,7 @@ id,comodidades,paradas
 111565,,"{""Roquetas de Mar"",Santander,Gandía,""Chiclana de la Frontera""}"
 111896,,{}
 111966,"{Agua,Baño,Comida,TV,""Aire acondicionado"",Wifi}",
+112120,"{Agua,""Asientos reclinables"",Wifi,Baño,Comida}",
 112382,"{""Aire acondicionado"",""Asientos reclinables"",Agua}",
 112620,"{Agua,TV,""Aire acondicionado""}",
 113184,,"{""Jerez de la Frontera"",""El Prat de LLobregat"",""San Fernando"",Reus,Málaga}"
@@ -151,6 +161,7 @@ id,comodidades,paradas
 116863,,"{""Collado Villalba""}"
 116944,"{Agua,""Asientos reclinables"",TV,""Aire acondicionado""}",
 117110,"{Baño,Calefacción,Wifi,TV}",
+117351,"{Calefacción,""Aire acondicionado"",Comida,""Asientos reclinables"",Wifi,TV}",
 117493,,"{""Jerez de la Frontera""}"
 117658,,"{Algeciras,""San Fernando"",Barcelona,Segovia}"
 117985,,{}
@@ -220,6 +231,7 @@ id,comodidades,paradas
 132498,,
 132781,"{""Aire acondicionado"",Agua,Baño}",
 132796,"{Baño,Calefacción,Wifi}",
+132919,,{}
 132944,,"{""Dos Hermanas""}"
 133029,,{Badalona}
 133054,"{Calefacción,Baño,Wifi,""Aire acondicionado"",Agua,Comida,""Asientos reclinables""}",
@@ -242,6 +254,7 @@ id,comodidades,paradas
 137690,"{TV,""Aire acondicionado"",Wifi,Calefacción,Comida,Agua}",
 138227,{},
 139025,{},
+139401,"{Calefacción,Comida,Baño,Agua,""Aire acondicionado""}",
 139631,"{""Asientos reclinables"",Comida,Agua}",
 139737,,{}
 139755,,"{Puertollano,Sabadell,Oviedo,""Santa Lucía de Tirajana"",Gerona}"
@@ -258,6 +271,7 @@ id,comodidades,paradas
 142419,"{Baño,TV,""Asientos reclinables"",Comida}",
 142438,{},
 142442,"{""Aire acondicionado"",Agua,Baño,TV}",
+142523,{},
 142662,"{""Aire acondicionado"",Calefacción,Baño,Agua,Wifi,""Asientos reclinables"",TV}",
 142853,,{Mijas}
 142908,,{Málaga}
@@ -268,6 +282,7 @@ id,comodidades,paradas
 143924,"{TV,Baño,Wifi,""Asientos reclinables"",Comida,Agua,Calefacción}",
 144534,"{Baño,Comida,Wifi,TV,""Asientos reclinables"",""Aire acondicionado""}",
 144554,"{Baño,Wifi,Calefacción,""Aire acondicionado"",Comida,Agua}",
+144670,"{Agua,TV,Comida}",
 144860,"{""Aire acondicionado"",Calefacción,Agua}",
 145216,,{}
 145896,,{}
@@ -277,6 +292,7 @@ id,comodidades,paradas
 147475,{},
 147571,{},
 148653,,"{Santander,Algeciras,""Torrejón de Ardoz"",Sevilla}"
+148662,"{Wifi,Calefacción,""Aire acondicionado"",Comida}",
 148663,,{}
 148681,"{Agua,Baño,Calefacción,TV}",
 148691,,
@@ -319,6 +335,7 @@ id,comodidades,paradas
 149460,"{""Aire acondicionado"",Calefacción,Baño,TV,Agua,Comida}",
 149465,"{Wifi,""Asientos reclinables"",Baño,TV,Agua}",
 149480,"{Agua,TV,""Asientos reclinables"",Calefacción,Wifi,""Aire acondicionado"",Baño}",
+149486,,"{""Molina de Segura"",Badalona,Gerona,Burgos,""Santiago de Compostela""}"
 149500,"{Comida,Calefacción,Wifi,Baño,""Asientos reclinables"",TV,Agua}",
 149508,,"{Torrelavega,Granada}"
 149533,,"{""San Sebastián"",Arrecife,Gandía}"
@@ -341,10 +358,12 @@ id,comodidades,paradas
 149809,,"{Pontevedra,""Sanlúcar de Barrameda""}"
 149825,,{}
 149868,,"{""Santa Lucía de Tirajana""}"
+149874,,"{Mijas,Murcia,Fuenlabrada,Torrelavega,""Talavera de la Reina""}"
 149942,,"{Rivas-Vaciamadrid,Murcia,""La Línea de la Concepción""}"
 149948,"{Wifi,TV,Baño,""Aire acondicionado"",Calefacción,Comida}",
 149959,"{TV,Wifi,""Asientos reclinables"",Agua}",
 149978,,{Gerona}
 150012,,{}
 150064,,"{Lugo,Sagunto,Murcia}"
+150067,,"{Arrecife,Badalona}"
 150072,,{}

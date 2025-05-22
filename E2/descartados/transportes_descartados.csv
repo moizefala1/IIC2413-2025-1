@@ -591,7 +591,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 84958,miánpaar973@viajes.cl,Albacete,Marbella,36,,,Megabus,2025-10-04,
 84959,,Torrejón de Ardoz,Alcoy,49,1443,102000,EME Bus,2026-02-19,2026-02-20
 84961,srjuardeje698@viajes.cl,Ferrol,Alcobendas,33,,445000,British Airways,,2026-08-19
-84968,,,,,,,,,
 84975,,Toledo,Getafe,30,2309,,CD (República Checa),2026-10-24,2026-10-25
 84987,,Lorca,Motril,31,662,184000,Alsa,2026-09-17,2026-09-17
 85002,ramiro8561965@viajes.cl,Alicante,Zaragoza,,1550,-135000,Aeroméxico,2025-05-15,2025-05-16
@@ -635,6 +634,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 85389,cérade760@viajes.cl,Córdoba,Benidorm,45,3460,99000,Pullman Bus,2025-11-08,2025-11-10
 85390,beatriz5951421@viajes.cl,Benidorm,Zamora,32,2364,179000,BoltBus,2025-11-10,2025-11-11
 85416,Lolatreviño115@viajes.cl,Tarragona,Inca,32,2274,135000,EME Bus,2026-11-20,2026-11-21
+87850,,Segovia,Arrecife,14,1808,79000,VRZ (Croacia),2026-08-12,2026-08-13
 85429,daniel9564115@viajes.cl,Palencia,Tarragona,34,978,111000,Primera Plus,2025-09-29,2025-09-29
 85436,jerónimo5779296@viajes.cl,Pontevedra,Benidorm,43,4147,,Plusmar,2025-07-21,2025-07-23
 85437,,Coslada,Molina de Segura,29,858,98000,ZS (Eslovenia),2026-02-18,2026-02-18
@@ -847,7 +847,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 87800,sancho5720769@viajes.cl,Jerez de la Frontera,,,1422,140000,DSB (Dinamarca),2025-09-13,2025-09-13
 87831,paqude911@viajes.cl,Sabadell,Marbella,40,1312,100000,Monbus,2025-11-08,2025-11-08
 87841,,Dos Hermanas,El Puerto de Santa María,40,1831,171000,Buses Nilahue,,2025-03-02
-87850,,Segovia,Arrecife,14,1808,79000,VRZ (Croacia),2026-08-12,2026-08-13
 87851,,Arrecife,Elche,86,3827,370000,Eurostar,2026-08-13,2026-08-15
 87859,,Alcobendas,Albacete,43,,85000,Via Bariloche,2026-08-08,2026-08-10
 87865,móamna527@viajes.cl,León,Málaga,,,100000,Monbus,2026-03-21,2026-03-21
@@ -1063,6 +1062,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 90208,Sra.carrera208@viajes.cl,Cerdañola del Vallés,Torrevieja,86,2038,73000,WestJet,2025-01-29,2025-01-30
 90217,sr.4997964@viajes.cl,Torrejón de Ardoz,Alcalá de Henares,,949,127000,NSB (Noruega),2025-01-04,2025-01-04
 90258,claudia8772514@viajes.cl,Pamplona,Baracaldo,44,2258,125000,ETN Turistar,,2026-05-01
+91203,,Vigo,,39,2439,103000,,2025-04-08,2025-04-09
 90261,teresa812759@viajes.cl,Ciudad Real,,49,1536,-165000,,2026-05-02,2026-05-03
 90262,baabpa755@viajes.cl,Avilés,,31,4229,,Primera Plus,2026-05-03,2026-05-05
 90283,,Cerdañola del Vallés,Ferrol,14,3724,371000,ZFBH (Bosnia y Herzegovina),2025-06-14,2025-06-16
@@ -1134,7 +1134,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 91165,elchpa632@viajes.cl,San Fernando,Molina de Segura,42,3675,,ADO,2025-04-23,2025-04-25
 91166,,Molina de Segura,Ciudad Real,41,,166000,Andesmar,2025-04-25,2025-04-26
 91169,Andrésvalencia995@viajes.cl,Santander,Valdemoro,47,1468,94000,JetSur,2026-07-07,2026-07-08
-91203,,Vigo,,39,2439,103000,,2025-04-08,2025-04-09
 91210,Rubénmadera789@viajes.cl,Santa Cruz de Tenerife,Zamora,60,,,Lufthansa,2025-05-04,2025-05-06
 91212,rocio4724470@viajes.cl,Zamora,San Sebastían de los Reyes,65,2515,125000,Spirit Airlines,,2025-05-08
 91216,caheab337@viajes.cl,Granollers,Málaga,89,2597,133000,ZFBH (Bosnia y Herzegovina),2025-12-25,2025-12-26
@@ -1415,6 +1414,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 94036,dolores8554213@viajes.cl,Rubí,Torrevieja,42,741,,Socibus,2026-01-29,2026-01-29
 94037,srbegrqu492@viajes.cl,Torrevieja,Zaragoza,35,562,111000,Socibus,2026-01-29,2026-01-29
 94042,Sr.armijo432@viajes.cl,Gerona,Zamora,73,1576,130000,ŽSSK (Eslovaquia),2025-12-13,2025-12-14
+99070,aresqu861@viajes.cl,Guadalajara,Segovia,11,3761,239000,,2026-11-22,2026-11-24
 94072,srsazamo562@viajes.cl,Cáceres,Santa Coloma de Gramanet,8,2309,,NS International,2025-01-07,2025-01-08
 94101,elvame829@viajes.cl,San Sebastían de los Reyes,Santa Coloma de Gramanet,55,2409,267000,Frontier Airlines,2026-09-17,2026-09-18
 94114,Patriciocerda695@viajes.cl,Molina de Segura,San Fernando,7,2959,167000,LATAM Airlines,,2026-10-26
@@ -1486,6 +1486,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 94861,sta.8937326@viajes.cl,Linares,Valladolid,17,4172,158000,,2026-03-24,2026-03-26
 94862,Franciscocorrales261@viajes.cl,Valladolid,Ciudad Real,31,1105,-150000,Italo,2026-03-26,2026-03-26
 94869,Silviabecerra810@viajes.cl,Ciudad Real,El Prat de LLobregat,5,1527,-114000,VRZ (Croacia),2026-04-01,2026-04-02
+108861,,Lugo,Cádiz,37,3923,65000,Greyhound,2026-07-24,2026-07-26
 94896,gregorio4266951@viajes.cl,Hospitalet de LLobregat,Coslada,49,1694,,Pullman Bus,2025-01-24,2025-01-25
 94898,Sr.calvillo603@viajes.cl,Valdemoro,Las Palmas de Gran Canaria,48,3493,92000,Monbus,2026-03-15,2026-03-17
 94899,jomaalma170@viajes.cl,Logroño,Las Palmas de Gran Canaria,46,2375,,ADO,2025-07-18,2025-07-19
@@ -1626,6 +1627,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 96702,,Alcalá de Guadaira,Alcoy,86,2688,-269000,Emirates,,2025-02-07
 96659,alcegá275@viajes.cl,Elche,Gijón,56,1676,192000,AVE,,2025-04-20
 96666,juan8830456@viajes.cl,Oviedo,Cartagena,46,2349,169000,Pullman Bus,2026-07-07,2026-07-08
+121639,sryocuca420@viajes.cl,,Benidorm,30,829,146000,FlixBus,2025-10-24,2025-10-24
 96668,patricia1999310@viajes.cl,Cartagena,Badalona,46,3714,,Crucero del Norte,2026-07-09,2026-07-11
 96677,Timoteodomínguez465@viajes.cl,Santa Lucía de Tirajana,Sanlúcar de Barrameda,20,3323,-275000,Lufthansa,2026-01-18,2026-01-20
 96683,joemvaar283@viajes.cl,Gandía,Vigo,34,2236,-95000,EME Bus,2025-03-21,2025-03-22
@@ -1840,7 +1842,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 99056,jucarahe187@viajes.cl,Badalona,La Coruña,47,3427,114000,Estrella Roja,2025-07-31,2025-08-02
 99063,beatriz5107351@viajes.cl,León,Valencia,87,,298000,Thalys,2025-08-26,2025-08-28
 99064,jolualca163@viajes.cl,,El Prat de LLobregat,37,2201,213000,ZFBH (Bosnia y Herzegovina),,2025-08-29
-99070,aresqu861@viajes.cl,Guadalajara,Segovia,11,3761,239000,,2026-11-22,2026-11-24
 99078,Sra.toro255@viajes.cl,Parla,Chiclana de la Frontera,37,174,,Alsa,2026-04-14,2026-04-14
 99091,ernesto3187128@viajes.cl,Parla,Leganés,74,1079,93000,Air France,2025-01-14,2025-01-14
 99100,leticia4877418@viajes.cl,Leganés,Santa Cruz de Tenerife,45,564,135000,Primera Plus,2026-01-27,2026-01-27
@@ -2628,7 +2629,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 108846,Sr.laureano675@viajes.cl,Alicante,Coslada,70,4273,279000,Trenitalia,2025-03-23,2025-03-25
 108853,lola905232@viajes.cl,Badajoz,San Sebastían de los Reyes,42,1722,,El Rápido Internacional,2026-11-26,2026-11-27
 108854,Hugoleyva186@viajes.cl,San Sebastían de los Reyes,Dos Hermanas,35,,151000,Turbus,,2026-11-27
-108861,,Lugo,Cádiz,37,3923,65000,Greyhound,2026-07-24,2026-07-26
 108862,stjopoal797@viajes.cl,Cádiz,Benalmádena,30,868,,Buses Romani,2026-07-26,2026-07-26
 108876,Déboradelacrúz982@viajes.cl,Valencia,Albacete,24,3002,319000,NS International,2025-06-03,2025-06-05
 108904,,Benidorm,Alcorcón,30,1533,131000,Greyhound,2025-11-24,2025-11-25
@@ -2987,7 +2987,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 113175,sta.5706868@viajes.cl,Vigo,Puertollano,,3759,188000,AVE,2026-06-12,2026-06-14
 113185,lumialca380@viajes.cl,Puertollano,Gandía,81,,98000,VR (Finlandia),2025-07-18,2025-07-19
 113209,,Majadahonda,Parla,4,1710,118000,Copa Airlines,2025-08-01,2025-08-02
-116457,reina2787864@viajes.cl,Torrevieja,Parla,83,3307,230000,,2025-05-15,2025-05-17
 113212,Raquelholguín560@viajes.cl,Alicante,Sabadell,91,1710,114000,CFR (Rumania),2025-12-22,2025-12-23
 113246,lamare305@viajes.cl,Tarrasa,Molina de Segura,32,4117,178000,Buses Ahumada,2026-01-11,2026-01-13
 113247,,Molina de Segura,San Fernando,35,2963,57000,Damas,2026-01-13,2026-01-15
@@ -3129,8 +3128,8 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 114842,stgumabo565@viajes.cl,Mollet del Vallés,El Puerto de Santa María,93,2086,134000,SNCB (Bélgica),,2026-09-16
 114856,,Linares,Barcelona,19,369,88000,Air New Zealand,2026-02-22,2026-02-22
 114861,Estelavelázquez978@viajes.cl,Alcalá de Henares,Dos Hermanas,53,2963,-146000,,2026-02-25,2026-02-27
-121639,sryocuca420@viajes.cl,,Benidorm,30,829,146000,FlixBus,2025-10-24,2025-10-24
 114882,srjofrmé741@viajes.cl,Segovia,Mollet del Vallés,99,4246,361000,NSB (Noruega),2025-08-18,2025-08-20
+124042,pabear838@viajes.cl,Reus,Pamplona,44,1926,103000,Air France,2026-02-12,2026-02-13
 114888,rafael1960467@viajes.cl,Mollet del Vallés,Cáceres,85,3621,,MÁV (Hungría),2025-08-25,2025-08-27
 114913,óscar8305124@viajes.cl,Mijas,Mérida,94,4088,418000,ZFBH (Bosnia y Herzegovina),2026-05-10,2026-05-12
 114917,Marcosperalta478@viajes.cl,Santiago de Compostela,Dos Hermanas,35,,91000,Monbus,2025-03-05,2025-03-05
@@ -3272,6 +3271,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 116441,Alejandroserrato929@viajes.cl,Cerdañola del Vallés,Lorca,36,2512,-60000,El Rápido Internacional,2025-07-27,2025-07-28
 116443,anmacade780@viajes.cl,Sagunto,Alcalá de Guadaira,51,4247,,Qantas,,2026-08-11
 116456,Mariluvaldez369@viajes.cl,Mijas,Calahorra,47,3685,184000,Megabus,,2025-09-01
+116457,reina2787864@viajes.cl,Torrevieja,Parla,83,3307,230000,,2025-05-15,2025-05-17
 116466,rocio5625820@viajes.cl,Castellón de la Plana,El Ejido,,3516,85000,Pullman Bus,2026-11-23,2026-11-25
 116467,Horaciotoledo760@viajes.cl,El Ejido,Mollet del Vallés,31,1214,55000,Via Bariloche,2026-11-25,2026-11-25
 116479,,Paterna,La Línea de la Concepción,2,4221,325000,JetBlue,2025-06-24,2025-06-26
@@ -3484,7 +3484,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 118757,elsa5735817@viajes.cl,Calahorra,Orense,92,1557,151000,HŽ (Croacia),2025-09-01,2025-09-02
 118766,somebá712@viajes.cl,Oviedo,Fuengirola,49,2084,143000,BoltBus,2025-09-24,2025-09-25
 118804,iscamo647@viajes.cl,Huelva,Alcorcón,66,2383,179000,AVE,,2026-09-20
-124042,pabear838@viajes.cl,Reus,Pamplona,44,1926,103000,Air France,2026-02-12,2026-02-13
+124043,,Lorca,Cáceres,47,934,131000,Flecha Bus,2025-08-13,2025-08-13
 118815,,Lorca,Hospitalet de LLobregat,68,4275,-307000,SNCB (Bélgica),,2025-07-09
 118884,Rafaelmontoya852@viajes.cl,Gecho,,30,3124,78000,Avanza,2026-05-30,2026-06-01
 118886,stjetilo156@viajes.cl,Toledo,Inca,34,3298,-206000,ZS (Eslovenia),2026-10-30,
@@ -3914,7 +3914,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 124013,,Mérida,Cartagena,48,2398,83000,,2026-04-28,2026-04-29
 124019,,Cartagena,Valdemoro,,1280,190000,Estrella Roja,2026-05-04,
 124040,clara5812524@viajes.cl,Leganés,Viladecans,,3528,100000,ŽSSK (Eslovaquia),2026-03-20,2026-03-22
-124043,,Lorca,Cáceres,47,934,131000,Flecha Bus,2025-08-13,2025-08-13
 124066,,Linares,Logroño,32,3018,82000,Alsa,2025-07-05,2025-07-07
 124068,stfloldí535@viajes.cl,Logroño,Granada,34,4010,138000,Crucero del Norte,2025-07-08,2025-07-10
 124070,magdalena8938940@viajes.cl,Granollers,,83,3379,198000,PKP (Polonia),2025-09-06,2025-09-08
@@ -4270,7 +4269,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 128229,Santiagocornejo308@viajes.cl,Málaga,Irún,35,2288,179000,FlixBus,2025-02-14,2025-02-15
 128236,Ireneybarra953@viajes.cl,Barcelona,Benalmádena,38,1596,78000,Futura,2026-12-01,2026-12-02
 128247,ósnapa647@viajes.cl,Palma de Mallorca,San Sebastián,79,3583,,Qatar Airways,2026-02-22,2026-02-24
-131594,,El Ejido,Parla,13,569,180000,Nederlandse Sp,2026-03-06,2026-03-06
 128255,Esperanzazapata304@viajes.cl,Talavera de la Reina,San Sebastían de los Reyes,6,1462,199000,KLM,2025-12-20,2025-12-21
 128278,,Murcia,San Fernando,67,855,38000,Copa Airlines,2026-10-31,2026-10-31
 128297,alfonso9925642@viajes.cl,Pamplona,Palencia,39,197,23000,BDZ (Bulgaria),,2025-07-02
@@ -4342,8 +4340,8 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 129262,,Ciudad Real,Santiago de Compostela,89,4211,289000,TGV (SNCF),2026-09-15,2026-09-17
 129263,,Santiago de Compostela,Salamanca,84,2535,130000,Amtrak,2026-09-17,2026-09-18
 129271,,Pamplona,Castellón de la Plana,10,2114,198000,PKP (Polonia),2025-02-09,2025-02-10
-136774,,Telde,Alicante,37,1585,171000,Crucero del Norte,2025-11-23,2025-11-24
 129274,federico3355300@viajes.cl,Molina de Segura,Cerdañola del Vallés,73,1290,38000,CD (República Checa),2025-02-13,2025-02-13
+138399,sta.3506129@viajes.cl,Burgos,Sevilla,58,3467,153000,KLM,2025-12-17,2025-12-19
 129283,graciela4241218@viajes.cl,Rivas-Vaciamadrid,Oviedo,21,3181,361000,Vueling,,2026-10-20
 129296,vireor184@viajes.cl,Santander,Huelva,87,2897,190000,AVE,2026-01-23,2026-01-25
 129306,Isabelvilla789@viajes.cl,Torrevieja,Benidorm,41,1180,159000,Flecha Bus,2025-05-24,2025-05-24
@@ -4413,7 +4411,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 129959,srmaeltrca573@viajes.cl,Huelva,Valencia,53,2573,172000,LATAM Airlines,2025-08-15,2025-08-16
 129969,maricarmen6071837@viajes.cl,Orihuela,,,1649,74000,MÁV (Hungría),,2025-09-01
 129975,Sta.garica988@viajes.cl,Manresa,Coslada,72,3749,426000,Deutsche Bahn (DB),2026-09-15,2026-09-17
-145972,victoria271239@viajes.cl,Sevilla,Bilbao,49,1798,52000,Monbus,,
 130011,maría6988790@viajes.cl,Benidorm,La Línea de la Concepción,33,3835,171000,Via Bariloche,2026-01-15,2026-01-17
 130042,horacio9560543@viajes.cl,Collado Villalba,El Prat de LLobregat,73,1711,131000,British Airways,2025-04-07,2025-04-08
 130044,gufeme353@viajes.cl,Manresa,Córdoba,59,2971,381000,Emirates,2025-12-22,2025-12-24
@@ -4556,6 +4553,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 131563,clbofi501@viajes.cl,Jaén,Talavera de la Reina,23,449,140000,VR (Finlandia),2025-12-01,2025-12-01
 131566,sra.7009428@viajes.cl,Parla,Inca,76,2996,262000,American Airlines,2025-12-07,2025-12-09
 131592,josé5816190@viajes.cl,Vigo,El Ejido,56,3804,367000,VRZ (Croacia),,2026-03-05
+131594,,El Ejido,Parla,13,569,180000,Nederlandse Sp,2026-03-06,2026-03-06
 131595,junolu567@viajes.cl,,Cerdañola del Vallés,42,730,76000,Amtrak,2026-03-06,2026-03-06
 131601,estela8925147@viajes.cl,Dos Hermanas,San Sebastián,46,2851,,Buses Romani,2026-01-11,2026-01-12
 131606,jojapi659@viajes.cl,,Alcalá de Henares,50,4183,,Condor Bus,2026-01-16,2026-01-18
@@ -4837,9 +4835,9 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 135217,claudio5915903@viajes.cl,Córdoba,Almería,37,2224,186000,Megabus,,2025-06-16
 135245,joemvaar283@viajes.cl,Logroño,Algeciras,83,3216,228000,Italo,2025-03-16,2025-03-18
 135274,Estelavelázquez978@viajes.cl,Torrelavega,Elche,49,3865,452000,Lufthansa,2026-02-19,2026-02-21
-145974,,Castellón de la Plana,Zamora,44,1995,75000,Flecha Bus,2025-06-19,
 135281,Sra.madrid758@viajes.cl,El Puerto de Santa María,,40,2674,282000,Nederlandse Sp,2026-07-04,
 135291,gemeco374@viajes.cl,San Fernando,Fuenlabrada,43,755,152000,,2026-01-22,
+139251,losema775@viajes.cl,Guadalajara,Albacete,17,2352,,,2025-03-11,2025-03-12
 135315,Carlaserrato369@viajes.cl,Cartagena,Gijón,61,939,63000,ZSSK (Eslovaquia),,2025-02-11
 135316,,Benidorm,Sagunto,48,2138,,BoltBus,2025-09-21,2025-09-22
 135324,srgasool987@viajes.cl,Sagunto,Murcia,49,1878,-88000,ETN Turistar,2025-09-29,2025-09-30
@@ -4981,6 +4979,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 136733,beatriz1096258@viajes.cl,Cornellá de Llobregat,Palencia,38,,191000,,2026-04-19,2026-04-19
 136755,Sra.esquibel568@viajes.cl,Estepona,Irún,33,576,61000,Avanza,2025-10-30,
 136773,stembope221@viajes.cl,San Sebastián,Telde,44,1241,112000,FlixBus,2025-11-23,2025-11-23
+136774,,Telde,Alicante,37,1585,171000,Crucero del Norte,2025-11-23,2025-11-24
 136776,Guadalupeguevara832@viajes.cl,San Sebastián,Rivas-Vaciamadrid,44,3111,69000,Flecha Bus,2025-02-12,2025-02-14
 136785,Lorenagranado808@viajes.cl,Guadalajara,Bilbao,92,1963,73000,ZS (Eslovenia),2025-05-12,2025-05-13
 136786,adán6039173@viajes.cl,Leganés,Valladolid,99,432,,Ethiopian Airlines,2025-12-18,2025-12-18
@@ -5122,10 +5121,8 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 138284,rosario3943568@viajes.cl,Paterna,Bilbao,34,3792,116000,Chevallier,2025-08-24,2025-08-26
 138288,elsoba726@viajes.cl,Lorca,Mérida,21,704,65000,American Airlines,2025-08-16,2025-08-16
 138304,ignacio1104447@viajes.cl,La Línea de la Concepción,Cerdañola del Vallés,39,1970,184000,Futura,2026-07-30,2026-07-31
-147363,,Majadahonda,Majadahonda,66,2180,242000,Etihad Airways,2026-11-21,2027-02-19
 138335,srbegrqu492@viajes.cl,Linares,Pontevedra,99,4041,453000,Southwest Airlines,2025-07-22,2025-07-24
 138351,siecbe470@viajes.cl,Motril,Estepona,35,3353,165000,Alsa,2026-04-17,2026-04-19
-138399,sta.3506129@viajes.cl,Burgos,Sevilla,58,3467,153000,KLM,2025-12-17,2025-12-19
 138400,francisca8404259@viajes.cl,Sevilla,Fuenlabrada,42,1065,126000,Air Canada,2025-12-19,2025-12-19
 138408,rabeoj904@viajes.cl,Santa Coloma de Gramanet,Fuengirola,7,1277,129000,Turkish Airlines,2025-04-07,2025-04-07
 138412,vivava349@viajes.cl,Cornellá de Llobregat,Getafe,43,283,31000,Omnibus de México,2025-01-31,2025-01-31
@@ -5198,7 +5195,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 139215,Anaadorno127@viajes.cl,Albacete,Castellón de la Plana,14,1041,-77000,Eurostar,2026-09-07,2026-09-07
 139219,pecame125@viajes.cl,,,38,1983,,ETN Turistar,2025-01-25,
 139233,Sr.guerra570@viajes.cl,Cáceres,Elda,35,1925,190000,Etihad Airways,2025-10-04,2025-10-05
-139251,losema775@viajes.cl,Guadalajara,Albacete,17,2352,,,2025-03-11,2025-03-12
 139263,julio6915188@viajes.cl,Vigo,Palma de Mallorca,50,4263,254000,Deutsche Bahn (DB),2025-03-26,2025-03-28
 139284,daabca985@viajes.cl,Puertollano,Baracaldo,30,2123,132000,Buses Ahumada,,2025-07-09
 139295,alicia8165477@viajes.cl,Calahorra,Madrid,49,3442,209000,KLM,2025-12-24,2025-12-26
@@ -5849,6 +5845,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 145092,junolu567@viajes.cl,El Puerto de Santa María,Madrid,,4067,118000,Monbus,2025-10-01,
 145093,sancho5720769@viajes.cl,Sagunto,Almería,49,1596,151000,Primera Plus,2025-01-20,
 145095,patricia8210365@viajes.cl,Ciudad Real,,44,428,79000,Socibus,2025-12-04,
+145262,saviag794@viajes.cl,San Fernando,Sabadell,46,2279,-82000,,2026-05-30,
 145098,Lorenagranado808@viajes.cl,,La Coruña,42,4136,75000,EME Bus,2026-01-12,
 145099,esmoma578@viajes.cl,Leganés,Cádiz,34,,126000,Primera Plus,2026-10-16,
 145101,redeto680@viajes.cl,Baracaldo,Ponferrada,46,4140,-128000,ETN Turistar,2025-03-12,
@@ -5923,7 +5920,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 145256,maría165242@viajes.cl,Baracaldo,Pozuelo de Alarcón,48,2059,,BoltBus,2025-09-11,
 145258,gloria9014722@viajes.cl,Gerona,Castellón de la Plana,,2433,107000,Futura,2025-04-12,
 145260,Tomásbarrios980@viajes.cl,Alcorcón,Santiago de Compostela,45,1878,,Plusmar,2025-12-02,
-145262,saviag794@viajes.cl,San Fernando,Sabadell,46,2279,-82000,,2026-05-30,
 145263,Miguelfonseca151@viajes.cl,Marbella,Barcelona,33,3733,-182000,Andesmar,,
 145264,Sra.cepeda378@viajes.cl,Collado Villalba,Tarrasa,34,343,60000,Socibus,2026-04-30,
 145266,Sta.garica988@viajes.cl,Alcorcón,Alcalá de Guadaira,32,3795,81000,Avanza,2025-01-16,
@@ -6210,6 +6206,8 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 145967,jacobo2653281@viajes.cl,Almería,El Ejido,36,597,54000,Crucero del Norte,2026-04-20,
 145969,guroba893@viajes.cl,San Sebastían de los Reyes,Cornellá de Llobregat,31,159,16000,Monbus,2026-06-12,
 145971,virginia9404929@viajes.cl,Benalmádena,Algeciras,42,3874,,Chevallier,,
+145972,victoria271239@viajes.cl,Sevilla,Bilbao,49,1798,52000,Monbus,,
+145974,,Castellón de la Plana,Zamora,44,1995,75000,Flecha Bus,2025-06-19,
 145975,Franciscamontoya218@viajes.cl,San Fernando,Bilbao,44,1427,110000,BoltBus,2026-07-11,
 145976,stfemihe492@viajes.cl,Dos Hermanas,León,,501,89000,Avanza,2026-11-20,
 145977,marta6290290@viajes.cl,Leganés,Santa Lucía de Tirajana,40,4230,99000,ETN Turistar,,
@@ -6644,6 +6642,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 146992,parelo438@viajes.cl,Lérida,Arrecife,24,3837,196000,Wizz Air,2026-05-03,2026-10-09
 146994,iscamo240@viajes.cl,Cádiz,Gandía,7,1948,119000,LATAM Airlines,,2026-11-06
 146995,Sra.gómez556@viajes.cl,Segovia,Viladecans,25,2025,81000,Vueling,2025-05-17,2025-08-09
+148037,,San Sebastían de los Reyes,Rubí,73,2700,291000,,2025-05-06,2025-08-26
 147002,sta.7263592@viajes.cl,Alcoy,Almería,34,396,29000,American Airlines,2025-02-22,2025-03-10
 147005,srribaro313@viajes.cl,Santa Lucía de Tirajana,Orihuela,61,2382,,Aeroméxico,2026-03-20,2026-06-27
 147006,,Vigo,Pontevedra,59,1321,114000,Air Canada,,2027-01-04
@@ -6713,7 +6712,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 147168,,Manresa,Arrecife,5,444,157000,Singapore Airlines,2025-10-10,2025-10-28
 147171,,Linares,Alcalá de Guadaira,15,,278000,Southwest Airlines,2025-03-09,2025-07-16
 147172,,Tarrasa,,55,3691,283000,Qantas,2025-12-31,
-147542,lirolo275@viajes.cl,Cuenta,Guadalajara,93,3103,145000,Avianca,2025-09-24,2026-01-31
 147174,ravime379@viajes.cl,Móstoles,Alcorcón,48,,122000,JetBlue,2026-11-23,2026-12-23
 147177,srraoclu199@viajes.cl,Inca,Vigo,2,1013,46000,Japan Airlines,2025-01-09,2025-02-20
 147178,crorar804@viajes.cl,Ávila,Córdoba,32,2648,-226000,WestJet,2026-07-23,2026-11-10
@@ -6786,7 +6784,9 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 147357,japaca917@viajes.cl,Calahorra,Irún,21,4054,,JetBlue,2025-06-26,2025-12-11
 147359,clcamu689@viajes.cl,Jerez de la Frontera,Jaén,89,2881,-218000,Turkish Airlines,2025-09-14,2026-01-12
 147362,jomaesca675@viajes.cl,Hospitalet de LLobregat,San Fernando,8,1290,-132000,United Airlines,2026-03-08,2026-04-30
+147363,,Majadahonda,Majadahonda,66,2180,242000,Etihad Airways,2026-11-21,2027-02-19
 147365,srpamofl591@viajes.cl,Jaén,Granollers,71,1827,177000,Alaska Airlines,2026-07-10,2026-09-24
+148042,,Rubí,Torrejón de Ardoz,16,637,72000,Lufthansa,2025-10-27,2025-11-22
 147367,Maricarmengaribay161@viajes.cl,Palma de Mallorca,Chiclana de la Frontera,49,,104000,WestJet,2025-11-06,2026-02-26
 147372,stcrsova938@viajes.cl,Alcobendas,Castellón de la Plana,33,3038,287000,Air Canada,,2025-06-18
 147376,,San Sebastián,Badalona,15,,194000,Spirit Airlines,2026-10-31,2027-01-18
@@ -6858,6 +6858,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 147533,Anaadorno127@viajes.cl,Málaga,Lugo,52,2483,-216000,Lufthansa,2025-11-02,2026-02-13
 147535,jarodo529@viajes.cl,Vigo,Leganés,77,3483,-236000,Wizz Air,2026-02-14,2026-07-09
 147539,Sta.bañuelos977@viajes.cl,Parla,Sagunto,74,4250,165000,Etihad Airways,2025-04-18,2025-10-12
+147542,lirolo275@viajes.cl,Cuenta,Guadalajara,93,3103,145000,Avianca,2025-09-24,2026-01-31
 147547,Sr.ochoa742@viajes.cl,Talavera de la Reina,Segovia,46,573,15000,Wizz Air,,2026-03-27
 147548,lourdes4205209@viajes.cl,Ciudad Real,León,84,4010,-216000,All Nippon Airways (ANA),2025-12-23,2026-06-08
 147550,,Burgos,Ciudad Real,75,1979,180000,Frontier Airlines,,2025-10-03
@@ -6998,7 +6999,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 147870,miánmega822@viajes.cl,Palma de Mallorca,Valdemoro,15,2741,-158000,Ryanair,2025-09-25,2026-01-17
 147871,,Roquetas de Mar,Paterna,68,3157,174000,Iberia,2026-02-06,
 147880,srsolues399@viajes.cl,Baracaldo,Cádiz,13,,188000,Iberia,2026-05-20,2026-09-19
-148037,,San Sebastían de los Reyes,Rubí,73,2700,291000,,2025-05-06,2025-08-26
+148864,,Albacete,Barcelona,2,3287,,ŽSSK (Eslovaquia),2026-09-23,2027-02-06
 147885,joaquín6062886@viajes.cl,Torrelavega,Torremolinos,17,1882,93000,Spirit Airlines,2025-08-20,2025-11-06
 147886,Sanchobonilla548@viajes.cl,,Sagunto,66,1339,94000,LATAM Airlines,2025-09-06,2025-10-31
 147887,Jacobotrejo682@viajes.cl,Barcelona,León,75,3807,,United Airlines,2025-01-15,2025-06-22
@@ -7070,7 +7071,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 148032,clara2103611@viajes.cl,Rivas-Vaciamadrid,Baracaldo,63,1115,-121000,All Nippon Airways (ANA),2025-05-24,2025-07-09
 148034,rocare556@viajes.cl,Córdoba,Mijas,79,3574,148000,Avianca,2025-05-25,2025-10-20
 148035,Maríavergara975@viajes.cl,Arrecife,Sanlúcar de Barrameda,13,290,97000,Air France,2026-02-03,2026-02-15
-148042,,Rubí,Torrejón de Ardoz,16,637,72000,Lufthansa,2025-10-27,2025-11-22
 148043,Lourdesbermúdez148@viajes.cl,Telde,Santiago de Compostela,48,4253,177000,Ethiopian Airlines,2026-05-05,2026-10-29
 148046,somebá712@viajes.cl,Salamanca,Fuengirola,88,1736,188000,Air Canada,2026-10-31,2027-01-11
 148049,sta.8892184@viajes.cl,Ferrol,Cerdañola del Vallés,98,2433,,Avianca,2026-05-18,2026-08-27
@@ -7428,7 +7428,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 148860,macrvaga962@viajes.cl,Bilbao,Puertollano,55,2877,-290000,Trenitalia,2026-02-11,2026-06-10
 148861,,Mérida,Elche,36,3160,178000,BDZ (Bulgaria),2025-05-04,2025-09-12
 148863,jaespi319@viajes.cl,Torrejón de Ardoz,Segovia,45,2252,160000,NS International,2026-09-02,2026-12-04
-148864,,Albacete,Barcelona,2,3287,,ŽSSK (Eslovaquia),2026-09-23,2027-02-06
 148865,sr.3383439@viajes.cl,Hospitalet de LLobregat,Burgos,26,,211000,ZSSK (Eslovaquia),2026-07-26,2026-12-05
 148868,gopemo896@viajes.cl,Rubí,Ávila,79,1638,,VR (Finlandia),,2025-09-08
 148871,rosario3943568@viajes.cl,Coslada,Sanlúcar de Barrameda,61,4128,,VRZ (Croacia),2025-03-04,2025-08-23
@@ -7495,7 +7494,6 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 149013,rosario6783813@viajes.cl,Jerez de la Frontera,Lorca,93,382,126000,CFR (Rumania),2025-05-21,2025-06-05
 149014,amalia1638984@viajes.cl,Calahorra,Mijas,92,2382,,VRZ (Croacia),,2027-01-19
 149021,Pedroolivárez339@viajes.cl,Castellón de la Plana,Torremolinos,92,2752,223000,DSB (Dinamarca),,2027-02-07
-149184,,Cornellá de Llobregat,Valencia,29,4143,265000,AVE,2025-05-18,2025-11-06
 149025,joemvaar283@viajes.cl,Talavera de la Reina,Palma de Mallorca,28,4239,252000,SBB (Suiza),2025-09-27,2026-03-22
 149028,ángama975@viajes.cl,Getafe,Pozuelo de Alarcón,58,3607,161000,Italo,2026-10-30,2027-03-29
 149029,Jesúsgalindo553@viajes.cl,Sanlúcar de Barrameda,Córdoba,28,3812,452000,SJ (Suecia),2025-08-01,2026-01-06
@@ -7568,6 +7566,7 @@ id,correo_empleado,lugar_origen,lugar_llegada,capacidad,tiempo_estimado,precio_a
 149174,alapde215@viajes.cl,Gandía,Torrevieja,87,603,105000,ZS (Eslovenia),2025-10-04,2025-10-29
 149175,,Cuenta,Castellón de la Plana,26,2055,128000,MÁV (Hungría),,2026-03-11
 149180,rodrigo6764850@viajes.cl,Mollet del Vallés,Pontevedra,10,1923,151000,CP (Portugal),2025-04-30,2025-07-19
+149184,,Cornellá de Llobregat,Valencia,29,4143,265000,AVE,2025-05-18,2025-11-06
 149185,joemvaar283@viajes.cl,Gerona,Huelva,51,3205,294000,Renfe,2026-03-24,2026-08-04
 149187,stnoesab339@viajes.cl,Linares,Roquetas de Mar,88,564,65000,PKP (Polonia),2025-11-05,2025-11-28
 149188,Santiagolomeli422@viajes.cl,Valdemoro,Molina de Segura,9,2037,175000,VR (Finlandia),2025-07-02,2025-09-24

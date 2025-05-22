@@ -75,6 +75,12 @@ CREATE TEMP TABLE temp_participantes (
     edad INTEGER
 );
 
+CREATE TEMP TABLE temp_habitaciones (
+    hotel_id INTEGER,
+    numero_habitacion VARCHAR(10),
+    tipo VARCHAR(50)
+);
+
 ---DESCARTADOS-----
 CREATE TEMP TABLE personas_descartados (
     nombre VARCHAR(50),
@@ -173,7 +179,7 @@ CREATE TEMP TABLE panoramas_descartados (
     precio_persona INTEGER,
     capacidad INTEGER,
     restricciones TEXT[],
-    fecha_panorama TIMESTAMP
+    fecha_panorama DATE
 );
 
 CREATE TEMP TABLE participantes_descartados (
@@ -182,11 +188,44 @@ CREATE TEMP TABLE participantes_descartados (
     edad INTEGER
 );
 
+CREATE TEMP TABLE hospedajes_descartados (
+    id INTEGER,
+    nombre VARCHAR(100),
+    ubicacion TEXT,
+    precio_noche INTEGER,
+    estrellas INTEGER,
+    comodidades TEXT[],
+    fecha_checkin DATE,
+    fecha_checkout DATE 
+
+);
+
+CREATE TEMP TABLE airbnb_descartados (
+    id INTEGER,
+    nombre_anfitrion VARCHAR(100),
+    contacto_anfitrion VARCHAR(100),
+    descripcion TEXT,
+    piezas INTEGER,
+    camas INTEGER,
+    banos INTEGER
+);
+
+CREATE TEMP TABLE hoteles_descartados (
+    id INTEGER,
+    politicas TEXT[]
+);
+
+CREATE TEMP TABLE habitaciones_descartados (
+    hotel_id INTEGER,
+    numero_habitacion VARCHAR(10),
+    tipo VARCHAR(50)
+);
+
 \copy temp_personas FROM '../csv/personas.csv' DELIMITER ',' CSV HEADER;
 \copy temp_reservas_agendas FROM '../csv/agenda_reserva.csv' DELIMITER ',' CSV HEADER;
 \copy temp_seguros_reviews FROM '../csv/review_seguro.csv' DELIMITER ',' CSV HEADER;
 \copy temp_participantes FROM '../csv/participantes.csv' DELIMITER ',' CSV HEADER; 
-
+\copy temp_habitaciones FROM '../csv/habitaciones.csv' DELIMITER ',' CSV HEADER;
 ------------------------------
 
 DO $$
@@ -388,7 +427,8 @@ DECLARE
   tupla temp_seguros_reviews%ROWTYPE;
 BEGIN
   FOR tupla IN
-    SELECT * FROM temp_seguros_reviews WHERE tipo_seguro IS NULL AND valor_seguro IS NULL AND empresa_seguro IS NULL AND clausula IS NULL LOOP
+    SELECT * FROM temp_seguros_reviews WHERE tipo_seguro IS NULL AND valor_seguro IS NULL AND empresa_seguro IS NULL 
+    AND clausula IS NULL LOOP
     BEGIN
       INSERT INTO Review(correo_usuario, reserva_id, estrellas, descripcion)
       VALUES(
@@ -419,8 +459,10 @@ DECLARE
   tupla temp_reservas_agendas%ROWTYPE;
 BEGIN
   FOR tupla IN
-    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Reserva) AND ubicacion IS NULL AND precio_noche IS NULL AND fecha_checkin IS NULL
-    AND nombre_panorama IS NULL AND precio_persona IS NULL AND fecha_panorama IS NULL
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Reserva) AND ubicacion IS NULL AND precio_noche IS NULL 
+    AND fecha_checkin IS NULL AND nombre_panorama IS NULL AND precio_persona IS NULL AND fecha_panorama IS NULL 
+    AND nombre_hospedaje IS NULL AND descripcion_airbnb IS NULL AND duracion IS NULL AND (restricciones IS NULL OR restricciones = '{}')
+    AND estrellas IS NULL AND fecha_checkout IS NULL
     LOOP
     BEGIN
     INSERT INTO Transporte(id, correo_empleado, lugar_origen, lugar_llegada, capacidad, tiempo_estimado, 
@@ -465,7 +507,7 @@ DECLARE
   tupla temp_reservas_agendas%ROWTYPE;
 BEGIN
   FOR tupla IN
-    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND escalas = '{}'
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND (escalas = '{}' OR escalas IS NULL)
     AND tipo_bus IS NULL and clase IS NULL
     LOOP
     BEGIN
@@ -495,7 +537,7 @@ DECLARE
 BEGIN
   FOR tupla IN
     SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Transporte) AND id NOT IN (SELECT id FROM Tren)
-    AND id NOT IN (SELECT id from trenes_descartados) AND escalas = '{}' AND clase IS NULL
+    AND id NOT IN (SELECT id from trenes_descartados) AND (escalas = '{}' OR escalas IS NULL) AND clase IS NULL
     LOOP
     BEGIN
     INSERT INTO Bus(id, comodidades, tipo)
@@ -550,8 +592,9 @@ DECLARE
   tupla temp_reservas_agendas%ROWTYPE;
 BEGIN
   FOR tupla IN
-    SELECT * FROM temp_reservas_agendas WHERE id NOT IN (SELECT id FROM Transporte) AND precio_noche IS NULL AND
-    estrellas IS NULL AND  comodidades = '{}' AND fecha_checkin IS NULL and fecha_checkout IS NULL
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Reserva) AND id NOT IN (SELECT id FROM Transporte) 
+    AND id NOT IN (SELECT id from transportes_descartados) AND nombre_hospedaje IS NULL AND precio_noche IS NULL AND
+    estrellas IS NULL AND  (comodidades = '{}' OR comodidades IS NULL) AND fecha_checkin IS NULL and fecha_checkout IS NULL
     LOOP
     BEGIN
     INSERT INTO Panorama(id, empresa, nombre, descripcion, ubicacion, duracion, precio_persona, capacidad, restricciones, fecha_panorama)
@@ -568,6 +611,7 @@ BEGIN
       tupla.fecha_panorama
       );
     EXCEPTION WHEN OTHERS THEN
+
     INSERT INTO panoramas_descartados(id, empresa, nombre, descripcion, ubicacion, duracion, precio_persona, capacidad, restricciones, fecha_panorama)
     VALUES(
       tupla.id,
@@ -613,6 +657,171 @@ BEGIN
 END $$;
 
 \copy participantes_descartados TO '../descartados/participantes_descartados.csv' DELIMITER ',' CSV HEADER;
+------------------------------------------
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id from Reserva) AND id NOT IN (SELECT id FROM Transporte) 
+    AND id NOT IN (SELECT id FROM transportes_descartados) AND id NOT IN (SELECT id FROM Panorama) 
+    AND id NOT IN (SELECT id FROM panoramas_descartados) 
+    LOOP
+    BEGIN
+    INSERT INTO Hospedaje(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
+    VALUES(
+      tupla.id,
+      tupla.nombre_hospedaje,
+      tupla.ubicacion,
+      tupla.precio_noche,
+      tupla.estrellas,
+      tupla.comodidades,
+      tupla.fecha_checkin,
+      tupla.fecha_checkout
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO hospedajes_descartados(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
+    VALUES(
+      tupla.id,
+      tupla.nombre_hospedaje,
+      tupla.ubicacion,
+      tupla.precio_noche,
+      tupla.estrellas,
+      tupla.comodidades,
+      tupla.fecha_checkin,
+      tupla.fecha_checkout
+      );
+    END;
+  END LOOP;
+END $$;
+\copy hospedajes_descartados TO '../descartados/hospedajes_descartados.csv' DELIMITER ',' CSV HEADER;
+------------------------------
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id from Reserva) AND id NOT IN (SELECT id FROM Transporte) 
+    AND id NOT IN (SELECT id FROM transportes_descartados) AND id NOT IN (SELECT id FROM Panorama) 
+    AND id NOT IN (SELECT id FROM panoramas_descartados) 
+    LOOP
+    BEGIN
+    INSERT INTO Hospedaje(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
+    VALUES(
+      tupla.id,
+      tupla.nombre_hospedaje,
+      tupla.ubicacion,
+      tupla.precio_noche,
+      tupla.estrellas,
+      tupla.comodidades,
+      tupla.fecha_checkin,
+      tupla.fecha_checkout
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO hospedajes_descartados(id, nombre, ubicacion, precio_noche, estrellas, comodidades, fecha_checkin, fecha_checkout)
+    VALUES(
+      tupla.id,
+      tupla.nombre_hospedaje,
+      tupla.ubicacion,
+      tupla.precio_noche,
+      tupla.estrellas,
+      tupla.comodidades,
+      tupla.fecha_checkin,
+      tupla.fecha_checkout
+      );
+    END;
+  END LOOP;
+END $$;
+\copy hospedajes_descartados TO '../descartados/hospedajes_descartados.csv' DELIMITER ',' CSV HEADER;
+------------------------------------
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Hospedaje) AND nombre_anfitrion IS NULL 
+    AND contacto_anfitrion IS NULL AND descripcion_airbnb IS NULL AND piezas IS NULL AND camas IS NULL AND banos IS NULL
+    LOOP
+    BEGIN
+    INSERT INTO Hotel(id, politicas)
+    VALUES(
+      tupla.id,
+      tupla.politicas
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO hoteles_descartados(id, politicas)
+    VALUES(
+      tupla.id,
+      tupla.politicas
+      );
+    END;
+  END LOOP;
+END $$;
+\copy hoteles_descartados TO '../descartados/hoteles_descartados.csv' DELIMITER ',' CSV HEADER;
+
+------------------------------
+DO $$
+DECLARE
+  tupla temp_reservas_agendas%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_reservas_agendas WHERE id IN (SELECT id FROM Hospedaje) AND id NOT IN (SELECT id FROM Hotel)
+    AND id NOT IN (SELECT id FROM hoteles_descartados)
+    LOOP
+    BEGIN
+    INSERT INTO Airbnb(id, nombre_anfitrion, contacto_anfitrion, descripcion, piezas, camas, banos)
+    VALUES(
+      tupla.id,
+      tupla.nombre_anfitrion,
+      tupla.contacto_anfitrion,
+      tupla.descripcion_airbnb,
+      tupla.piezas,
+      tupla.camas,
+      tupla.banos
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO airbnb_descartados(id, nombre_anfitrion, contacto_anfitrion, descripcion, piezas, camas, banos)
+    VALUES(
+      tupla.id,
+      tupla.nombre_anfitrion,
+      tupla.contacto_anfitrion,
+      tupla.descripcion_airbnb,
+      tupla.piezas,
+      tupla.camas,
+      tupla.banos
+      );
+    END;
+  END LOOP;
+END $$;
+\copy airbnb_descartados TO '../descartados/airbnb_descartados.csv' DELIMITER ',' CSV HEADER;
+------------------------------
+DO $$
+DECLARE
+  tupla temp_habitaciones%ROWTYPE;
+BEGIN
+  FOR tupla IN
+    SELECT * FROM temp_habitaciones
+    LOOP
+    BEGIN
+    INSERT INTO Habitacion(hotel_id, numero_habitacion, tipo)
+    VALUES(
+      tupla.hotel_id,
+      tupla.numero_habitacion,
+      tupla.tipo
+      );
+    EXCEPTION WHEN OTHERS THEN
+    INSERT INTO habitaciones_descartados(hotel_id, numero_habitacion, tipo)
+    VALUES(
+      tupla.hotel_id,
+      tupla.numero_habitacion,
+      tupla.tipo
+      );
+    END;
+  END LOOP;
+END $$;
+\copy habitaciones_descartados TO '../descartados/habitaciones_descartados.csv' DELIMITER ',' CSV HEADER;
+------------------------------
+
 
 
 COMMIT;
