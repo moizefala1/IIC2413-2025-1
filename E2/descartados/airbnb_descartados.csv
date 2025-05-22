@@ -1,7 +1,6 @@
 id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 78570,Juan Carlos Ibarra Reynoso,,Relájate en un lugar tranquilo y acogedor,4,3,3
 78655,Sra. Juan Carvajal Acevedo,+56 9 8489 5177,,6,4,4
-78775,Sr. Homero Ruelas Esquivel,+56 2 1959 8982,,3,4,2
 78795,Claudia Cabrera Armendáriz,,Ubicación céntrica con fácil acceso a atracciones turísticas,2,5,2
 78803,María Teresa Zarate Quesada,+56 9 0388 0128,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,,4
 78878,Sr. Jerónimo Rael Reyes,+56 2 8804 8759,,5,5,
@@ -25,7 +24,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 80132,Sta. Samuel Candelaria Aranda,,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,4,2
 80183,,+56 9 0834 2921,Experimenta el lujo y la comodidad en este alojamiento,3,2,3
 80774,Sr. Carmen Posada Osorio,+56 2 7603 3481,,2,2,1
-80882,Martín Heredia Gaitán,+56 2 2937 5193,,4,4,3
 80900,David Aguirre Franco,+56 9 7032 5723,,4,,3
 80940,,+56 2 6336 3868,Ideal para una escapada romántica,,3,3
 80991,Jorge Valentín Marín,,,6,5,2
@@ -55,7 +53,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 83835,Ramón Godoy Galindo,+56 9 2823 1871,Descubre la historia de la ciudad desde tu ventana,6,,4
 83998,Marisol Duran Cortés,+56 2 9004 6991,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,,4
 84073,Francisca Tirado Romero,+56 9 9585 3048,Ubicación céntrica con fácil acceso a atracciones turísticas,5,4,
-84101,Pedro Moreno Barrientos,+56 9 4437 0817,Ideal para una escapada romántica,6,1,
 84179,,+56 2 6948 4218,Disfruta de una estadía en el corazón de la ciudad,4,4,4
 84282,María Teresa Noriega Delatorre,+56 9 9805 7229,,4,5,4
 84350,Marco Antonio Sandoval Echevarría,+56 2 6792 4943,Ideal para una escapada romántica,3,3,
@@ -74,7 +71,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 86024,,,Perfecto para familias y grupos grandes,3,,2
 86158,Eduardo Cedillo Robledo,+56 9 4935 5428,Perfecto para familias y grupos grandes,4,,2
 86249,Florencia Tamayo Vela,+56 2 0503 0272,Descubre la historia de la ciudad desde tu ventana,3,3,
-86279,Irene Cornejo Arroyo,,Ideal para una escapada romántica,2,5,1
 86295,Octavio Guzmán Rubio,+56 9 2204 9821,,4,5,4
 86391,Cecilia Hidalgo Heredia,,Perfecto para familias y grupos grandes,6,6,4
 86598,Virginia Rivero Quiñónez,+56 9 8024 3086,Relájate en un lugar tranquilo y acogedor,6,,
@@ -94,7 +90,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 87842,Sr. Maricarmen Reyes Villanueva,+56 9 6018 2883,,5,4,4
 87848,Hernán Farías Mercado,+56 9 2964 4200,Disfruta de una estadía en el corazón de la ciudad,,4,3
 87861,,+56 9 5106 7952,,5,6,4
-87977,Clemente Escobar Villaseñor,+56 2 4616 7323,Experimenta el lujo y la comodidad en este alojamiento,,3,2
 88084,Teodoro Hidalgo Reynoso,+56 9 0450 4820,Ubicación céntrica con fácil acceso a atracciones turísticas,3,,3
 88176,Rosa Lira Espinoza,,Relájate en un lugar tranquilo y acogedor,2,2,3
 88286,Adriana Granado Báez,+56 2 5474 0832,Disfruta de una estadía en el corazón de la ciudad,4,6,
@@ -121,7 +116,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 91022,José Luis Tórrez Hidalgo,+56 9 4805 2254,Relájate en un lugar tranquilo y acogedor,,3,3
 91038,Daniela Rael Samaniego,+56 2 8689 1497,Ubicación céntrica con fácil acceso a atracciones turísticas,3,4,
 91092,,+56 9 3702 9511,Ideal para una escapada romántica,2,2,2
-91140,,+56 9 9705 4456,Descubre la historia de la ciudad desde tu ventana,3,4,3
 91282,,+56 2 5237 5693,Ideal para una escapada romántica,2,3,4
 91412,Homero Prado Patiño,+56 9 3711 2935,Ideal para una escapada romántica,6,,4
 91443,,+56 2 5397 0303,,2,2,2
@@ -134,7 +128,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 91777,Julia Holguín Villarreal,+56 2 9272 8439,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,5,
 91919,María del Carmen Corral Maya,,Disfruta de una estadía en el corazón de la ciudad,2,2,2
 91924,,+56 2 1008 3012,Disfruta de una estadía en el corazón de la ciudad,6,5,4
-91942,Jesús Cuellar Guajardo,,Relájate en un lugar tranquilo y acogedor,5,5,3
 91983,María del Carmen Reyna Lovato,+56 9 9255 5989,Descubre la historia de la ciudad desde tu ventana,4,5,
 92023,Adriana Ceja Montaño,,Ubicación céntrica con fácil acceso a atracciones turísticas,2,,3
 92220,Benjamín Irizarry Mireles,+56 2 4873 3150,Disfruta de una estadía en el corazón de la ciudad,,6,3
@@ -153,13 +146,9 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 93515,,+56 2 5149 8386,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,4,3
 93700,Silvia Echevarría Zepeda,,Experimenta el lujo y la comodidad en este alojamiento,,6,3
 93846,Lucia Rodríguez Haro,+56 2 9947 5168,Ubicación céntrica con fácil acceso a atracciones turísticas,3,,2
-93857,Emilio Sisneros Caraballo,,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,6,4
-94035,,+56 2 6703 4264,Experimenta el lujo y la comodidad en este alojamiento,3,3,1
-94098,,+56 2 2927 2069,Ubicación céntrica con fácil acceso a atracciones turísticas,5,4,3
 94168,,+56 9 6508 8007,Perfecto para familias y grupos grandes,4,5,3
 94171,,+56 2 2802 0291,Descubre la historia de la ciudad desde tu ventana,6,4,4
 94184,Magdalena Lozada Lomeli,+56 9 0788 5928,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,,3
-94279,Guillermina Sanches Terrazas,+56 9 0233 8931,Experimenta el lujo y la comodidad en este alojamiento,,3,1
 94288,Mario Barraza Véliz,+56 2 2465 7545,Experimenta el lujo y la comodidad en este alojamiento,3,,2
 94429,,+56 9 1273 2322,Experimenta el lujo y la comodidad en este alojamiento,6,5,4
 94461,Adán Jurado Espino,,Experimenta el lujo y la comodidad en este alojamiento,5,4,2
@@ -191,7 +180,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 97515,,+56 9 9235 5057,Experimenta el lujo y la comodidad en este alojamiento,2,5,2
 97761,Benito Abreu Cabán,+56 2 9421 5151,Ubicación céntrica con fácil acceso a atracciones turísticas,,2,3
 97866,,+56 9 4460 0696,Relájate en un lugar tranquilo y acogedor,3,3,1
-97960,Ignacio Gómez Leiva,+56 2 4088 5100,,4,4,3
 98030,Timoteo Frías Juárez,+56 2 7133 6524,,2,3,1
 98147,Graciela Noriega Barrera,+56 2 5738 8840,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,6,
 98200,Sta. Mario Puga Banda,,Ideal para una escapada romántica,4,6,4
@@ -204,12 +192,10 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 98950,Sta. Juan Carlos Reséndez Ordóñez,+56 9 2785 1376,,2,5,2
 99302,Ramona Reyna Carbajal,+56 9 1708 8487,Relájate en un lugar tranquilo y acogedor,,6,3
 99618,Roberto Fajardo Orta,,Ideal para una escapada romántica,5,6,3
-99647,Sancho Gallardo Coronado,,Ubicación céntrica con fácil acceso a atracciones turísticas,2,2,2
 99697,,+56 9 1910 3677,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,2,4
 99702,Micaela Posada Gallegos,+56 2 4616 4305,,3,2,2
 99906,,,Aventúrate en la naturaleza y descansa en un lugar cómodo,,2,1
 99959,,+56 9 9629 6266,,5,4,3
-99981,Olivia Castañeda Frías,+56 2 3359 6635,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,5,
 100093,Homero Palomino Duarte,+56 2 2810 6940,Relájate en un lugar tranquilo y acogedor,2,,2
 100153,Claudia Pedraza Ríos,+56 9 1333 4191,Descubre la historia de la ciudad desde tu ventana,2,,2
 100517,Sra. Josefina Collazo Vigil,+56 9 2867 2717,Relájate en un lugar tranquilo y acogedor,3,,3
@@ -267,7 +253,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 106391,Sta. Cristina Frías Páez,,Relájate en un lugar tranquilo y acogedor,4,3,3
 106527,Sr. Lorenzo Aguirre Zúñiga,+56 9 6294 5331,,5,5,4
 106758,Timoteo Cano Cabrera,+56 2 0758 7117,Experimenta el lujo y la comodidad en este alojamiento,,5,3
-106831,Sra. Julia Salas Salgado,+56 2 6286 3313,,4,4,3
 107023,Jorge Enríquez Delvalle,+56 2 0101 3697,Disfruta de una estadía en el corazón de la ciudad,,,4
 107037,,+56 9 3719 4631,Descubre la historia de la ciudad desde tu ventana,4,5,4
 107120,,+56 9 5349 4304,Ideal para una escapada romántica,5,1,4
@@ -279,10 +264,8 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 107914,Cristina Blanco Patiño,+56 9 1560 6122,Relájate en un lugar tranquilo y acogedor,2,3,
 107937,Diana Díaz Mercado,+56 2 2765 7560,Perfecto para familias y grupos grandes,3,,
 107940,Hugo Matos Villaseñor,+56 9 5849 0628,Ideal para una escapada romántica,6,4,
-107993,Timoteo Prieto Olivo,+56 9 6582 0652,Relájate en un lugar tranquilo y acogedor,2,3,
 108239,Óscar Alva Blanco,,Relájate en un lugar tranquilo y acogedor,3,3,1
 108329,Sr. Pedro Adame Pizarro,+56 2 7211 0539,Ubicación céntrica con fácil acceso a atracciones turísticas,3,,2
-108364,,+56 2 2322 5922,Perfecto para familias y grupos grandes,6,6,4
 108372,Patricio Vergara Carrion,,Ubicación céntrica con fácil acceso a atracciones turísticas,5,5,
 108549,,+56 9 7640 6793,Experimenta el lujo y la comodidad en este alojamiento,6,,4
 108589,Claudia Ornelas Olvera,+56 9 1902 5512,Experimenta el lujo y la comodidad en este alojamiento,3,4,
@@ -338,7 +321,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 113434,Sra. Rocio Cano Corrales,+56 9 8988 4332,Ideal para una escapada romántica,5,3,
 113537,Florencia Carrasquillo Lara,+56 9 7124 7261,Perfecto para familias y grupos grandes,4,,3
 113745,Vicente Feliciano Villagómez,+56 2 6220 0650,,4,3,2
-113846,Claudio Beltrán González,,Experimenta el lujo y la comodidad en este alojamiento,2,2,2
 113967,Pedro Miramontes Cuellar,+56 9 5539 0383,Aventúrate en la naturaleza y descansa en un lugar cómodo,,2,3
 114013,Francisca Almaraz Tirado,+56 2 7014 3917,,,2,1
 114116,,+56 9 5613 9674,Ubicación céntrica con fácil acceso a atracciones turísticas,6,5,4
@@ -350,7 +332,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 114404,Sra. Óscar Solorzano Padilla,+56 9 2547 6382,,5,,4
 114465,Jerónimo Fuentes Frías,,Experimenta el lujo y la comodidad en este alojamiento,,6,3
 114483,Verónica Calvillo Meraz,+56 9 6280 2047,Descubre la historia de la ciudad desde tu ventana,5,,3
-114537,Felipe Zamora Cantú,,Relájate en un lugar tranquilo y acogedor,2,6,2
 114574,Agustín Vázquez Garza,+56 9 3310 7342,Descubre la historia de la ciudad desde tu ventana,,6,4
 114862,Daniel Negrón Flores,+56 2 7041 9571,Aventúrate en la naturaleza y descansa en un lugar cómodo,,2,3
 114928,Daniela Apodaca Camacho,+56 2 0632 1750,Descubre la historia de la ciudad desde tu ventana,2,3,
@@ -400,7 +381,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 119068,,+56 2 6387 9763,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,3,2
 119150,Germán Medina Domínguez,+56 9 6731 7222,,4,4,3
 119159,Timoteo Meraz Mesa,+56 9 0206 1437,Experimenta el lujo y la comodidad en este alojamiento,,4,2
-119219,Mercedes Zepeda Guevara,,Disfruta de una estadía en el corazón de la ciudad,5,4,3
 119305,,+56 9 6134 8095,Disfruta de una estadía en el corazón de la ciudad,4,4,2
 119667,María Tello Delgadillo,+56 2 9252 0915,,4,6,3
 119871,Sr. Eduardo Arevalo Benítez,,Descubre la historia de la ciudad desde tu ventana,2,3,2
@@ -425,21 +405,18 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 121791,Gerardo Reynoso Barrera,,Ubicación céntrica con fácil acceso a atracciones turísticas,3,3,4
 122145,Sta. Olivia Madrigal Ruiz,+56 2 9733 6180,,6,4,2
 122200,Marta Badillo Loya,,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,3,2
-122663,Josefina Alba Olmos,+56 9 2478 4859,Aventúrate en la naturaleza y descansa en un lugar cómodo,2,,4
-122724,Lourdes Núñez Ballesteros,+56 9 7381 0189,Descubre la historia de la ciudad desde tu ventana,4,,2
 122936,Rodrigo Cabán Muñiz,+56 9 1914 1697,Experimenta el lujo y la comodidad en este alojamiento,2,,2
 123014,Joaquín Canales Ojeda,+56 2 5692 4705,,,3,3
 123224,Gustavo Sarabia Campos,+56 9 3994 2455,,2,,1
-123353,Leticia Mata Rascón,+56 2 9824 0595,Ideal para una escapada romántica,,4,2
 123693,,+56 9 9401 4254,Descubre la historia de la ciudad desde tu ventana,,,4
 123822,Germán Rentería Maldonado,+56 9 1504 9433,Perfecto para familias y grupos grandes,3,,3
 123925,José Lemus Almonte,+56 2 5591 8810,,3,4,3
 124014,Martín Lozada Contreras,+56 2 4998 1488,Ubicación céntrica con fácil acceso a atracciones turísticas,6,5,
 124117,Sta. Eduardo Becerra Reyes,+56 9 6666 1890,Aventúrate en la naturaleza y descansa en un lugar cómodo,,2,3
 124263,Ramón Otero Rico,+56 9 8609 6211,Perfecto para familias y grupos grandes,2,,2
+155716,Gabriel Ferrer Leiva,+56 9 3441 5112,,4,3,3
 124430,Sta. María del Carmen Gaona Rodarte,,Descubre la historia de la ciudad desde tu ventana,2,3,1
 124578,Sr. Julio César Quiñónez Tamayo,+56 9 4464 6745,,,4,3
-124848,Diego Quintanilla Toro,+56 2 8574 4964,,,4,2
 124859,,+56 2 9175 6521,,4,6,4
 125203,,+56 9 0492 7332,Disfruta de una estadía en el corazón de la ciudad,4,3,3
 125233,Teodoro Centeno Laboy,,Perfecto para familias y grupos grandes,3,2,3
@@ -454,23 +431,19 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 126421,,+56 2 8481 1639,Relájate en un lugar tranquilo y acogedor,5,6,4
 126434,,+56 2 1908 3182,,5,5,1
 126492,Sta. Samuel Ledesma Lemus,+56 9 8490 7781,Ideal para una escapada romántica,,,2
-126653,,,Ubicación céntrica con fácil acceso a atracciones turísticas,4,4,4
 126745,Pedro Razo Porras,+56 9 3102 0919,Perfecto para familias y grupos grandes,4,,4
 126914,Eloisa Mojica Piña,+56 2 1175 7717,Disfruta de una estadía en el corazón de la ciudad,5,,3
 126941,Amalia Rubio Guardado,+56 2 2665 8552,Ubicación céntrica con fácil acceso a atracciones turísticas,4,,2
 127051,Luz Téllez Monroy,+56 9 2421 8836,Perfecto para familias y grupos grandes,6,,4
 127071,Norma Rosales Moreno,+56 9 3236 8249,,3,3,2
-127105,Leticia Canales Leiva,+56 9 3735 8472,Ideal para una escapada romántica,5,,3
 127189,Gabriel Yáñez Matos,+56 9 0915 8098,Aventúrate en la naturaleza y descansa en un lugar cómodo,,5,4
 127484,Sra. Ramiro Valverde de Jesús,+56 2 5208 0638,,3,4,3
 127510,Raquel Benavídez Sisneros,+56 2 5515 2482,Experimenta el lujo y la comodidad en este alojamiento,,5,4
-127711,Barbara Paz Rolón,+56 2 1155 4142,Perfecto para familias y grupos grandes,2,3,
 127821,Sta. Andrés Mota Ulibarri,+56 2 2358 5678,Aventúrate en la naturaleza y descansa en un lugar cómodo,2,,4
 127913,Miguel Carreón Sierra,,Relájate en un lugar tranquilo y acogedor,2,5,3
 127968,Sta. Francisco Rosario Guzmán,+56 2 3397 1548,Descubre la historia de la ciudad desde tu ventana,5,6,
 128242,Dolores Madrid Muro,+56 9 9884 9526,Ideal para una escapada romántica,5,3,
 128280,David Orozco Godínez,+56 9 6224 1809,Disfruta de una estadía en el corazón de la ciudad,,5,3
-128336,Sra. Luis Miguel Flórez Bonilla,+56 9 8584 5578,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,2,
 128339,Sta. Marcos Delrío Badillo,,Ideal para una escapada romántica,3,4,2
 128576,Santiago Castillo Alcala,+56 2 2923 3674,,,5,3
 128750,,+56 2 8943 7246,Disfruta de una estadía en el corazón de la ciudad,5,3,2
@@ -482,7 +455,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 129466,Alejandro Coronado Villanueva,+56 2 2633 3773,,5,5,2
 129494,Elena Atencio Altamirano,+56 9 6174 2836,Aventúrate en la naturaleza y descansa en un lugar cómodo,,6,4
 129595,Lucia Leal Esparza,+56 9 1648 9478,Perfecto para familias y grupos grandes,4,,4
-129761,,+56 9 7362 7595,Descubre la historia de la ciudad desde tu ventana,4,3,3
 129794,,+56 9 1624 9988,Experimenta el lujo y la comodidad en este alojamiento,3,,4
 129796,,+56 9 9798 1091,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,4,4
 129857,Raquel Jaime Rascón,+56 9 9430 8618,Ideal para una escapada romántica,4,3,
@@ -518,9 +490,7 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 133370,Julio César Abrego Quesada,,Ubicación céntrica con fácil acceso a atracciones turísticas,2,6,3
 133677,Concepción Guajardo Barragán,,Perfecto para familias y grupos grandes,6,4,4
 133685,,+56 9 3743 2628,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,3,2
-133734,Lorena Corona Mayorga,+56 2 6796 1696,,6,6,4
 133939,Ángela Ávila Alva,+56 9 5790 3514,Experimenta el lujo y la comodidad en este alojamiento,6,5,
-134089,Elisa Olivera Medina,+56 2 6688 0900,Relájate en un lugar tranquilo y acogedor,,3,2
 134246,Sra. Concepción Sanches Irizarry,+56 2 2894 5385,,5,4,3
 134261,Alicia Tello Robledo,+56 2 1578 6928,,5,5,4
 134308,Sra. Carmen Valencia Ledesma,+56 2 1659 7677,,5,6,3
@@ -532,7 +502,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 135079,Jorge Robledo Armendáriz,+56 2 0986 3851,Perfecto para familias y grupos grandes,6,,4
 135096,Rafael Puente Archuleta,+56 9 2031 4831,Experimenta el lujo y la comodidad en este alojamiento,5,5,
 135104,Adriana Serrano Marín,+56 9 3009 5693,Descubre la historia de la ciudad desde tu ventana,,2,1
-135142,,+56 9 0230 6218,Perfecto para familias y grupos grandes,4,5,4
 135272,,+56 2 8699 9254,Experimenta el lujo y la comodidad en este alojamiento,1,3,3
 135345,José María Casares Franco,+56 9 0166 9175,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,,4
 135534,Sr. María Elena Cerda Lemus,,,6,,4
@@ -556,12 +525,10 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 137378,Sra. Florencia Alejandro Ramírez,+56 9 4633 6904,Ubicación céntrica con fácil acceso a atracciones turísticas,3,,2
 137385,,+56 9 1713 6006,Descubre la historia de la ciudad desde tu ventana,4,4,3
 137478,,+56 2 9459 0421,Ubicación céntrica con fácil acceso a atracciones turísticas,6,4,4
-155563,,+56 2 6409 9053,Perfecto para familias y grupos grandes,2,3,1
 137880,Timoteo Quintanilla Calvillo,+56 9 7990 7644,Disfruta de una estadía en el corazón de la ciudad,,4,
 137927,Raquel Samaniego Portillo,+56 2 1712 9516,Descubre la historia de la ciudad desde tu ventana,,2,1
 138103,Miguel Ángel Valadez Matías,+56 9 8446 6871,Experimenta el lujo y la comodidad en este alojamiento,,4,3
 138205,Jacobo Burgos Castro,,Perfecto para familias y grupos grandes,4,5,2
-138297,Dolores Sáenz Feliciano,+56 9 7188 1856,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,,3
 138320,Gabriel Maldonado Baca,+56 2 1290 6359,,3,2,2
 138413,Reina Granado Bernal,,Experimenta el lujo y la comodidad en este alojamiento,4,3,2
 138647,Alberto Sanabria Deleón,+56 9 5825 5872,,4,3,2
@@ -571,8 +538,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 138990,,+56 2 8829 4442,Ideal para una escapada romántica,2,3,
 139117,Barbara Quiroz Meléndez,+56 9 9090 6564,Ideal para una escapada romántica,,6,4
 139157,Amalia Garay Téllez,,Relájate en un lugar tranquilo y acogedor,,2,2
-139184,,+56 9 1847 4119,Descubre la historia de la ciudad desde tu ventana,,3,2
-139191,Sra. Gerardo Guerrero Medina,+56 2 3831 8240,,5,6,4
 139240,Sr. Sara Alcala Perales,+56 2 0911 8412,Perfecto para familias y grupos grandes,2,5,
 139256,Juana Carrera Madera,+56 2 5629 0395,Ideal para una escapada romántica,2,,1
 139390,Isabela Quiroz Sáenz,+56 2 0241 4777,Ubicación céntrica con fácil acceso a atracciones turísticas,2,4,
@@ -583,7 +548,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 139880,Ignacio Hidalgo Aguilera,+56 2 3086 5523,Aventúrate en la naturaleza y descansa en un lugar cómodo,,3,1
 139923,Cristobal Montañez Arguello,+56 2 2294 1545,Ideal para una escapada romántica,,5,3
 140005,Diana Linares Verdugo,+56 2 3476 9720,Ideal para una escapada romántica,2,3,
-140223,,+56 2 9283 8174,Perfecto para familias y grupos grandes,5,5,3
 140279,Adriana Arce Tovar,+56 9 1022 7907,,3,3,2
 140330,Samuel Lomeli Madrid,+56 2 5672 0753,Aventúrate en la naturaleza y descansa en un lugar cómodo,,4,4
 140354,Elena Guerrero Soto,+56 2 3636 9307,Relájate en un lugar tranquilo y acogedor,5,,4
@@ -601,7 +565,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 141715,José Romero Enríquez,+56 2 7286 0268,Aventúrate en la naturaleza y descansa en un lugar cómodo,,2,2
 141856,Vicente Perea Tejeda,+56 2 8016 8214,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,,3
 141988,Esperanza Ontiveros Becerra,+56 9 2118 6098,Ideal para una escapada romántica,,5,4
-142081,,+56 2 3207 9489,Descubre la historia de la ciudad desde tu ventana,4,5,2
 142200,Sr. Leticia Chávez Montenegro,+56 9 6096 9720,Disfruta de una estadía en el corazón de la ciudad,2,,2
 142212,Jerónimo Gastélum Calvillo,+56 9 9327 0959,Perfecto para familias y grupos grandes,6,6,
 142252,Gabriel Patiño Vargas,+56 2 1062 0698,Ubicación céntrica con fácil acceso a atracciones turísticas,2,,2
@@ -616,7 +579,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 143134,Raúl Sotelo Alicea,+56 9 4427 9783,,3,5,3
 143148,,+56 9 1241 5595,,3,3,2
 143178,Sr. María Luisa Mondragón Galván,+56 2 6948 0678,Experimenta el lujo y la comodidad en este alojamiento,5,6,
-143186,Adela Yáñez Carreón,+56 9 1403 1111,Relájate en un lugar tranquilo y acogedor,3,4,
 143432,,+56 9 1201 2163,,5,5,3
 143546,Cristian Fierro Mercado,+56 9 4169 1611,Ubicación céntrica con fácil acceso a atracciones turísticas,4,,3
 143594,Rocio Ceballos Díaz,+56 2 8488 2233,,2,2,
@@ -631,7 +593,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 144480,Sta. Juana Fuentes Pacheco,+56 9 6265 2604,,4,5,2
 144550,,+56 9 6578 9018,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,4,3
 155290,,+56 2 5192 4910,Relájate en un lugar tranquilo y acogedor,4,5,4
-155291,Estela Merino Urrutia,+56 2 2377 5435,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,,3
 155301,Manuela Berríos Barrios,+56 2 7331 6471,Perfecto para familias y grupos grandes,6,,4
 155307,Sra. Eduardo Contreras Rodarte,+56 9 4207 7713,,2,3,2
 155308,José Uribe Vargas,,Disfruta de una estadía en el corazón de la ciudad,3,4,4
@@ -639,14 +600,12 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155322,Diego Montero Rubio,,Relájate en un lugar tranquilo y acogedor,2,2,2
 155323,Victoria Alcántar Espinal,+56 2 9182 1963,Ubicación céntrica con fácil acceso a atracciones turísticas,2,,2
 155327,Jorge Sauceda Ríos,+56 2 5441 1575,Ubicación céntrica con fácil acceso a atracciones turísticas,,,1
-155332,Sr. Guillermo Gil Carmona,+56 2 5953 8318,Descubre la historia de la ciudad desde tu ventana,,6,4
 155334,Carolina Vera Balderas,,Experimenta el lujo y la comodidad en este alojamiento,3,4,2
 155337,Julia Lemus Acuña,,Ideal para una escapada romántica,3,2,2
 155341,,+56 9 8418 7229,Relájate en un lugar tranquilo y acogedor,3,5,1
 155342,Pablo Loya Alaniz,+56 2 2926 0605,,5,3,2
 155344,Teodoro Paredes Baeza,+56 2 1912 3123,,3,4,3
 155347,Enrique Saldivar Rivas,+56 9 0087 9786,Experimenta el lujo y la comodidad en este alojamiento,3,3,
-155353,Sr. María Eugenia Espinosa Peña,+56 9 4143 0494,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,,3
 155354,Nicolás Flórez Banda,+56 2 6841 8288,,2,5,4
 155365,,+56 2 7575 8575,Relájate en un lugar tranquilo y acogedor,6,5,4
 155372,,+56 9 6948 4645,Relájate en un lugar tranquilo y acogedor,6,5,4
@@ -664,6 +623,7 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155407,Ricardo Nieves Sedillo,+56 2 2192 9160,Disfruta de una estadía en el corazón de la ciudad,,6,4
 155410,Sta. Rocio Granado Nava,+56 9 2342 2540,Ideal para una escapada romántica,4,6,
 155425,Javier Gamboa Alcaraz,+56 2 3329 4016,Ideal para una escapada romántica,,3,2
+155718,Julio César Colón Rivero,,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,2,1
 155426,Benito Regalado Carrera,,Ubicación céntrica con fácil acceso a atracciones turísticas,5,5,3
 155438,Ramiro Garica Barrios,+56 9 1825 0628,Disfruta de una estadía en el corazón de la ciudad,4,4,
 155441,Ángela Carrion Melgar,+56 2 5086 6678,Experimenta el lujo y la comodidad en este alojamiento,5,5,
@@ -687,12 +647,12 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155521,Lucas Caballero Salgado,+56 2 2510 0313,Experimenta el lujo y la comodidad en este alojamiento,4,4,
 155523,Vicente Jimínez Mayorga,+56 2 6448 5325,Ubicación céntrica con fácil acceso a atracciones turísticas,4,,2
 155527,Sr. Rafael Valadez Concepción,+56 9 4267 2801,Descubre la historia de la ciudad desde tu ventana,4,5,
-155531,Sra. Emilia Carrera Delarosa,+56 9 6329 1319,,5,,3
 155533,,+56 2 0371 7437,Ubicación céntrica con fácil acceso a atracciones turísticas,3,4,1
 155540,Lorena Alanis Nevárez,+56 2 2321 2474,,4,4,3
 155541,Jorge Otero Mejía,+56 2 8986 7455,Ideal para una escapada romántica,3,,2
 155546,,+56 9 5339 7091,Perfecto para familias y grupos grandes,5,2,3
 155554,Caridad Montemayor Roybal,+56 2 4366 2236,Ubicación céntrica con fácil acceso a atracciones turísticas,,3,2
+155563,,+56 2 6409 9053,Perfecto para familias y grupos grandes,2,3,1
 155566,Rubén Mercado Caraballo,,Disfruta de una estadía en el corazón de la ciudad,4,5,3
 155570,Olivia Armas Echevarría,+56 2 0670 6007,Disfruta de una estadía en el corazón de la ciudad,1,1,
 155577,Mariano Suárez Espinal,+56 9 4075 9380,Aventúrate en la naturaleza y descansa en un lugar cómodo,6,6,
@@ -710,7 +670,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155623,Raúl Regalado Caldera,+56 2 9371 9831,Experimenta el lujo y la comodidad en este alojamiento,3,,1
 155625,Raquel Zúñiga Naranjo,+56 9 1726 4707,Ideal para una escapada romántica,4,4,
 155628,Pilar Ocampo Rincón,,Ideal para una escapada romántica,5,6,4
-155629,Alfonso Marín Dávila,+56 9 0412 8174,Ideal para una escapada romántica,2,,1
 155632,Sra. Luis Fajardo Meraz,+56 2 3986 6119,Ubicación céntrica con fácil acceso a atracciones turísticas,4,,4
 155636,Sr. Leonor Irizarry Matías,+56 2 3085 5540,Disfruta de una estadía en el corazón de la ciudad,,4,2
 155638,Mateo Carrera Gil,,Disfruta de una estadía en el corazón de la ciudad,5,6,3
@@ -721,11 +680,9 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155658,Rosa Coronado Marroquín,,Experimenta el lujo y la comodidad en este alojamiento,3,2,1
 155659,Jacobo Romero Haro,,Ideal para una escapada romántica,5,4,3
 155664,Gabriela Espinoza Cazares,+56 2 3526 5364,Perfecto para familias y grupos grandes,,,2
-155681,Sta. Daniel Benavides Padrón,+56 2 4775 2478,Ubicación céntrica con fácil acceso a atracciones turísticas,2,,3
 155683,,+56 9 7682 5320,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,6,3
 155684,,+56 2 4545 9153,Ubicación céntrica con fácil acceso a atracciones turísticas,2,2,2
 155685,José María Cedillo Menchaca,,Ideal para una escapada romántica,3,3,2
-155686,Manuela Cabán Tamez,+56 9 4858 5769,Ubicación céntrica con fácil acceso a atracciones turísticas,,4,2
 155691,Inés Valdez Ponce,+56 9 4659 2771,,4,4,4
 155692,,+56 9 4569 5880,Disfruta de una estadía en el corazón de la ciudad,3,3,2
 155693,,+56 2 2619 6074,Ideal para una escapada romántica,5,6,3
@@ -734,8 +691,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155702,Sra. Óscar Delvalle Cazares,+56 2 8435 5091,Disfruta de una estadía en el corazón de la ciudad,4,,3
 155709,Emilio Barragán Olivera,+56 9 6902 6428,,5,1,1
 155713,Conchita González Farías,+56 9 4967 3047,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,,4
-155716,Gabriel Ferrer Leiva,+56 9 3441 5112,,4,3,3
-155718,Julio César Colón Rivero,,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,2,1
 155724,Carmen Huerta Roque,,Descubre la historia de la ciudad desde tu ventana,4,,3
 155725,Catalina Becerra Montaño,+56 9 7030 2414,Descubre la historia de la ciudad desde tu ventana,5,4,
 155728,Mateo Chacón Godínez,+56 9 1178 8130,Perfecto para familias y grupos grandes,,2,2
@@ -746,11 +701,9 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155772,Alfredo Tijerina Rosales,+56 2 4812 9990,Experimenta el lujo y la comodidad en este alojamiento,,3,
 155773,,+56 9 8213 4218,Ideal para una escapada romántica,2,3,2
 155775,Adán Romero Carvajal,+56 9 7862 9576,Ubicación céntrica con fácil acceso a atracciones turísticas,3,,2
-155776,,+56 2 4547 5043,Ideal para una escapada romántica,5,3,2
 155784,Sr. Emilio Negrón Terrazas,+56 2 4129 9075,,4,,3
 155793,Ricardo Caldera Anaya,+56 9 7602 5139,Relájate en un lugar tranquilo y acogedor,5,4,
 155798,Rosalia Enríquez Corral,+56 9 0611 2481,Disfruta de una estadía en el corazón de la ciudad,3,3,
-155815,Julio César de Anda Loera,+56 9 0311 5250,Disfruta de una estadía en el corazón de la ciudad,5,,2
 155817,,+56 9 8661 4767,Perfecto para familias y grupos grandes,5,4,2
 155819,Teresa Acuña Chavarría,+56 9 5808 5173,Ubicación céntrica con fácil acceso a atracciones turísticas,6,5,
 155820,Daniela Velasco Delacrúz,,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,3,1
@@ -774,7 +727,6 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155871,,+56 2 1195 2402,Experimenta el lujo y la comodidad en este alojamiento,6,6,4
 155873,Diego Menéndez Segura,,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,6,4
 155881,Sr. Mercedes Murillo Delarosa,+56 9 9190 4867,Descubre la historia de la ciudad desde tu ventana,6,,3
-155882,Sra. Concepción Atencio Rascón,+56 2 0743 9366,Aventúrate en la naturaleza y descansa en un lugar cómodo,3,2,
 155884,Ángela Montañez Manzanares,+56 2 7148 8717,,3,,2
 155885,Elisa Armendáriz Galván,+56 2 7220 9711,Aventúrate en la naturaleza y descansa en un lugar cómodo,4,,4
 155891,,+56 9 1187 5478,Relájate en un lugar tranquilo y acogedor,4,4,1
@@ -801,9 +753,7 @@ id,nombre_anfitrion,contacto_anfitrion,descripcion,piezas,camas,banos
 155988,,+56 9 5991 3584,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,6,4
 155992,Sr. Adán Carreón Sierra,+56 2 8118 1082,Disfruta de una estadía en el corazón de la ciudad,,5,4
 155993,Natalia Farías Quesada,,Experimenta el lujo y la comodidad en este alojamiento,6,5,4
-155997,Cristobal Urrutia Blanco,+56 2 4560 5736,Perfecto para familias y grupos grandes,4,4,
 156000,,+56 9 0438 3347,Ubicación céntrica con fácil acceso a atracciones turísticas,1,3,
-156002,Gonzalo Trujillo Espinal,+56 9 1015 9086,,4,,3
 156012,Teresa Matos Avilés,+56 2 3454 0292,Disfruta de una estadía en el corazón de la ciudad,4,,1
 156016,Jorge Luis Ortiz Benavídez,+56 9 6432 6051,Descubre la historia de la ciudad desde tu ventana,2,,2
 156017,Sr. Ricardo Muñiz Briones,+56 2 2420 9975,Aventúrate en la naturaleza y descansa en un lugar cómodo,5,6,

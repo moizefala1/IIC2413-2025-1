@@ -125,7 +125,7 @@ CREATE TABLE Hospedaje (
 -- Tabla Hotel
 CREATE TABLE Hotel (
     id INTEGER PRIMARY KEY,
-    politicas TEXT[] NOT NULL,
+    politicas TEXT[],
     FOREIGN KEY (id) REFERENCES Hospedaje(id) ON DELETE CASCADE
 );
 
@@ -144,12 +144,12 @@ CREATE TABLE Habitacion (
 -- Tabla Airbnb
 CREATE TABLE Airbnb (
     id INTEGER PRIMARY KEY,
-    nombre_anfitrion VARCHAR(100) NOT NULL,
-    contacto_anfitrion VARCHAR(100) NOT NULL,
-    descripcion TEXT NOT NULL,
-    piezas INTEGER NOT NULL,
-    camas INTEGER NOT NULL,
-    banos INTEGER NOT NULL,
+    nombre_anfitrion VARCHAR(100),
+    contacto_anfitrion VARCHAR(100),
+    descripcion TEXT,
+    piezas INTEGER,
+    camas INTEGER,
+    banos INTEGER,
     FOREIGN KEY (id) REFERENCES Hospedaje(id) ON DELETE CASCADE
 );
 --------------------------------------------------------------------------------------
