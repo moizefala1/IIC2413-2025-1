@@ -11,7 +11,7 @@ $dv = $_POST['dv'] ?? '';
 $nombre = $_POST['nombre_real'] ?? '';
 $email = $_POST['email'] ?? '';
 
-// Guardar datos para reusarlos
+
 $_SESSION['form_data'] = $_POST;
 
 if ($clave !== $repetir_clave) {
@@ -23,7 +23,7 @@ if ($clave !== $repetir_clave) {
 try {
     $db = conectarBD();
 
-    $stmt = $db->prepare("INGRESE SU CONSULTA SQL AQUI");
+    $stmt = $db->prepare("SELECT correo FROM persona WHERE correo = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
@@ -36,17 +36,24 @@ try {
     $db->beginTransaction();
 
     $stmt = $db->prepare("
-        Hacer la consulta para insertar el nuevo usuario
+        INSERT INTO persona (correo, nombre, contrasena, username, telefono_contacto, run, dv)
+        VALUES (:correo, :nombre, :contrasena, :username, :telefono_contacto, :run, :dv)
     ");
     $stmt->bindParam(':username', $usuario);
     $stmt->bindParam(':contrasena', $clave);
     $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':telefono', $telefono);
+    $stmt->bindParam(':correo', $email);
+    $stmt->bindParam(':telefono_contacto', $telefono);
     $stmt->bindParam(':run', $run);
     $stmt->bindParam(':dv', $dv);
     $stmt->execute();
 
+    $stmt = $db->prepare("
+        INSERT INTO usuario (correo, puntos)
+        VALUES (:correo, 0)
+    ");
+    $stmt->bindParam(':correo', $email);
+    $stmt->execute();
     $db->commit();
 
     unset($_SESSION['form_data']);
@@ -55,8 +62,11 @@ try {
     exit();
 
 } catch (Exception $e) {
-    if ($db->inTransaction()) $db->rollBack();
-    $_SESSION['error'] = 'Usuario no se puede registrar';
+    if (isset($db) && $db->inTransaction()) {
+        $db->rollBack();
+    }
+    $_SESSION['error'] = 'Error al registrar el usuario: ' . $e->getMessage();
+    error_log('Error en registro: ' . $e->getMessage()); // Registrar error en logs
     header('Location: registro.php');
     exit();
 }
