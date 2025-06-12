@@ -1,10 +1,9 @@
 <?php
 session_start();
 $mensaje_error = $_SESSION['error'] ?? null;
-$mensaje_success = $_SESSION['success'] ?? null;
 $form_data = $_SESSION['form_data'] ?? [];
 
-unset($_SESSION['error'], $_SESSION['success'], $_SESSION['form_data']);
+unset($_SESSION['error'], $_SESSION['form_data']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -72,8 +71,6 @@ unset($_SESSION['error'], $_SESSION['success'], $_SESSION['form_data']);
 
                 <?php if ($mensaje_error): ?>
                     <p class="error"><?= htmlspecialchars($mensaje_error) ?></p>
-                <?php elseif ($mensaje_success): ?>
-                    <p class="success"><?= htmlspecialchars($mensaje_success) ?></p>
                 <?php endif; ?>
 
                 <p><a href="main.php">Volver al inicio</a></p>

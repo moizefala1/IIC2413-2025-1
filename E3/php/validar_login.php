@@ -7,7 +7,7 @@ $contrasena = filter_var($_POST['contrasena'], FILTER_SANITIZE_STRING);
 
 $db = conectarBD();
 
-$queryUsuario = "SELECT * FROM persona WHERE username = :usuario";
+$queryUsuario = "SELECT * FROM persona WHERE username = :usuario AND correo IN (SELECT correo FROM usuario)";
 $stmtUsuario = $db->prepare($queryUsuario);
 $stmtUsuario->bindParam(':usuario', $usuario);
 $stmtUsuario->execute();

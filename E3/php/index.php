@@ -1,15 +1,18 @@
 <?php
 // Inicia sesión
 session_start();
-$error = $_GET['error'] ?? null;
+$mensaje_success = $_SESSION['success'] ?? null;
+$mensaje_error = $_GET['error'] ?? null;
+unset($_SESSION['success']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Inicio de sesión - Booked.com</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/style.css"> 
 </head>
+
 <body>
     <div class="container">
         <h1>Bienvenido a Booked.com</h1>
@@ -22,11 +25,11 @@ $error = $_GET['error'] ?? null;
 
             <button type="submit">Iniciar sesión</button>
         </form>
-
         <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
-
-        <?php if ($error): ?>
-            <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php if ($mensaje_success): ?>
+            <p class="success"><?= htmlspecialchars($mensaje_success) ?></p>
+        <?php elseif ($mensaje_error): ?>
+            <p class="error"><?= htmlspecialchars($mensaje_error) ?></p>
         <?php endif; ?>
     </div>
 </body>
