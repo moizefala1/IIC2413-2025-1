@@ -44,30 +44,6 @@ $db->commit();
     <meta charset="UTF-8">
     <title>Crear Viaje</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #555;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
         .form-group {
             margin-bottom: 20px;
         }
@@ -93,14 +69,12 @@ $db->commit();
             background-color: white;
         }
         
-        /* Contenedor con scroll para cada sección */
         .section-content {
             max-height: 300px;
             overflow-y: auto;
             padding-right: 10px;
         }
-        
-        /* Estilos para las barras de scroll de cada sección */
+    
         .section-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -119,7 +93,6 @@ $db->commit();
             background: #0056b3;
         }
         
-        /* Estilos específicos para cada tipo de sección */
         .transportes-content::-webkit-scrollbar-thumb {
             background: #28a745;
         }
@@ -192,7 +165,6 @@ $db->commit();
             padding: 20px;
         }
         
-        /* Indicador de scroll */
         .scroll-indicator {
             text-align: center;
             color: #666;
