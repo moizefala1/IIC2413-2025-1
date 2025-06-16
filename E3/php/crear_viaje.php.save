@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 $db = ConectarBD();
 $db->beginTransaction();
 
-// TRANSPORTES
+// ========== FILTROS PARA TRANSPORTES ==========
 $where_transporte = "r.estado_disponibilidad = 'Disponible'";
 $params_transporte = [];
 
@@ -18,18 +18,14 @@ if (!empty($_GET['empresa_transporte'])) {
     $params_transporte[] = '%' . $_GET['empresa_transporte'] . '%';
 }
 
-if (!empty($_GET['origen_transporte']) || !empty($_GET['destino_transporte'])) {
-    $where_transporte .= " AND (";
-    $conditions = [];
-    if (!empty($_GET['origen_transporte'])) {
-        $conditions[] = "LOWER(t.lugar_origen) LIKE LOWER(?)";
-        $params_transporte[] = '%' . trim($_GET['origen_transporte']) . '%';
-    }
-    if (!empty($_GET['destino_transporte'])) {
-        $conditions[] = "LOWER(t.lugar_llegada) LIKE LOWER(?)";
-        $params_transporte[] = '%' . trim($_GET['destino_transporte']) . '%';
-    }
-    $where_transporte .= implode(" OR ", $conditions) . ")";
+if (!empty($_GET['origen_transporte'])) {
+    $where_transporte .= " AND LOWER(t.lugar_origen) LIKE LOWER(?)";
+    $params_transporte[] = '%' . $_GET['origen_transporte'] . '%';
+}
+
+if (!empty($_GET['destino_transporte'])) {
+    $where_transporte .= " AND LOWER(t.lugar_llegada) LIKE LOWER(?)";
+    $params_transporte[] = '%' . $_GET['destino_transporte'] . '%';
 }
 
 if (!empty($_GET['precio_min_transporte'])) {
@@ -66,7 +62,7 @@ $stmt_transportes = $db->prepare($query_transportes);
 $stmt_transportes->execute($params_transporte);
 $transportes = $stmt_transportes->fetchAll(PDO::FETCH_ASSOC);
 
-//PAANORAMAS
+// ========== FILTROS PARA PANORAMAS ==========
 $where_panorama = "r.estado_disponibilidad = 'Disponible'";
 $params_panorama = [];
 
@@ -129,7 +125,7 @@ $stmt_panoramas = $db->prepare($query_panoramas);
 $stmt_panoramas->execute($params_panorama);
 $panoramas = $stmt_panoramas->fetchAll(PDO::FETCH_ASSOC);
 
-//HOSPEDAJE
+// ========== FILTROS PARA HOSPEDAJES ==========
 $where_hospedaje = "r.estado_disponibilidad = 'Disponible'";
 $params_hospedaje = [];
 
@@ -258,16 +254,6 @@ $db->commit();
 </head>
 <body>
     <div class="container">
-        <?php if (isset($_SESSION['error'])): ?>
-        <div class="error">
-            <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
-        </div>
-        <?php endif; ?>
-        <?php if (isset($_SESSION['success'])): ?>
-            <div class="success">
-                <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
-            </div>
-        <?php endif; ?>
         <h1>Filtros de Viaje</h1>
             <div class="filtros">
                 <h3>Filtrar Transportes</h3>
@@ -326,6 +312,7 @@ $db->commit();
                     <?php endforeach; ?>
                     <div>
                         <button type="submit">Aplicar Filtros</button>
+                        <a href="?">Limpiar Filtros</a>
                     </div>
                 </form>
             </div>
@@ -405,6 +392,7 @@ $db->commit();
                     
                     <div>
                         <button type="submit">Aplicar Filtros</button>
+                        <a href="?">Limpiar Filtros</a>
                     </div>
                 </form>
 
@@ -437,12 +425,7 @@ $db->commit();
                                     value="<?php echo($_GET['precio_max_hospedaje'] ?? ''); ?>" 
                                     placeholder="999999">
                         </div>
-                        <div>
-                            <label>Estrellas mínimas</label>
-                            <input type="number" name="estrellas_min"
-                                    value="<?php echo($_GET['estrellas_min'] ?? ''); ?>" 
-                                    placeholder="1" min="1" max="5">
-                        </div>
+                        aa
                         <div>
                             <label>Check-in desde</label>
                             <input type="date" name="checkin_desde" 
@@ -478,28 +461,47 @@ $db->commit();
                     
                     <div>
                         <button type="submit">Aplicar Filtros</button>
+                        <a href="?">Limpiar Filtros</a>
                     </div>
-
                 </form>
             </div>
+            
 
-    <div>
-        <a href="?">Limpiar Filtros</a>
-    </div>  
 
+
+
+
+
+
+
+
+
+            
         <h1>Crear Nuevo Viaje</h1>
-        <div>
+        <div class= "section">
             <form action="procesar_crear_viaje.php" method="POST">
                 <div>
                     <label for="nombre_viaje" > Nombre del viaje:</label>
                     <input type="text" id="nombre_viaje" name="nombre_viaje"  
-                        placeholder="Ingresa el nombre de tu viaje" required>
+                        placeholder="Ingresa el nombre de tu viaje" required> 
                 </div>
-        <div>
+                </div>
+                    <?php foreach (['empresa_transporte', 'origen_transporte', 'destino_transporte', 
+                    'precio_min_transporte', 'precio_max_transporte', 'fecha_salida_desde', 'fecha_salida_hasta', 
+                    'capacidad_min_transporte', 'nombre_hospedaje', 'ubicacion_hospedaje', 'precio_min_hospedaje', 
+                    'precio_max_hospedaje', 'estrellas_min', 'checkin_desde', 'checkin_hasta', 'checkout_desde', '
+                    checkout_hasta'] as $filtro): ?>
+                        <?php if (!empty($_GET[$filtro])): ?>
+                            <input type="hidden" name="<?php echo $filtro; ?>" value="<?php echo($_GET[$filtro]); ?>">
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <div>
+        </div>
+        <div class="section">
             <h2>Transportes Disponibles</h2>
             <div class="section-content">
                 <?php if (count($transportes) > 0): ?>
-                    <div>
+                    <div class="results-count">
                         <strong><?php echo count($transportes); ?></strong> transportes encontrados
                     </div>
                     <?php foreach ($transportes as $transporte): ?>
@@ -527,74 +529,89 @@ $db->commit();
             </div>
         </div>
 
-        <div>
+        <div class="section">
             <h2>Panoramas Disponibles</h2>            
-            <div>
+            <div class="results-count">
                 <strong><?php echo count($panoramas); ?></strong> panoramas encontrados
             </div>
             
-            <div class="section-content">
+            <div class="section-content panoramas-content">
                 <?php if (count($panoramas) > 0): ?>
                     <?php foreach ($panoramas as $panorama): ?>
                         <div class="reserva">
-                            <input type="checkbox" name="panoramas[]" value="<?php echo $panorama['id']; ?>">
+                            <input type="checkbox" name="panoramas[]" value="<?php echo $panorama['id']; ?>" 
+                                    id="panorama_<?php echo $panorama['id']; ?>">
                             <div class="reserva-info">
                                 <div class="reserva-title">
                                     <?php echo htmlspecialchars($panorama['nombre']); ?> - 
                                     <?php echo htmlspecialchars($panorama['empresa']); ?>
                                 </div>
                                 <div class="reserva-details">
-                                    <strong>Descripción:</strong> <?php echo($panorama['descripcion']); ?><br>
-                                    <strong>Ubicación:</strong> <?php echo($panorama['ubicacion']); ?><br>
-                                    <strong>Precio:</strong> $<?php echo($panorama['precio_persona']); ?> por persona<br>
-                                    <strong>Duración:</strong> <?php echo($panorama['duracion']); ?> horas<br>
-                                    <strong>Capacidad:</strong> <?php echo($panorama['capacidad']); ?> personas<br>
-                                    <strong>Fecha:</strong> <?php echo date($panorama['fecha_panorama']); ?><br>
-                                    <strong>Restricciones:</strong> <?php echo($panorama['restricciones']); ?>
+                                    <strong>Descripción:</strong> <?php echo htmlspecialchars($panorama['descripcion']); ?><br>
+                                    <strong>Ubicación:</strong> <?php echo htmlspecialchars($panorama['ubicacion']); ?><br>
+                                    <?php if ($panorama['precio_persona']): ?>
+                                        <strong>Precio:</strong> $<?php echo number_format($panorama['precio_persona']); ?> por persona<br>
+                                    <?php endif; ?>
+                                    <?php if ($panorama['duracion']): ?>
+                                        <strong>Duración:</strong> <?php echo $panorama['duracion']; ?> horas<br>
+                                    <?php endif; ?>
+                                    <?php if ($panorama['capacidad']): ?>
+                                        <strong>Capacidad:</strong> <?php echo $panorama['capacidad']; ?> personas<br>
+                                    <?php endif; ?>
+                                    <?php if ($panorama['fecha_panorama']): ?>
+                                        <strong>Fecha:</strong> <?php echo date('d/m/Y', strtotime($panorama['fecha_panorama'])); ?><br>
+                                    <?php endif; ?>
+                                    <?php if ($panorama['restricciones']): ?>
+                                        <strong>Restricciones:</strong> <?php echo($panorama['restricciones']); ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <div>No hay panoramas disponibles con los filtros seleccionados.</div>
+                    <div class="no-results">No hay panoramas disponibles con los filtros seleccionados.</div>
                 <?php endif; ?>
             </div>
         </div>
 
-        <div>
+        <div class="section">
             <h2>Hospedajes Disponibles</h2>
-            <div>
+
+            
+            <div class="results-count">
                 <strong><?php echo count($hospedajes); ?></strong> hospedajes encontrados
             </div>
             
-            <div class="section-content">
+            <div class="section-content hospedajes-content">
                 <?php if (count($hospedajes) > 0): ?>
                     <?php foreach ($hospedajes as $hospedaje): ?>
                         <div class="reserva">
-                            <input type="checkbox" name="hospedajes[]" value="<?php echo $hospedaje['id']; ?>">
+                            <input type="checkbox" name="hospedajes[]" value="<?php echo $hospedaje['id']; ?>" 
+                                    id="hospedaje_<?php echo $hospedaje['id']; ?>">
                             <div class="reserva-info">
                                 <div class="reserva-title">
-                                    <?php echo($hospedaje['nombre_hospedaje']); ?> - 
-                                    <?php echo($hospedaje['ubicacion']); ?>
+                                    <?php echo htmlspecialchars($hospedaje['nombre_hospedaje']); ?> - 
+                                    <?php echo htmlspecialchars($hospedaje['ubicacion']); ?>
                                 </div>
                                 <div class="reserva-details">
-                                    <strong>Precio:</strong> $<?php echo($hospedaje['precio_noche']); ?> por noche<br>
-                                    <strong>Estrellas:</strong> <?php echo('⭐' . $hospedaje['estrellas']); ?><br>
-                                    <strong>Check-in:</strong> <?php echo($hospedaje['fecha_checkin']); ?><br>
-                                    <strong>Check-out:</strong> <?php echo($hospedaje['fecha_checkout']); ?><br>
-                                    <strong>Comodidades:</strong> <?php echo($hospedaje['comodidades']); ?>
+                                    <strong>Precio:</strong> $<?php echo number_format($hospedaje['precio_noche']); ?> por noche<br>
+                                    <?php if ($hospedaje['estrellas']): ?>
+                                        <strong>Estrellas:</strong> <?php echo str_repeat('⭐', $hospedaje['estrellas']); ?><br>
+                                    <?php endif; ?>
+                                    <strong>Check-in:</strong> <?php echo date('d/m/Y', strtotime($hospedaje['fecha_checkin'])); ?><br>
+                                    <?php if ($hospedaje['fecha_checkout']): ?>
+                                        <strong>Check-out:</strong> <?php echo date('d/m/Y', strtotime($hospedaje['fecha_checkout'])); ?><br>
+                                    <?php endif; ?>
+                                    <?php if ($hospedaje['comodidades']): ?>
+                                        <strong>Comodidades:</strong> <?php echo htmlspecialchars($hospedaje['comodidades']); ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <div>No hay hospedajes disponibles con los filtros seleccionados.</div>
+                    <div class="no-results">No hay hospedajes disponibles con los filtros seleccionados.</div>
                 <?php endif; ?>
-            </div>
-
-            <div>
-                <label for="participantes">Participantes (separados por coma)</label>
-                <input type="text" name="participantes" placeholder="Juan, Pedro...">
             </div>
             <button type="submit" class="btn-submit">Crear Viaje</button>
             </form>
