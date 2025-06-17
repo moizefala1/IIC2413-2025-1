@@ -257,6 +257,9 @@ $db->commit();
     </style>
 </head>
 <body>
+    <div class = "boton-volver">
+        <button onclick="location.href='main.php'">Volver</button>
+    </div>
     <div class="container">
         <?php if (isset($_SESSION['error'])): ?>
         <div class="error">
@@ -270,6 +273,7 @@ $db->commit();
         <?php endif; ?>
         <h1>Filtros de Viaje</h1>
             <div class="filtros">
+
                 <h3>Filtrar Transportes</h3>
                 <form method="GET" action="">
                     <div class="filtros-grid">
@@ -593,8 +597,8 @@ $db->commit();
             </div>
 
             <div>
-                <label for="participantes">Participantes (separados por coma)</label>
-                <input type="text" name="participantes" placeholder="Juan, Pedro...">
+                <label for="participantes">Participantes (separados por comas, con su edad)</label>
+                <input type="text" name="participantes" placeholder="Juan.20, Pedro.30, ...">
             </div>
             <button type="submit" class="btn-submit">Crear Viaje</button>
             </form>

@@ -1,55 +1,42 @@
-## Estructura del proyecto
+### ENTREGA 3
+### Aclaraciones
+- Las solucion presentada al enunciado es tomando en cuenta exlusivamente el ejemplo de viaje entregado en el mismo enunciado, y no se asegura que funcione en una generalidad.  
+- Se espera que para entrar a la pagina se usa el directorio url/php/index.php, con el fin de que los estilos de la carpeta css se apliquen a todas las paginas.
 
-E3/  
-├── css/  
-│   └── style.css # Estilos globales de la aplicación  
-├── php/  
-│   ├── index.php # Login de usuarios  
-│   ├── validar_login.php # Procesamiento del login  
-│   ├── main.php # Página principal tras iniciar sesión  
-│   ├── registro.php # Registro de nuevos usuarios  
-│   ├── procesar_registro.php # Procesa el formulario de registro  
-│   ├── crear_viaje.php # Formulario para crear un viaje  
-│   ├── desplegar_viaje.php # Vista del itinerario del viaje  
-│   ├── cerrar_sesion.php # Cierre de sesión  
-│   └── utils.php # Conexión a la base de datos  
+## 2.1
+- Se implementaron condiciones para mantener la integridad de los datos, verificando: 
+  a) Formato de email, con FILTER_VALIDATE_EMAIL
+  b) Formato de RUN, con preg_match y strlen
+  c) Formato de DV, con preg_match
+  d) Que las claves coincidan
+  e) Que los campos (usuario, clave, email, nombre, run, dv) no esten vacios
 
-## Cómo ejecutar
+-Todos los errores externos a estas validaciones previas dependeran exclusivamente de la base de datos, y se mostraran en la pagina como 'Error al registrar el usuario. Por favor verifica tus datos.' 
 
-1. **Sube todos los archivos** al servidor del curso dentro de tu carpeta `Sites/E3/`.
-2. **Inicia la aplicación localmente** con los siguientes pasos:
+-El registroy el login se maneja mediante prepare-bindparam, por lo que previene inyecciones sql.
 
-Cambia las variables en `Sites/E3/php/utils.php`
+## 2.2
+- Para esta funcionalidad, se decidio optar por otro metodo para crear el viaje, el cual permite un manejo mas ordenado y preciso de los datos a efectos de codigo, pero implica un mayor cuidado para el usuario. 
 
-```
-$host = 'localhost'; // Cambiar al servidor bdd1.ing.puc.cl si se quiere usar el servidor remoto
-$dbname = 'bdd'; // Nombre de usuario
-$usuario = 'nombre_usuario'; // Nombre de usuario
-$clave = 'contraseña'; // Número de alumno
-```
-En la terminal, ubicate en la carpeta E3, luego ejecuta el siguiente comando:
+## EXPLICACION SOLUCION
 
-```
-php -S localhost:8000
-```
+- Al crear el viaje, se muestran 3 secciones de seleccion multiple, donde aparecen los transportes, los panoramas y los hospedajes. 
 
-En tu navegador, ir a la ruta:
-http://localhost:8000/php/index.php
+- Cada seccion tiene asociado una seccion de filtros, donde se puede ingresar los datos necesarios para filtrar la seleccion. (cabe destacar que los filtros deben aplicarse de manera secuencial, es decir, primero poner los filtros de viaje, darle a aplicar filtros que aparece en la misma seccion, luego los filtros de panorama, darle a aplicar filtros, y finalmente los filtros de hospedaje, y darle a aplicar filtros)
 
-3. **Inicia la aplicación en el servidor del curso** con los siguientes pasos:
-Entra al servidor con el protocolo ssh como siempre.
+-El filtro de origen y destino para los transportes muestra: todos los viajes que tengan el origen seleccionado (sin importar el destino), y los viajes que tengan el destino seleccionado (sin importar el origen). De esta forma, pueden analizar la posibilidad de hacer escalas para organizar el viaje.
 
-No es necesario ejecutar ningún comando! Solo entra a esta URL: https://bdd1.ing.puc.cl/tu_usuario/E3/php/index.php
+- Cada seccion de seleccion multiple, se muestra un checkbox para cada opcion, y al seleccionar una opcion se agrega el id de la opcion a un array, que luego se pasa al servidor para ser procesado.
 
--Recuerda modificar 'tu_usuario' con tu nombre de usuario.
+- Por lo anterior, es responsabilidad del usuario seleccionar tanto los viaje de vuelta, como de ida. Esto tambien da la opcion de seleccionar unicamente un viaje de ida sin necesidad de seleccionar uno de vuelta.
 
-## Tecnologías utilizadas
+- Si no se escoge ninguna opcion, se crea la agenda vacia.
 
-- PHP
-- HTML5 + CSS3
-- PostgreSQL
-- Servidor: `bdd1.ing.puc.cl`
+- Los participantes se añaden a la base de datos si y solo si existe algun panorama asociado a la agenda. (Analizando la bdd, esto sucede de esta manera, por lo que se mantiene)
 
-### Contacto
+- Al crear el viaje, se muestra una seccion de seleccion de participantes, donde se puede ingresar varios nombres de participantes separados por comas. 
 
-Cualquier duda técnica o problema de ejecución puede comunicarse a través de ISSUES según las instrucciones del curso.
+
+
+
+# TODA LA SOLUCION ESTA DISEÑADA MANTENIENDO LO SOLICITADO EN EL ENUNCIADO, Y HACIENDO USO PLENO DE LA LIBERTAD ENTREGADA POR EL MISMO. SE CUMPLE CON LO SOLICITADO (tengan piedad :c, si igual me kedo chora la pagina siono :3 jejeje).
