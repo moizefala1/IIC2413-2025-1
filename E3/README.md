@@ -3,6 +3,8 @@
 - Las solucion presentada al enunciado es tomando en cuenta exlusivamente el ejemplo de viaje entregado en el mismo enunciado, y no se asegura que funcione en una generalidad.  
 - Se espera que para entrar a la pagina se usa el directorio url/php/index.php, con el fin de que los estilos de la carpeta css se apliquen a todas las paginas.
 
+- Se han ejecutado ya todas las funciones dentro de la carpeta archivos sql, para que se mantengan en la base de datos.
+
 ## 2.1
 - Se implementaron condiciones para mantener la integridad de los datos, verificando: 
   a) Formato de email, con FILTER_VALIDATE_EMAIL
@@ -30,13 +32,21 @@
 
 - Por lo anterior, es responsabilidad del usuario seleccionar tanto los viaje de vuelta, como de ida. Esto tambien da la opcion de seleccionar unicamente un viaje de ida sin necesidad de seleccionar uno de vuelta.
 
+-De igual manera, es responsabilidad del usuario que sus reservas HAGAN SENTIDO, es decir, pueden reservar un panorama de capacidad inferior a la de los participantes. (Esta decision se toma considerando la posibilidad del usuario de reservar algun panorama/viaje/hospedaje sin necesariamente considerar a todos los participantes de la agenda.)
+
 - Si no se escoge ninguna opcion, se crea la agenda vacia.
 
 - Los participantes se añaden a la base de datos si y solo si existe algun panorama asociado a la agenda. (Analizando la bdd, esto sucede de esta manera, por lo que se mantiene)
 
-- Al crear el viaje, se muestra una seccion de seleccion de participantes, donde se puede ingresar varios nombres de participantes separados por comas. 
+- Al crear el viaje, se muestra una seccion de seleccion de participantes, donde se puede ingresar varios nombres de participantes separados por comas. Existe una verificacion para que el formato sea el correcto, aunque no especifica el error.
 
+-Se calcula el puntaje de cada reserva como el monto/1000 (luego en el sp se calcula de nuevo para el puntaje total a agregar a la agenda).
 
+-El monto de viaje se calcula como el precio de asiento por persona * cantidad de personas.
+-El monto de panorama es el que viene por defecto.
+-El monto de hospedaje se calcula como el precio de noche por persona * cantidad de dias de noche.
 
 
 # TODA LA SOLUCION ESTA DISEÑADA MANTENIENDO LO SOLICITADO EN EL ENUNCIADO, Y HACIENDO USO PLENO DE LA LIBERTAD ENTREGADA POR EL MISMO. SE CUMPLE CON LO SOLICITADO (tengan piedad :c, si igual me kedo chora la pagina siono :3 jejeje).
+
+## 2.3

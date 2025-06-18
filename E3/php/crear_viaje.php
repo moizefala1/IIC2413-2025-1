@@ -14,20 +14,20 @@ $where_transporte = "r.estado_disponibilidad = 'Disponible'";
 $params_transporte = [];
 
 if (!empty($_GET['empresa_transporte'])) {
-    $where_transporte .= " AND LOWER(t.empresa) LIKE LOWER(?)";
-    $params_transporte[] = '%' . $_GET['empresa_transporte'] . '%';
+    $where_transporte .= " AND unaccent(LOWER(t.empresa)) LIKE LOWER(?)";
+    $params_transporte[] = '%' . limpiar_string($_GET['empresa_transporte']) . '%'; 
 }
 
 if (!empty($_GET['origen_transporte']) || !empty($_GET['destino_transporte'])) {
     $where_transporte .= " AND (";
     $conditions = [];
     if (!empty($_GET['origen_transporte'])) {
-        $conditions[] = "LOWER(t.lugar_origen) LIKE LOWER(?)";
-        $params_transporte[] = '%' . trim($_GET['origen_transporte']) . '%';
+        $conditions[] = "unaccent(LOWER(t.lugar_origen)) LIKE LOWER(?)";
+        $params_transporte[] = '%' . limpiar_string($_GET['origen_transporte']) . '%';
     }
     if (!empty($_GET['destino_transporte'])) {
-        $conditions[] = "LOWER(t.lugar_llegada) LIKE LOWER(?)";
-        $params_transporte[] = '%' . trim($_GET['destino_transporte']) . '%';
+        $conditions[] = "unaccent(LOWER(t.lugar_llegada)) LIKE LOWER(?)";
+        $params_transporte[] = '%' . limpiar_string($_GET['destino_transporte']) . '%';
     }
     $where_transporte .= implode(" OR ", $conditions) . ")";
 }
@@ -71,18 +71,18 @@ $where_panorama = "r.estado_disponibilidad = 'Disponible'";
 $params_panorama = [];
 
 if (!empty($_GET['empresa_panorama'])) {
-    $where_panorama .= " AND LOWER(p.empresa) LIKE LOWER(?)";
-    $params_panorama[] = '%' . $_GET['empresa_panorama'] . '%';
+    $where_panorama .= " AND unaccent(LOWER(p.empresa)) LIKE LOWER(?)";
+    $params_panorama[] = '%' . limpiar_string($_GET['empresa_panorama']) . '%';
 }
 
 if (!empty($_GET['nombre_panorama'])) {
-    $where_panorama .= " AND LOWER(p.nombre) LIKE LOWER(?)";
-    $params_panorama[] = '%' . $_GET['nombre_panorama'] . '%';
+    $where_panorama .= " AND unaccent(LOWER(p.nombre)) LIKE LOWER(?)";
+    $params_panorama[] = '%' . limpiar_string($_GET['nombre_panorama']) . '%';
 }
 
 if (!empty($_GET['ubicacion_panorama'])) {
-    $where_panorama .= " AND LOWER(p.ubicacion) LIKE LOWER(?)";
-    $params_panorama[] = '%' . $_GET['ubicacion_panorama'] . '%';
+    $where_panorama .= " AND unaccent(LOWER(p.ubicacion)) LIKE LOWER(?)";
+    $params_panorama[] = '%' . limpiar_string($_GET['ubicacion_panorama']) . '%';
 }
 
 if (!empty($_GET['precio_min_panorama'])) {
@@ -134,13 +134,13 @@ $where_hospedaje = "r.estado_disponibilidad = 'Disponible'";
 $params_hospedaje = [];
 
 if (!empty($_GET['nombre_hospedaje'])) {
-    $where_hospedaje .= " AND LOWER(h.nombre_hospedaje) LIKE LOWER(?)";
-    $params_hospedaje[] = '%' . $_GET['nombre_hospedaje'] . '%';
+    $where_hospedaje .= " AND unaccent(LOWER(h.nombre_hospedaje)) LIKE LOWER(?)";
+    $params_hospedaje[] = '%' . limpiar_string($_GET['nombre_hospedaje']) . '%';
 }
 
 if (!empty($_GET['ubicacion_hospedaje'])) {
-    $where_hospedaje .= " AND LOWER(h.ubicacion) LIKE LOWER(?)";
-    $params_hospedaje[] = '%' . $_GET['ubicacion_hospedaje'] . '%';
+    $where_hospedaje .= " AND unaccent(LOWER(h.ubicacion)) LIKE LOWER(?)";
+    $params_hospedaje[] = '%' . limpiar_string($_GET['ubicacion_hospedaje']) . '%';
 }
 
 if (!empty($_GET['precio_min_hospedaje'])) {
@@ -176,6 +176,20 @@ if (!empty($_GET['checkout_desde'])) {
 if (!empty($_GET['checkout_hasta'])) {
     $where_hospedaje .= " AND h.fecha_checkout <= ?";
     $params_hospedaje[] = $_GET['checkout_hasta'];
+}
+
+if (!empty($_GET['tipo_hospedaje'])) {
+    $tipo = $_GET['tipo_hospedaje'];
+    if ($tipo = 1) {
+        $tabla = 'airbnb';
+    } elseif ($tipo = 2) {
+        $tabla = 'hotel';
+    }
+    $where_hospedaje .= " AND h.id IN (SELECT id FROM " . $tabla . ")";
+
+    //Se hace de esta manera ya que con algun proxy podria suceder que alguien intervenga la solicitud, cambie el valor
+    //de la string, y logra enviar una inyeccion sql, entonces se valida mediante numeros en lugar de reemplazar
+    //la string directamente en la query.
 }
 
 $query_hospedajes = "SELECT h.*, r.estado_disponibilidad 
@@ -467,8 +481,15 @@ $db->commit();
                             <input type="date" name="checkout_hasta" 
                                     value="<?php echo($_GET['checkout_hasta'] ?? ''); ?>">
                         </div>
-                    </div>
-
+                        <div>
+                            <label>Airbnb / Hotel </label>
+                            <select name="tipo_hospedaje">
+                                <option value="">Todos</option>
+                                <option value=1 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == 'airbnb') ? 'selected' : ''; ?>>Airbnb</option>
+                                <option value=2 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == 'hotel') ? 'selected' : ''; ?>>Hotel</option>
+                            </select>   
+                        </div>     
+                    </div>        
                     <?php foreach (['empresa_transporte', 'origen_transporte', 
                     'destino_transporte', 'precio_min_transporte', 'precio_max_transporte', 
                     'fecha_salida_desde', 'fecha_salida_hasta', 'capacidad_min_transporte', 'empresa_panorama', 
@@ -483,14 +504,12 @@ $db->commit();
                     <div>
                         <button type="submit">Aplicar Filtros</button>
                     </div>
-
                 </form>
             </div>
 
-    <div>
-        <a href="?">Limpiar Filtros</a>
-    </div>  
-
+        <div>
+            <a href="?">Limpiar Filtros</a>
+        </div>  
         <h1>Crear Nuevo Viaje</h1>
         <div>
             <form action="procesar_crear_viaje.php" method="POST">

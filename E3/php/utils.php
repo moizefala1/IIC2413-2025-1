@@ -14,4 +14,10 @@ function conectarBD() {
         exit();
     }
 }
+
+
+function limpiar_string($text) {
+    $text = trim($text);
+    return iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text);
+}
 ?>
