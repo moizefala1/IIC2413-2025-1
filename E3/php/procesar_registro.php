@@ -76,7 +76,7 @@ try {
     ");
     
     $stmt->bindParam(':username', $usuario);
-    $stmt->bindParam(':contrasena', $contrasena);
+    $stmt->bindParam(':contrasena', $clave);
     $stmt->bindParam(':nombre', $nombre);
     $stmt->bindParam(':correo', $email);
     $stmt->bindParam(':telefono_contacto', $telefono);

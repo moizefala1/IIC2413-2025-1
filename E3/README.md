@@ -47,6 +47,8 @@
 -El monto de hospedaje se calcula como el precio de noche por persona * cantidad de dias de noche.
 
 
-# TODA LA SOLUCION ESTA DISEÑADA MANTENIENDO LO SOLICITADO EN EL ENUNCIADO, Y HACIENDO USO PLENO DE LA LIBERTAD ENTREGADA POR EL MISMO. SE CUMPLE CON LO SOLICITADO (tengan piedad :c, si igual me kedo chora la pagina siono :3 jejeje).
+- No existe forma de crear un trigger sobre una transaccion... no que se me ocurra al menos. Por lo que se crea el SP, y se ejecuta manualmente (sin trigger) justo antes del commit de la transaccion, tomando como argumento el id de la agenda a modificar. El principal problema es que no se puede crear un trigger con AFTER INSERT ON agenda, ya que al menos en mi codigo, al insertar la agenda esta está vacía, y luego empieza a insertar los datos de los viajes, los panoramas y/o los hospedajes, por lo que la suma da NULL o 0. Por lo mismo, se decicio hacerlo de esta forma.
+
+# TODA LA SOLUCION ESTA DISEÑADA MANTENIENDO LO SOLICITADO EN EL ENUNCIADO, Y HACIENDO USO PLENO DE LA LIBERTAD ENTREGADA POR EL MISMO. SE CUMPLE CON LO SOLICITADO (tengan piedad :c, si igual me kedo chora la pagina siono :3 jejeje, ademas q cumple todas las funcionalidades uwu).
 
 ## 2.3

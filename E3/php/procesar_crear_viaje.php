@@ -27,30 +27,34 @@ $usuario = $_SESSION['usuario'] ?? '';
 try {
     $db = ConectarBD();
     $db->beginTransaction();
-    if (strpos($participantes, ',') === false) {
-    throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
-    }
+    if (!empty($participantes)) {
+        if (strpos($participantes, ',') === false) {
+        throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
+        }
+        $participantes_array = explode(',', $participantes);
+        $cantidad_participantes = count($participantes_array);
+        //Verificar formato d eparticipantes
+        if ($cantidad_participantes > 1) {
+            foreach ($participantes_array as $participante) {
+                $participante = trim($participante);
+                $participante = explode('.', $participante);
+                if (count($participante) < 2) {
+                    throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
+                }
 
-    $participantes_array = explode(',', $participantes);
-    $cantidad_participantes = count($participantes_array);
-    //Verificar formato d eparticipantes
-    if ($cantidad_participantes > 0) {
-        foreach ($participantes_array as $participante) {
-            $participante = trim($participante);
-            $participante = explode('.', $participante);
-            if (count($participante) < 2) {
-                throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
-            }
-
-            $nombre = $participante[0];
-            $edad = $participante[1];
-            if (!is_numeric($edad) || $edad < 0 || empty($edad)) { 
-                throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
-            }
-            if (empty($nombre) || !preg_match('/^[a-zA-Z\s]+$/', $nombre)) {
-                throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
+                $nombre = $participante[0];
+                $edad = $participante[1];
+                if (!is_numeric($edad) || $edad < 0 || empty($edad)) { 
+                    throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
+                }
+                if (empty($nombre) || !preg_match('/^[a-zA-Z\s]+$/', $nombre)) {
+                    throw new PDOException(' Formato de participantes incorrecto. Debe ser "Nombre.Edad,Nombre.Edad, ..."');
+                }
             }
         }
+    }
+    else {
+        $cantidad_participantes = 1;
     }
 
     $stmt = $db ->prepare('SELECT correo FROM persona WHERE username = :usuario');
@@ -152,7 +156,7 @@ try {
                 throw new PDOException();
             }
 
-            if ($cantidad_participantes > 0) {
+            if ($cantidad_participantes > 1) {
                 foreach ($participantes_array as $participante) {
                     $participante = trim($participante);
                     $participante = explode('.', $participante);
@@ -236,11 +240,13 @@ try {
     }
 
     ////// FUNCIONANDO
-    $db ->commit();
-    //CREAR TRIGGER PARA ESTE COMITT, CON SP PARA CALCULAR PUNTOS DE LA AGENDA ENTERA Y AÑADIRLOS A USUARIO
+    $db->query("SELECT calcular_puntos_usuario($agenda_id)");
+    /// No existe forma de crear un trigger sobre una transaccion... no que se me ocurra al menos
+    $db ->commit();   
     $_SESSION['success'] = 'Agenda creada correctamente.';
     header('Location: crear_viaje.php');
     exit();
+    
 }
 catch (PDOException $e) {
     $db->rollBack();
