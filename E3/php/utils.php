@@ -1,9 +1,9 @@
 <?php
 function conectarBD() {
-    $host = 'localhost'; // Cambiar al servidor bdd1.ing.puc.cl si se quiere usar el servidor remoto
-    $dbname = 'e3'; // Nombre de usuario
-    $usuario = 'booked'; // Nombre de usuario
-    $clave = 'bdd2025-1'; // Número de alumno
+    $host = 'bdd1.ing.puc.cl'; // Cambiar al servidor bdd1.ing.puc.cl si se quiere usar el servidor remoto
+    $dbname = 'lvaro.panozo.e3'; // Nombre de usuario
+    $usuario = 'lvaro.panozo.e3'; // Nombre de usuario
+    $clave = '24664057'; // Número de alumno
 
     try {
         $db = new PDO("pgsql:host=$host;dbname=$dbname", $usuario, $clave);

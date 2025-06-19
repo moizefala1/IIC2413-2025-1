@@ -180,9 +180,9 @@ if (!empty($_GET['checkout_hasta'])) {
 
 if (!empty($_GET['tipo_hospedaje'])) {
     $tipo = $_GET['tipo_hospedaje'];
-    if ($tipo = 1) {
+    if ($tipo == 1) {
         $tabla = 'airbnb';
-    } elseif ($tipo = 2) {
+    } elseif ($tipo == 2) {
         $tabla = 'hotel';
     }
     $where_hospedaje .= " AND h.id IN (SELECT id FROM " . $tabla . ")";
@@ -485,8 +485,8 @@ $db->commit();
                             <label>Airbnb / Hotel </label>
                             <select name="tipo_hospedaje">
                                 <option value="">Todos</option>
-                                <option value=1 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == 'airbnb') ? 'selected' : ''; ?>>Airbnb</option>
-                                <option value=2 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == 'hotel') ? 'selected' : ''; ?>>Hotel</option>
+                                <option value=1 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == '1') ? 'selected' : ''; ?>>Airbnb</option>
+                                <option value=2 <?php echo (isset($_GET['tipo_hospedaje']) && $_GET['tipo_hospedaje'] == '2') ? 'selected' : ''; ?>>Hotel</option>
                             </select>   
                         </div>     
                     </div>        

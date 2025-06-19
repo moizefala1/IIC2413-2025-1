@@ -1,9 +1,14 @@
 ### ENTREGA 3
 ### Aclaraciones
 - Las solucion presentada al enunciado es tomando en cuenta exlusivamente el ejemplo de viaje entregado en el mismo enunciado, y no se asegura que funcione en una generalidad.  
+
 - Se espera que para entrar a la pagina se usa el directorio url/php/index.php, con el fin de que los estilos de la carpeta css se apliquen a todas las paginas.
 
 - Se han ejecutado ya todas las funciones dentro de la carpeta archivos sql, para que se mantengan en la base de datos.
+
+- Para la revision se espera acceder a la URL:
+https://bdd1.ing.puc.cl/lvaro.panozo.e3/E3/php/index.php
+Dado que acceder directamente sin el /php/ hace que los estilos no se apliquen.
 
 ## 2.1
 - Se implementaron condiciones para mantener la integridad de los datos, verificando: 
@@ -47,7 +52,7 @@
 -El monto de hospedaje se calcula como el precio de noche por persona * cantidad de dias de noche.
 
 
-- No existe forma de crear un trigger sobre una transaccion... no que se me ocurra al menos. Por lo que se crea el SP, y se ejecuta manualmente (sin trigger) justo antes del commit de la transaccion, tomando como argumento el id de la agenda a modificar. El principal problema es que no se puede crear un trigger con AFTER INSERT ON agenda, ya que al menos en mi codigo, al insertar la agenda esta está vacía, y luego empieza a insertar los datos de los viajes, los panoramas y/o los hospedajes, por lo que la suma da NULL o 0. Por lo mismo, se decicio hacerlo de esta forma.
+- No existe forma de crear un trigger sobre una transaccion... no que se me ocurra al menos. Por lo que se crea el SP, y se ejecuta manualmente (sin trigger) justo antes del commit de la transaccion en el codigo php, tomando como argumento el id de la agenda a modificar. El principal problema es que no se puede crear un trigger con AFTER INSERT ON agenda, ya que al menos en mi codigo, al insertar la agenda esta está vacía, y luego empieza a insertar los datos de los viajes, los panoramas y/o los hospedajes, por lo que la suma da NULL o 0. Por lo mismo, se decicio hacerlo de esta forma.
 
 # TODA LA SOLUCION ESTA DISEÑADA MANTENIENDO LO SOLICITADO EN EL ENUNCIADO, Y HACIENDO USO PLENO DE LA LIBERTAD ENTREGADA POR EL MISMO. SE CUMPLE CON LO SOLICITADO (tengan piedad :c, si igual me kedo chora la pagina siono :3 jejeje, ademas q cumple todas las funcionalidades uwu).
 

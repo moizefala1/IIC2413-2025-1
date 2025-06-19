@@ -43,9 +43,9 @@ input {
 }
 
 .boton-volver {
-    position: fixed; /* Fija el botón en la pantalla */
-    top: 20px;      /* Distancia desde arriba */
-    left: 20px;     /* Distancia desde la izquierda */
+    position: fixed;
+    top: 20px;
+    left: 20px;     
 }
 
 button {

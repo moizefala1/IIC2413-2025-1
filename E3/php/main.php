@@ -13,6 +13,11 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="error">
+            <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+        </div>
+    <?php endif; ?>
     <div class="container">
         <h1>Hola, <?= htmlspecialchars($_SESSION['usuario']) ?></h1>
         <h2>¿Qué deseas hacer?</h2>
